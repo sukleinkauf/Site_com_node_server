@@ -1,13 +1,22 @@
 extends layout
 
-block content
-	nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top
-		ul.nav.sidebar-nav
-			li.sidebar.brand
-				a(href='#') Funny Fellings
-				li.active
-					a(href='#') História
-				li
-					a(href='#') Contato
-				li
-					a(href='#') Produtos
+block menu
+
+	div#wrapper
+		div.overlay
+		nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top (role="navegation")
+			ul.nav.sidebar-nav
+				li.sidebar-brand
+					a(href='#') Sweet Feellings
+					li.active
+						a(href='#', id="linkmenu2") História
+					li
+						a(href='#', id="linkmenu3") Contato
+					li
+						a(href='#', id="linkmenu4") Produtos
+					li
+						a(href='#', id="linkmenu5") Promoções
+					li
+						a(href='#', id="linkmenu6") Carrinho
+		div#page-content-wrapper
+			i#i.fa.fa-align-justify.Icon.hamburguer.is-closed(data-toggle="offcanvas") 
