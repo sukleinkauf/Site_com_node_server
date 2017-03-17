@@ -19,7 +19,7 @@ gulp.task('build-img',function(){
 gulp.task('bootstrap',function(){ //copiando da pasta de origim e colando no destino
 	gulp.src('bower_components/bootstrap/dist/css/bootstrap.min.css')
 		.pipe(gulp.dest('public/stylesheets'));
-	gulp.src('bower_components/bootstrap/dist/js/bootstrap.js')
+	gulp.src('bower_components/bootstrap/dist/js/bootstrap.min.js')
 		.pipe(gulp.dest('public/javascripts'));
 	gulp.src('bower_components/bootstrap/dist/fonts/**/*')
 		.pipe(gulp.dest('public/fonts'));
