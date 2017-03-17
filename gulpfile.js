@@ -5,8 +5,17 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
     server    = require('tiny-lr'),
     path = require ('path'),
     less = require('gulp-less'); //les para css
+    var open = require('gulp-open');//abrir pagina quando iniciar server
 
 
+gulp.task('open', function(){
+	var options = {
+					uri: 'http://localhost:5000/',
+					app: 'chrome'
+ 				 };
+	gulp.src('views/layout.pug')
+	.pipe(open(options));
+});
 
 gulp.task('build-img',function(){
 
@@ -16,7 +25,7 @@ gulp.task('build-img',function(){
 	
 });
 
-gulp.task('less', function () {
+gulp.task('less', function () {//transpilação de less para css
 	return gulp.src('less/*.less')
 	.pipe(less())
 	.pipe(gulp.dest('public/stylesheets'));
@@ -53,7 +62,7 @@ gulp.task('fontawesome',function(){ //copiando da pasta de origim e colando no d
 	console.log("font-awesome");
 });
 
-gulp.task('default', ['bootstrap','jquery','fontawesome','less','build-img']);
+gulp.task('default', ['bootstrap','jquery','fontawesome','less','build-img','open']);
 	
 
 path.join(__dirname)//para saber onde eu estou
