@@ -4,7 +4,7 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
     refresh   = require('gulp-livereload'),
     server    = require('tiny-lr'),
     path = require ('path'),
-    less = require('less'); //les para css
+    less = require('gulp-less'); //les para css
 
 
 
@@ -14,6 +14,13 @@ gulp.task('build-img',function(){
 		.pipe(imagemin()) //função pipe permite ligar funções entre elas
 		.pipe(gulp.dest('public/images'));//destino das ações 
 	
+});
+
+gulp.task('less', function () {
+	return gulp.src('less/*.less')
+	.pipe(less())
+	.pipe(gulp.dest('public/stylesheets'));
+	console.log("less")
 });
 
 gulp.task('bootstrap',function(){ //copiando da pasta de origim e colando no destino
@@ -40,13 +47,13 @@ gulp.task('fontawesome',function(){ //copiando da pasta de origim e colando no d
 
 	gulp.src('bower_components/font-awesome/css/font-awesome.min.css')
 		.pipe(gulp.dest('public/stylesheets'));
-		
+
 	gulp.src('bower_components/font-awesome/fonts/**/*')
 		.pipe(gulp.dest('public/fonts'));
 	console.log("font-awesome");
 });
 
-gulp.task('default', ['bootstrap','jquery','fontawesome','build-img']);
+gulp.task('default', ['bootstrap','jquery','fontawesome','less','build-img']);
 	
 
 path.join(__dirname)//para saber onde eu estou
