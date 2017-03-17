@@ -1,11 +1,20 @@
 var gulp = require('gulp'), //requerindo ao móduo gulp
 	imagemin = require('gulp-imagemin'), //minimizando imagens
     minifycss = require('gulp-minify-css'),
-    refresh   = require('gulp-livereload'),
+    refresh   = require('gulp-livereload'), //regarregar a página sem f5
     server    = require('tiny-lr'),
     path = require ('path'),
-    less = require('gulp-less'); //les para css
-    var open = require('gulp-open');//abrir pagina quando iniciar server
+    less = require('gulp-less'), //les para css
+    open = require('gulp-open'),//abrir pagina quando iniciar server
+    watch = require('gulp-watch'); //para assistir mudanças
+
+
+// gulp.watch( 'src/less/*.less', ['less'] );
+// gulp.task('watch', function() {
+// 	gulp.watch('less/*.less', [
+// 		'less'
+// 	]);
+// });
 
 
 gulp.task('open', function(){
