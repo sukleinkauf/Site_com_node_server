@@ -17,12 +17,14 @@ gulp.task('build-img',function(){
 });
 
 gulp.task('bootstrap',function(){ //copiando da pasta de origim e colando no destino
-	gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+	gulp.src('bower_components/bootstrap/dist/css/bootstrap.min.css')
 		.pipe(gulp.dest('public/stylesheets'));
-	gulp.src('node_modules/bootstrap/dist/js/bootstrap.js')
+	gulp.src('bower_components/bootstrap/dist/js/bootstrap.js')
 		.pipe(gulp.dest('public/javascripts'));
-	gulp.src('node_modules/bootstrap/dist/fonts/**/*')
+	gulp.src('bower_components/bootstrap/dist/fonts/**/*')
 		.pipe(gulp.dest('public/fonts'));
+	gulp.src('bower_components/jquery/dist/jquery.min.js')
+		.pipe(gulp.dest('public/javascripts'));
 	console.log("bootstrap");
 });
 
