@@ -1,12 +1,12 @@
-var gulp = require('gulp'); //requerindo ao móduo gulp
-	imagemin = require('gulp-imagemin')
+var gulp = require('gulp'), //requerindo ao móduo gulp
+	imagemin = require('gulp-imagemin'), //minimizando imagens
     minifycss = require('gulp-minify-css'),
     refresh   = require('gulp-livereload'),
-    server    = require('tiny-lr');
+    server    = require('tiny-lr'),
+    path = require ('path'),
+    less = require('less'); //les para css
 
-gulp.task('default',function(){//task: define tarefas no gulp
-	console.log("teste");
-});
+
 
 gulp.task('build-img',function(){
 
@@ -25,3 +25,8 @@ gulp.task('bootstrap',function(){ //copiando da pasta de origim e colando no des
 		.pipe(gulp.dest('public/fonts'));
 	console.log("bootstrap");
 });
+
+gulp.task('default', ['bootstrap','build-img']);
+	
+
+path.join(__dirname)//para saber onde eu estou
