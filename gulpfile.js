@@ -6,7 +6,8 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
     path = require ('path'),
     less = require('gulp-less'), //les para css
     open = require('gulp-open'),//abrir pagina quando iniciar server
-    watch = require('gulp-watch'); //para assistir mudanças
+    watch = require('gulp-watch'), //para assistir mudanças
+    nodemon = require('gulp-nodemon');
 
 
 // gulp.watch( 'src/less/*.less', ['less'] );
@@ -70,6 +71,12 @@ gulp.task('fontawesome',function(){ //copiando da pasta de origim e colando no d
 		.pipe(gulp.dest('public/fonts'));
 	console.log("font-awesome");
 });
+
+// gulp.task('nodemon', function () {
+// 	nodemon({
+// 		script: 'server.js', 
+// 	})
+// })
 
 gulp.task('default', ['bootstrap','jquery','fontawesome','less','build-img','open']);
 	

@@ -73,10 +73,10 @@
   height: 100%;
   width: 3px;
   background-color: #1c1c1c;
-  -webkit-transition: width 0.5s ease-in;
-  -moz-transition: width 0.5s ease-in;
-  -ms-transition: width 0.5s ease-in;
-  transition: width 0.5s ease-in;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 /*Setando cores diferentes ao passar o mouse*/
 .sidebar-nav li:first-child a {
@@ -85,35 +85,37 @@
   font-family: 'Sofia', cursive;
   font-size: 120%;
 }
-.sidebar-nav li:first-child a:hover,
-.sidebar-nav li:first-child a:active,
-.sidebar-nav li:first-child a:focus {
+.sidebar-nav li:first-child,
+a:hover,
+a:active,
+a:focus {
   background-color: #1A1A1A;
 }
 .sidebar-nav li:nth-child(2):before {
   background-color: #ec1b5a;
 }
-.sidebar-nav li:nth-child(3):before {
+li:nth-child(3):before {
   background-color: #79aefe;
 }
-.sidebar-nav li:nth-child(4):before {
+li:nth-child(4):before {
   background-color: #314190;
 }
-.sidebar-nav li:nth-child(5):before {
+li:nth-child(5):before {
   background-color: #279636;
 }
-.sidebar-nav li:nth-child(6):before {
+li:nth-child(6):before {
   background-color: #7d5d81;
 }
-.sidebar-nav li:nth-child(7):before {
-  background-color: #ead24c;
-}
-.sidebar-nav li:nth-child(8):before {
-  background-color: #2d2366;
-}
-.sidebar-nav li:nth-child(9):before {
-  background-color: #35acdf;
-}
+/*	li:nth-child(7):before {
+    	background-color: #ead24c;   
+	}
+	li:nth-child(8):before {
+   	 background-color: #2d2366;   
+	}
+	li:nth-child(9):before {
+		background-color: #35acdf;   
+	}
+*/
 #linkmenu2:hover {
   background-color: #ec1b5a;
 }
@@ -144,11 +146,11 @@
   padding: 10px 15px 10px 30px;
 }
 .sidebar-nav li a:hover,
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus,
-.sidebar-nav li.open a:hover,
-.sidebar-nav li.open a:active,
-.sidebar-nav li.open a:focus {
+li a:active,
+li a:focus,
+li.open a:hover,
+li.open a:active,
+li.open a:focus {
   text-decoration: none;
   background-color: transparent;
 }
@@ -171,16 +173,16 @@
   background: transparent;
   border: none;
 }
-.hamburger:hover,
-.hamburger:focus,
-.hamburger:active {
+.hamburger :hover,
+:focus,
+:active {
   outline: none;
 }
 #i {
   font-size: 250%;
   position: fixed;
 }
-#i:hover {
+#i :hover {
   color: #ED2764;
   font-size: 300%;
   cursor: pointer;
@@ -193,7 +195,7 @@
   line-height: 32px;
   text-align: center;
   opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
+  webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
 }
 .hamburger.is-closed:hover:before {
