@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
 /*fonte oficial dos titulos*/
+html,
+body {
+  height: 100%;
+  background-image: url("../images/fundosite.jpg");
+}
 body {
   position: relative;
   overflow-x: hidden;
 }
-body,
-html {
+.container {
+  width: 70%;
   height: 100%;
-  background-image: url("../images/fundosite.jpg");
+  background-color: #FFFFFF;
 }
