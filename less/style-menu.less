@@ -6,12 +6,18 @@
 @colorquatro: #279636;
 @colorcinco: #7d5d81;
 
-.transition(){
+.transition(@parametro){
 
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;	
+	-webkit-transition: @parametro;
+	-moz-transition: @parametro;
+	-o-transition: @parametro;
+	transition: @parametro;	
+}
+.rotate(@parametro){
+	-webkit-transform: @parametro;
+	-moz-transform: @parametro;
+	-o-transform: @parametro;
+	transform: @parametro;
 }
 
 .nav .open > a, 
@@ -24,7 +30,7 @@
 
 #wrapper {
 	padding-left: 0;
-	.transition();
+	.transition(all 0.5s ease);
 
 }
 
@@ -41,7 +47,7 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	background: #1a1a1a;
-	.transition();
+	.transition(all 0.5s ease);
 }
 
 #sidebar-wrapper::-webkit-scrollbar {
@@ -92,7 +98,7 @@
 	height: 100%;
 	width: 3px;
 	background-color: #1c1c1c;
-	.transition();
+	.transition(all 0.5s ease);
 
 }
 /*Setando cores diferentes ao passar o mouse*/
@@ -125,16 +131,7 @@
 	li:nth-child(6):before {
    	 background-color: @colorcinco;   
 	}
-/*	li:nth-child(7):before {
-    	background-color: #ead24c;   
-	}
-	li:nth-child(8):before {
-   	 background-color: #2d2366;   
-	}
-	li:nth-child(9):before {
-		background-color: #35acdf;   
-	}
-*/
+
 #linkmenu2:hover{
 	background-color: @colorum;
 }
@@ -154,11 +151,7 @@
 .sidebar-nav li.open:hover:before {
 
 	width: 100%;
-	-webkit-transition: width .2s ease-in;
-	-moz-transition:  width .2s ease-in;
-	-ms-transition:  width .2s ease-in;
-	transition: width .2s ease-in;
-
+	.transition(width .2s ease-in);
 }
 
 .sidebar-nav li a {
@@ -185,70 +178,52 @@
 }
 
 #nav-icon1 {
-  width: 45px;
-  height: 0%;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
+	width: 45px;
+	height: 0%;
+	position: relative;
+	.rotate(rotate(0deg));
+	.transition(.5s ease-in-out);
+	cursor: pointer;
 }
 
 #nav-icon1 span {
-  display: block;
-  position: absolute;
-  height: 8px;
-  width: 100%;
-  background: #d3531a;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+	display: block;
+	position: absolute;
+	height: 8px;
+	width: 100%;
+	background: #d3531a;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	.rotate(rotate(0deg));
+	.transition(.25s ease-in-out);
 }
 
 #nav-icon1 span:nth-child(1) {
-  top: 0px;
+	top: 0px;
 }
 
 #nav-icon1 span:nth-child(2) {
-  top: 15px;
+	top: 15px;
 }
 
 #nav-icon1 span:nth-child(3) {
-  top: 30px;
+	top: 30px;
 }
 
 #nav-icon1.open span:nth-child(1) {
-  top: 18px;
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
+	top: 18px;
+	.rotate(rotate(135deg));
 }
 
 #nav-icon1.open span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
+	opacity: 0;
+	left: -60px;
 }
 
 #nav-icon1.open span:nth-child(3) {
-  top: 18px;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
+	top: 18px;
+	.rotate(rotate(-135deg));
 }
 
 
