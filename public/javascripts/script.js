@@ -1,12 +1,12 @@
 
 
 function menu(){
-	$('#nav-icon1').click(function(){
+	$('#nav-icon1').click(function(){  //função que muda botão
 		$(this).toggleClass('open');
 	});
 }
 function abrir_fechar(){
-	$('[data-toggle="offcanvas"]').click(function () {
+	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
 		$('#wrapper').toggleClass('toggled');
 	});  
 }
