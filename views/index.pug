@@ -1,22 +1,7 @@
 extends layout
 
-block menu
-
-	div#wrapper
-		div.overlay
-		nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top (role="navegation")
-			ul.nav.sidebar-nav
-				li.sidebar-brand
-					a(href='#') Sweet Feellings
-					li.active
-						a(href='#', id="linkmenu2") História
-					li
-						a(href='#', id="linkmenu3") Contato
-					li
-						a(href='#', id="linkmenu4") Produtos
-					li
-						a(href='#', id="linkmenu5") Promoções
-					li
-						a(href='#', id="linkmenu6") Carrinho
-		div#page-content-wrapper
-			i#i.fa.fa-align-justify.Icon.hamburguer.is-closed(data-toggle="offcanvas") 
+block content
+	div.container 
+		div.row
+			div.col-md-12
+				p teste
