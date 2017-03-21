@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
 /*fonte oficial dos titulos*/
+@Colorfont: #3A59A9;
 
 html, 
 body { 
@@ -15,5 +16,37 @@ body {
 	width: 70%;
 	height: 100%;
 	background-color: #FFFFFF;
-	margin-top: 4%;
+	margin-top: 10%;
+	padding: 5%;
 }
+.row{
+	background-image: url(../images/cozinha3.png);
+	background-size: 100%;
+	background-repeat: none;
+	height: 75%;
+	padding-top: 25%;
+	padding-bottom: 3%;
+}
+.saibaMais{
+	width: 40%;
+	height: 40%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 2%;
+	margin-bottom: 4%;
+	padding: 1%;
+}
+button.saiba{
+	background-color: lighten(@Colorfont, 10%); 
+	border:@Colorfont;
+	color: rgb(255, 255, 255);
+	border-radius: 2%;
+
+}
+p {
+	font-family: 'Sofia', cursive;
+	color:@Colorfont;
+	font-size: 200%;
+	font-weight: bold;
+	line-height: 48px;	
+}
+
