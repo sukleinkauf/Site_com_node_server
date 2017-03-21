@@ -22,9 +22,6 @@ function abrir_fechar(){
 		$('#wrapper').toggleClass('toggled');
 	});  
 }
-// function tituloHistória(){
-	
-// }
 
 function actions () {
 	abrir_fechar();
