@@ -154,12 +154,12 @@ li:nth-child(6):before {
 /*-------------------------------*/
 .hamburger {
   position: fixed;
-  top: 3%;
+  top: 14%;
   z-index: 999;
   display: block;
   width: 32px;
   height: 32px;
-  margin-left: 3%;
+  margin-left: 10%;
   background: transparent;
   border: none;
 }
