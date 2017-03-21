@@ -13,7 +13,7 @@ body {
   width: 70%;
   height: 100%;
   background-color: #FFFFFF;
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 5%;
 }
 .row {
@@ -22,14 +22,14 @@ body {
   background-repeat: none;
   height: 75%;
   padding-top: 25%;
-  padding-bottom: 3%;
+  padding-bottom: 1%;
 }
 #saibaMais {
   width: 40%;
   height: 40%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 2%;
-  margin-bottom: 4%;
+  margin-bottom: 2%;
   padding: 1%;
 }
 button.saiba {
@@ -39,10 +39,14 @@ button.saiba {
   border-radius: 2%;
   margin-left: 35%;
 }
-p {
+p.saiba-letra {
   font-family: 'Sofia', cursive;
   color: #3A59A9;
   font-size: 200%;
   font-weight: bold;
-  line-height: 48px;
+  line-height: 30px;
+}
+img.logo {
+  max-width: 100px;
+  max-height: 100px;
 }
