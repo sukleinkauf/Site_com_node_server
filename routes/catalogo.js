@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+/* GET products listing. */
+router.get('/', function(req, res) {
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
-		data= JSON.parse(data)
-		res.render('index', { title: 'Sweet Feelings', data: data});
+		data = JSON.parse(data);
+		res.render('catalogo', {data: data});
 	});
 });
 

@@ -20,9 +20,9 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
 
 gulp.task('open', function(){
 	var options = {
-					uri: 'http://localhost:5000/',
-					app: 'chrome'
- 				 };
+		uri: 'http://localhost:4600/',
+		app: 'chrome'
+	};
 	gulp.src('views/layout.pug')
 	.pipe(open(options));
 });
@@ -72,13 +72,14 @@ gulp.task('fontawesome',function(){ //copiando da pasta de origim e colando no d
 	console.log("font-awesome");
 });
 
-// gulp.task('nodemon', function () {
-// 	nodemon({
-// 		script: 'server.js', 
-// 	})
-// })
+gulp.task('nodemon', function () {
+	nodemon({
+		script: './bin/www',
+		ext: 'js html'
+	})
+})
 
-gulp.task('default', ['bootstrap','jquery','fontawesome','less','build-img','open']);
+gulp.task('default', ['nodemon','less','build-img','open']);
 	
 
 path.join(__dirname)//para saber onde eu estou

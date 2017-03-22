@@ -4,7 +4,7 @@
 	"preço":"7,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"Galaxia.jpg",
+	"imag":"Galaxia",
 	"id":1
 },
 {	"nome":"Nozes",
@@ -12,7 +12,7 @@
 	"preço":"6,50",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"Nozes.jpg",
+	"imag":"Nozes",
 	"id":2
 },
 {	"nome":"Cafe",
@@ -20,7 +20,7 @@
 	"preço":"6,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"Cafe.jpg",
+	"imag":"Cafe",
 	"id":3
 },
 {	"nome":"mm's",
@@ -28,7 +28,7 @@
 	"preço":"6,50",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"mm's.jpeg",
+	"imag":"mm's",
 	"id":4
 },
 {	"nome":"Morango",
@@ -36,7 +36,7 @@
 	"preço":"6,50",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"morango.jpg",
+	"imag":"morango",
 	"id":5
 },
 {	"nome":"Rainbow",
@@ -44,7 +44,7 @@
 	"preço":"6,50",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"rainbow.jpg",
+	"imag":"rainbow",
 	"id":6
 },
 {	"nome":"Oreo",
@@ -52,7 +52,7 @@
 	"preço":"7,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"Oreo.jpg",
+	"imag":"Oreo",
 	"id":7
 },
 {	"nome":"Ice",
@@ -60,7 +60,7 @@
 	"preço":"7,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"Ice.jpg",
+	"imag":"Ice",
 	"id":8
 },
 {	"nome":"stikadinho",
@@ -68,7 +68,7 @@
 	"preço":"7,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"stikadinho.jpg",
+	"imag":"stikadinho",
 	"id":9
 },
 {	"nome":"Kinder Bueno",

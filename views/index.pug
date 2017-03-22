@@ -12,13 +12,12 @@ block content
 			.col-md-12
 				.destaque
 					span Destaques
-				.row
-					.col-md-4
-						.moldura
-							img(src= "../images/boloformato/bolofoto.jpg" alt="bolofoto")
-					.col-md-4
-						.moldura
-							img(src= "../images/boloformato/bolominie.jpg" alt="bolominie")
-					.col-md-4
-						.moldura
-							img(src= "../images/boloformato/bolowhisky.jpg" alt="bolowhisky")
+						.produtosdestaques
+							- for (var x = 0; x < 9; x++)
+								.col-md-4
+									.moldura
+										img(src= "../images/"+data[x].imag+".jpg")
+										p= data[x].nome
+										h5= "R$ "+data[x].preço
+							
+						
