@@ -76,7 +76,7 @@
 	"preço":"7,00",
 	"peso":" 120g",
 	"categoria":"Cupcake",
-	"imag":"KinderBueno.jpg",
+	"imag":"KinderBueno",
 	"id":10
 },
 {	"nome":"Romeu e Julieta",
@@ -84,7 +84,7 @@
 	"preço":"65,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"RomeuJulieta.jpg",
+	"imag":"RomeuJulieta",
 	"id":11
 },
 {	"nome":"Paçoca",
@@ -92,7 +92,7 @@
 	"preço":"65,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"pacoca.jpg",
+	"imag":"pacoca",
 	"id":12
 },
 {	"nome":"Moranguinho",
@@ -100,7 +100,7 @@
 	"preço":"60,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"moranguinho.jpg",
+	"imag":"moranguinho",
 	"id":13
 },
 {	"nome":"Sensação",
@@ -108,7 +108,7 @@
 	"preço":"65,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"sensação.jpg",
+	"imag":"sensação",
 	"id":14
 },
 {	"nome":"Beijinho",
@@ -116,7 +116,7 @@
 	"preço":"60,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"beijinho.jpg",
+	"imag":"beijinho",
 	"id":15
 },
 {	"nome":"Leite Ninho",
@@ -124,7 +124,7 @@
 	"preço":"65,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"Leiteninho.jpg",
+	"imag":"Leiteninho",
 	"id":16
 },
 {	"nome":"Casadinho",
@@ -132,7 +132,7 @@
 	"preço":"60,00",
 	"peso":"100 unidades",
 	"categoria":"Doces",
-	"imag":"casadinho.jpg",
+	"imag":"casadinho",
 	"id":17
 },
 {	"nome":"Torta de Bombom",
@@ -140,7 +140,7 @@
 	"preço":"48,90",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortabombom.jpg",
+	"imag":"tortabombom",
 	"id":18
 },
 {	"nome":"Torta Ouro Branco",
@@ -148,7 +148,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortaourobranco.jpg",
+	"imag":"tortaourobranco",
 	"id":19
 },
 {	"nome":"Torta Kinder Bueno",
@@ -156,7 +156,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortakinderbueno.jpg",
+	"imag":"tortakinderbueno",
 	"id":20
 },
 {	"nome":"Torta MM's",
@@ -164,7 +164,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"Tortamm's.jpg",
+	"imag":"Tortamm's",
 	"id":21
 },
 {	"nome":"Torta Churros",
@@ -172,7 +172,7 @@
 	"preço":"49,90",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortachurros.jpg",
+	"imag":"tortachurros",
 	"id":22
 },
 {	"nome":"Torta de morango",
@@ -180,7 +180,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortamorango.jpg",
+	"imag":"tortamorango",
 	"id":23
 },
 {	"nome":"Torta de Prestígio",
@@ -188,7 +188,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortaprestigio.jpg",
+	"imag":"tortaprestigio",
 	"id":24
 },
 {	"nome":"Torta de Brigadeiro",
@@ -196,7 +196,7 @@
 	"preço":"49,90",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"TortaBrigadeiro.jpg",
+	"imag":"TortaBrigadeiro",
 	"id":25
 },
 {	"nome":"Torta de Suflair",
@@ -204,7 +204,7 @@
 	"preço":"50,00",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"tortasuflair.jpg",
+	"imag":"tortasuflair",
 	"id":26
 },
 {	"nome":"Torta Marta Rocha",
@@ -212,7 +212,7 @@
 	"preço":"59,90",
 	"peso":"1kg",
 	"categoria":"Torta",
-	"imag":"TortaMartaRocha.jpg",
+	"imag":"TortaMartaRocha",
 	"id":27
 },
 {	"nome":"Bolo de Cenoura",
@@ -220,7 +220,7 @@
 	"preço":"3,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"",
+	"imag":"bolodecenoura",
 	"id":28
 },
 {	"nome":"Bolo de Chocolate",
@@ -228,7 +228,7 @@
 	"preço":"4,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"bolodecenoura.jpg",
+	"imag":"bolodechocolate",
 	"id":29
 },
 {	"nome":"Bolo de Coco",
@@ -236,7 +236,7 @@
 	"preço":"3,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"bolodecoco.jpg",
+	"imag":"bolodecoco",
 	"id":30
 },
 {	"nome":"Bolo de Laranja",
@@ -244,7 +244,7 @@
 	"preço":"3,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"bolodelaranja.jpg",
+	"imag":"bolodelaranja",
 	"id":31
 },
 {	"nome":"Bolo de Limão",
@@ -252,7 +252,7 @@
 	"preço":"3,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"bolodelimão.jpg",
+	"imag":"bolodelimão",
 	"id":32
 },
 {	"nome":"Bolo Nega Maluca",
@@ -260,7 +260,7 @@
 	"preço":"3,99",
 	"peso":"100g",
 	"categoria":"Bolo",
-	"imag":"bolonegamaluca.jpg",
+	"imag":"bolonegamaluca",
 	"id":33
 },
 {	"nome":"Bolo Barbie",
@@ -268,7 +268,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolobarbie.jpg",
+	"imag":"bolobarbie",
 	"id":34
 },
 {	"nome":"Bolo Galinha Pintadinha",
@@ -276,7 +276,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bologalinha.jpg",
+	"imag":"bologalinha",
 	"id":35
 },
 {	"nome":"Bolo Gravata",
@@ -284,7 +284,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bologravata.jpg",
+	"imag":"bologravata",
 	"id":36
 },
 {	"nome":"Bolo Gravida",
@@ -292,7 +292,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bologravida.jpg",
+	"imag":"bologravida",
 	"id":37
 },
 {	"nome":"Bolo Maquiagem",
@@ -300,7 +300,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolomaquiagem.jpg",
+	"imag":"bolomaquiagem",
 	"id":38
 },
 {	"nome":"Bolo Moto",
@@ -308,7 +308,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolomoto.jpg",
+	"imag":"bolomoto",
 	"id":39
 },
 {	"nome":"Bolo Notas Musicais",
@@ -316,7 +316,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolonotas.jpg",
+	"imag":"bolonotas",
 	"id":40
 },
 {	"nome":"Bolo Osso",
@@ -324,7 +324,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"boloosso.jpg",
+	"imag":"boloosso",
 	"id":41
 },
 {	"nome":"Bolo Sorvete",
@@ -332,7 +332,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolosorvete.jpg",
+	"imag":"bolosorvete",
 	"id":42
 },
 {	"nome":"Bolo Super Homem",
@@ -340,7 +340,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolosuperhomem.jpg",
+	"imag":"bolosuperhomem",
 	"id":43
 },
 {	"nome":"Bolo Violão",
@@ -348,7 +348,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"boloviolão.jpg",
+	"imag":"boloviolão",
 	"id":44
 },
 {	"nome":"Bolo Whisky",
@@ -356,7 +356,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolowhisky.jpg",
+	"imag":"bolowhisky",
 	"id":45
 },
 {	"nome":"Bolo Zumbi",
@@ -364,7 +364,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolozumbi.jpg",
+	"imag":"bolozumbi",
 	"id":46
 	},
 {	"nome":"Bolo Fotografia",
@@ -372,7 +372,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolofoto.jpg",
+	"imag":"bolofoto",
 	"id":47
 	},
 {	"nome":"Bolo Homem Aranha",
@@ -380,7 +380,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolohomemaranha.jpg",
+	"imag":"bolohomemaranha",
 	"id":48
 },
 {	"nome":"Bolo Mulher Maravilha",
@@ -388,7 +388,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolomulhermaravilha.jpg",
+	"imag":"bolomulhermaravilha",
 	"id":49
 },
 {	"nome":"Bolo Minions",
@@ -396,7 +396,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolominion.jpg",
+	"imag":"bolominion",
 	"id":50
 },
 {	"nome":"Bolo Mickey",
@@ -404,7 +404,7 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolomickey.jpg",
+	"imag":"bolomickey",
 	"id":51
 },
 {	"nome":"Bolo Minnie",
@@ -412,6 +412,6 @@
 	"preço":"70,00",
 	"peso":"1kg",
 	"categoria":"Boloformato",
-	"imag":"bolominie.jpg",
+	"imag":"bolominie",
 	"id":52
 }]
