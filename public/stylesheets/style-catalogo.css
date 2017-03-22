@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+/*fonte oficial dos titulos*/
+html,
+body {
+  height: 100%;
+  background-image: url("../images/fundocatalogo.jpg");
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+.container {
+  width: 70%;
+  background-color: #FFFFFF;
+  margin-top: 5%;
+  padding: 5%;
+  font-family: 'Sofia', cursive;
+}
+.mapa a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  color: #84C6EE;
+}
+.mapa a,
+p {
+  float: left;
+  font-size: 150%;
+}
+.row.titulo {
+  text-align: center;
+}
+.moldura {
+  height: 50%;
+  width: 45%;
+  margin-top: 8%;
+}
+img {
+  width: 219%;
+  height: 200px;
+}
