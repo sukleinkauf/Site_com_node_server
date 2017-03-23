@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/catalogo', catalogo);
+app.use('/db/catalogo', catalogo);
 app.use('/db/produtos', produtos);
 app.use('/saibamais', saibamais);
 

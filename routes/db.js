@@ -5,7 +5,7 @@ var fs = require('fs');
 /* GET products listing. */
 router.get('/', function(req, res) {
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
-		data = JSON.parse(data);
+		// data = JSON.parse(data);
 		res.render('db', {data: data});
 	});
 });
