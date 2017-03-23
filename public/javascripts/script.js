@@ -2,7 +2,7 @@ var trigger = $('.hamburger'),
 	overlay = $('.overlay'),
 	isClosed = false;
 
-function hamburger_cross() {
+function hamburger_cross() { //função que muda classe do icone 
 
 	if (isClosed == true) {          
 		overlay.hide();
@@ -17,18 +17,43 @@ function hamburger_cross() {
 	}
 }
 
-function abrir_fechar(){
+function abrir_fecharmenu(){
 	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
 		$('#wrapper').toggleClass('toggled');
 	});  
 }
 
+function filtros(){
+	$.getJSON('./db/products.json', function(json) {
+		json = JSON.parse(json);
+		for(var i = 0; i<json.length;i++){
+			$('#tabela').append('img(src= '+'"../images/"'+json[x].imag+'.jpg')
+		}
+	});
+}
+
 function actions () {
-	abrir_fechar();
+	abrir_fecharmenu();
 
 	trigger.click(function () {
 		hamburger_cross();      
 	}); 
+
+	$('#bolo').click(function(){
+		filtros(this);
+	});
+	$('#oloformato').click(function(){
+		filtros(this);
+	});
+	$('#cupcake').click(function(){
+		filtros(this);
+	});
+	$('#doces').click(function(){
+		filtros(this);
+	});
+	$('#torta').click(function(){
+		filtros(this);
+	});
 }
 
 $(document).ready(function () {

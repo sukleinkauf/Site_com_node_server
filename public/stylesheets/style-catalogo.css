@@ -40,12 +40,15 @@ body {
   height: 200px;
 }
 .filtros {
-  margin-top: 25%;
+  margin-top: 20%;
 }
 .filtros img {
   float: right;
 }
 .filtros p {
   float: left;
-  margin-top: 1%;
+}
+.filtros .pergunta {
+  margin-bottom: 5%;
+  margin-left: 2%;
 }
