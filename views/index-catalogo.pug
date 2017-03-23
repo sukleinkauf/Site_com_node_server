@@ -1,14 +1,17 @@
-.container
-	.mapa
-		a(href='http://localhost:4600/') Home 
-	p / Catalogo
-	.row.titulo
-		.col-md-12
-			H1  Catalogo de Produtos
-	.row
-		- for (var x = 0; x < 9; x++)
-			.col-md-3
-				.moldura
-					img(src= "../images/"+data[x].imag+".jpg")
-					p= data[x].nome
-					h5= "R$ "+data[x].preço
+extends catalogo
+
+block content
+	.container
+		.mapa
+			a(href='http://localhost:5000/') Home 
+		p.caminho / Catalogo
+		.row.titulo
+			.col-md-12
+				H1  Catalogo de Produtos
+		.row
+			- for (var x = 0; x < 9; x++)
+				.col-md-3
+					.moldura
+						img(src= "../images/"+data[x].imag+".jpg")
+						p= data[x].nome
+						h5= "R$ "+data[x].preço

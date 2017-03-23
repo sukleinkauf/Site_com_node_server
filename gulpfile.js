@@ -20,7 +20,7 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
 
 gulp.task('open', function(){
 	var options = {
-		uri: 'http://localhost:4600/',
+		uri: 'http://localhost:5000/',
 		app: 'chrome'
 	};
 	gulp.src('views/layout.pug')

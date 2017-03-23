@@ -23,7 +23,7 @@ body {
   color: #84C6EE;
 }
 .mapa a,
-p {
+.caminho {
   float: left;
   font-size: 150%;
 }
