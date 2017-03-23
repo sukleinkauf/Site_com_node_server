@@ -49,7 +49,7 @@ p.saiba-letra {
 .destaque {
   font-family: 'Sofia', cursive;
   color: #E22E3D;
-  font-size: 200%;
+  font-size: 150%;
   text-align: center;
   margin-top: 3%;
 }
@@ -60,5 +60,5 @@ p.saiba-letra {
 }
 img {
   width: 219%;
-  height: 200px;
+  height: 192px;
 }

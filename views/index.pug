@@ -13,11 +13,12 @@ block content
 				.destaque
 					span Destaques
 						.produtosdestaques
-							- for (var x = 0; x < 9; x++)
-								.col-md-4
-									.moldura
-										img(src= "../images/"+data[x].imag+".jpg")
-										p= data[x].nome
-										h5= "R$ "+data[x].preço
-							
+							- for (var x = 0; x < data.length; x++)
+								if data[x].categoria == "Boloformato"
+									.col-md-3
+										.moldura
+											img(src= "../images/boloformato/"+data[x].imag+".jpg")
+											//- p= data[x].nome
+											h5= "R$ "+data[x].preço
+								
 						
