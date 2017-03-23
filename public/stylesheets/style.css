@@ -9,7 +9,7 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-.container {
+.container.one {
   width: 70%;
   background-color: #FFFFFF;
   margin-top: 5%;
@@ -49,16 +49,44 @@ p.saiba-letra {
 .destaque {
   font-family: 'Sofia', cursive;
   color: #E22E3D;
-  font-size: 150%;
   text-align: center;
   margin-top: 3%;
 }
+.title {
+  font-size: 250%;
+}
 .moldura {
   height: 50%;
-  width: 45%;
-  margin-top: 8%;
+  width: 100%;
+  margin-top: 10%;
+  font-size: 43%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-top: 1%;
 }
 img {
-  width: 219%;
-  height: 192px;
+  width: 100%;
+  height: 171px;
+}
+.footerprincipal {
+  font-size: 100%;
+  color: #5b352c;
+}
+.container.two {
+  width: 70%;
+  background-color: #F3BDC7;
+  margin-top: 0%;
+}
+.ladodireito {
+  text-align: right;
+  padding-top: 2%;
+}
+.ladoesquerdo {
+  text-align: left;
+  padding-top: 2%;
+}
+h2 {
+  font-size: 112%;
+  font-weight: bold;
+  line-height: 40%;
 }

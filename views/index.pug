@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	.container 
+	.container.one 
 		.row.sobrenos
 			.col-md-12
 				#saibaMais
@@ -11,14 +11,14 @@ block content
 		.row
 			.col-md-12
 				.destaque
-					span Destaques
+					span.title Destaques
 						.produtosdestaques
 							- for (var x = 0; x < data.length; x++)
 								if data[x].categoria == "Boloformato"
 									.col-md-3
 										.moldura
-											img(src= "../images/boloformato/"+data[x].imag+".jpg")
-											//- p= data[x].nome
+											p= data[x].nome
+											img(src= "../images/boloformato/"+data[x].imag+".jpg" alt=""+data[x].nome) 
 											h5= "R$ "+data[x].preço
+
 								
-						
