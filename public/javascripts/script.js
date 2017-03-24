@@ -1,6 +1,7 @@
 var trigger = $('.hamburger'),
 	overlay = $('.overlay'),
 	isClosed = false;
+	db="http://localhost:4600/db/produtos"
 
 function hamburger_cross() { //função que muda classe do icone 
 
@@ -23,11 +24,12 @@ function abrir_fecharmenu(){
 	});  
 }
 
-function filtros(){
-	$.getJSON('./db/products.json', function(json) {
-		json = JSON.parse(json);
-		for(var i = 0; i<json.length;i++){
-			$('#tabela').append('img(src= '+'"../images/"'+json[x].imag+'.jpg')
+function filtros(id){
+	
+	$.get(db, function(dados){		
+		for(var i = 0; i<1;i++){
+			console.log(dados);
+			$('#tabela').append('img(src="../images/'+dados[i].imag+'.jpg"')
 		}
 	});
 }
