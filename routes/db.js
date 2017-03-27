@@ -6,7 +6,6 @@ var file = require('./../controller/file');
 /* GET products listing. */
 router.get('/', function(req, res) {
 	file.read(function(data){
-		var dataJson = JSON.stringify(data) //transforma variavel em Json
 		res.json(data);	
 	});
 });

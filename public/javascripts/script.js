@@ -23,17 +23,34 @@ function abrir_fecharmenu(){
 		$('#wrapper').toggleClass('toggled');
 	});  
 }
+function tableclean(){ //função que limpa a tabela
+	$("#tabela").html(""); 
+}
 
-function filtros(id){
-	
-	$.get(db, function(dados){		
-		for(var i = 0; i<1;i++){
-			console.log(dados[i].nome);
-			$('#tabela').append('<img src="../images/'+dados[i].imag+'.jpg">')
+function filtros(categoria){
+	tableclean();
+	console.log(categoria)
+	$.get(db, function(dados){	
+		for(var i = 0; i<dados.length;i++){
+		
+			if(dados[i].categoria==categoria){
+				$('#tabela').append('<div class="col-md-4">'+'<div class="grid">'+'<figure class "effect-kira">'+
+					'<img src="../images/'+dados[i].imag+'.jpg">'+'<figcaption>'+'<p>'+
+					'<a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i></a>'+
+					'<a href="#"><i class="fa fa-fw fa-info"></i></a>'+
+					'<a href="#"><i class="fa fa-fw fa-share"></i></a>'+
+					'</p>'+'</figcaption>'+'</figure>'+'</div>'+'</div>')
+			}else if(categoria==0){
+				$('#tabela').append('<div class="col-md-4">'+'<div class="grid">'+'<figure class "effect-kira">'+
+					'<img src="../images/'+dados[i].imag+'.jpg">'+'<figcaption>'+'<p>'+
+					'<a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a>'+
+					'<a href="#"><i class="fa fa-fw fa-info"></i></a>'+
+					'<a href="#"><i class="fa fa-fw fa-share"></i></a>'+
+					'</p>'+'</figcaption>'+'</figure>'+'</div>'+'</div>')
+			}
 		}
 	});
 }
-
 function actions () {
 	abrir_fecharmenu();
 
@@ -42,23 +59,24 @@ function actions () {
 	}); 
 
 	$('#bolo').click(function(){
-		filtros(this);
+		filtros("Bolo");
 	});
-	$('#oloformato').click(function(){
-		filtros(this);
+	$('#boloformato').click(function(){
+		filtros("Boloformato");
 	});
 	$('#cupcake').click(function(){
-		filtros(this);
+		filtros("Cupcake");
 	});
 	$('#doces').click(function(){
-		filtros(this);
+		filtros("Doces");
 	});
 	$('#torta').click(function(){
-		filtros(this);
+		filtros("Torta");
 	});
 }
 
 $(document).ready(function () {
 	actions();
+	filtros("0");
 
 });

@@ -30,21 +30,13 @@ body {
 	font-size: 150%;
 }
 .row.titulo{
-	text-align: center
+	text-align: center;
+	margin-bottom: 5%;
 }
-.moldura{
-	height: 50%;
-	width: 45%;
-	margin-top: 8%;
 
-}
-.moldura img{
-	width: 219%;
-	height: 200px;
-}
 .filtros{
 	margin-top: 20%;
-
+	margin-left: 5%;
 	img{
 		float:right;
 	}
@@ -55,4 +47,73 @@ body {
 		margin-bottom: 5%;
 		margin-left: 2%;
 	}
+}
+.col-md-3{
+	padding-left: 0%;
+}
+/*-----------------*/
+/***** Kira *****/
+/*-----------------*/
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 243px;
+	max-width: 315px;
+	max-height: 181px;
+	width: 48%;
+	height: auto;
+	background: rgba(0,0,0,.0001);
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 200px;
+	max-width: 100%;
+	opacity: 1;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #011023;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15%;
+	height: 100%;
+	font-size: 170%;
+	background-color: snow;
+	padding: 0;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 50%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+	margin-top: 3%;
+}
+
+.grid a{
+	margin-top: 5%;
 }
