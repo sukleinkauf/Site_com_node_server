@@ -34,23 +34,18 @@ function filtros(categoria){
 		for(var i = 0; i<dados.length;i++){
 		
 			if(dados[i].categoria==categoria){
-				$('#tabela').append('<div class="col-md-4">'+'<div class="grid">'+'<figure class "effect-kira">'+
-					'<img src="../images/'+dados[i].imag+'.jpg">'+'<figcaption>'+'<p>'+
-					'<a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i></a>'+
-					'<a href="#"><i class="fa fa-fw fa-info"></i></a>'+
-					'<a href="#"><i class="fa fa-fw fa-share"></i></a>'+
-					'</p>'+'</figcaption>'+'</figure>'+'</div>'+'</div>')
+				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
+					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
+					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div>');
 			}else if(categoria==0){
-				$('#tabela').append('<div class="col-md-4">'+'<div class="grid">'+'<figure class "effect-kira">'+
-					'<img src="../images/'+dados[i].imag+'.jpg">'+'<figcaption>'+'<p>'+
-					'<a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a>'+
-					'<a href="#"><i class="fa fa-fw fa-info"></i></a>'+
-					'<a href="#"><i class="fa fa-fw fa-share"></i></a>'+
-					'</p>'+'</figcaption>'+'</figure>'+'</div>'+'</div>')
+				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
+					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
+					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div>');
 			}
 		}
 	});
 }
+
 function actions () {
 	abrir_fecharmenu();
 
