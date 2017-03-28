@@ -1,1 +1,31 @@
-p=title
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/style-sobre.css')
+		link(rel='stylesheet', href='/stylesheets/style-menu.css')
+		link(rel='stylesheet', href='/stylesheets/style-navbar.css')
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/bootstrap.min.js')
+		script(src='/javascripts/script.js')
+	body
+		include navbar
+		include menu
+		.container.one
+			.row.sobrenos
+				.col-md-12
+					#saibaMais
+
+			.row 
+				.col-md-12
+					.col-md-6
+						h1.titulo Um momento de pausa…
+						.textosaiba
+							p Todo mundo merece um instante de pausa, onde toda a correria da vida para por segundos e os problemas se tornam distantes. Comer um doce é um desses momentos. Aquele onde a vida fica um pouquinho mais doce e tranquila. E não há problema no mundo que não pareça mais simples depois de um bom doce! Em 2010, a Sweet Fellings nasceu assim, de um momento de pausa. 
+							p De um desejo de fazer o que se gosta, mudar o rumo da vida. Nossos doces são pedacinho da infância, o bolo da vovó, aquele feito no aconchego da nossa casa e que deixa aquele cheirinho gostoso de carinho e chocolate. 
+							p Acreditamos na importância das coisas feitas à mão, em que temos a oportunidade de colocar um pouco de delicadeza, criatividade e atenção aos detalhes. E foi assim desde a primeira fornada e será assim até o fim. Por isso, convidamos você a dar sua primeira mordida e ter o seu momento de parada!
+					.col-md-6.fundosaiba
+
+		include footer
