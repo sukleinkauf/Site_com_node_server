@@ -36,19 +36,21 @@ function filtros(categoria){
 			if(dados[i].categoria==categoria){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart red"></i></a><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div>');
+					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart red"></i></a><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart red" id="heart"></i><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div>');
+					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart red" id="'+dados[i].id+'"></i><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
 }
-function heart(){
-	console.log("teste")
+function heart(cora){
 
-	$(".fa-heart").toggleClass("red");
+	console.log(cora)
+	var id =$(cora).parents('tr').data("id");
+	
+	$(id).toggleClass("red");
 };
 
 function actions () {
@@ -74,7 +76,7 @@ function actions () {
 		filtros("Torta");
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
-		heart();
+		heart(this);
 	});
 }
 
