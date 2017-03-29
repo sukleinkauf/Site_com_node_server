@@ -5,8 +5,11 @@ block content
 		.row
 			.col-md-12
 				.mapa
-					a(href='http://localhost:5000/') Home 
-				p.caminho / Catalogo
+					nav
+						.nav-wrapper
+							.col.s12
+								a(href='http://localhost:5000/').breadcrumb Inicial 
+								a(href="#!").breadcrumb  > Catalogo
 				.filtros
 					.row.pergunta
 						h3 O que você deseja ver? Clique para encontrar...

@@ -16,16 +16,20 @@ body {
   padding: 5%;
   font-family: 'Sofia', cursive;
 }
-.mapa a:hover {
+.breadcrumb {
   background-color: transparent;
   text-decoration: none;
   cursor: pointer;
-  color: #84C6EE;
+  margin-right: -45px;
 }
-.mapa a,
-.caminho {
-  float: left;
-  font-size: 150%;
+.breadcrumb:hover,
+.breadcrumb:focus {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+}
+.breadcrumb:before {
+  font-size: 0px;
 }
 .row.titulo {
   text-align: center;
@@ -33,7 +37,6 @@ body {
 }
 .filtros {
   margin-top: 5%;
-  margin-left: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .filtros .pergunta {
@@ -53,15 +56,17 @@ body {
   font-size: 170%;
   text-align: center;
 }
-.fa-heart {
-  color: red;
+/*.fa-heart{
+	color:red;
+	background-color: transparent;
 }
-.red {
-  color: black;
+.reda{
+    color: black;
 }
-.fa-heart:hover {
-  color: red;
+.fa-heart:hover{
+	color: red;
 }
+*/
 /*-----------------*/
 /***** Kira *****/
 /*-----------------*/

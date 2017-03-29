@@ -55,13 +55,21 @@ gulp.task('bootstrap',function(){ //copiando da pasta de origim e colando no des
 	console.log("bootstrap");
 });
 
-gulp.task('jquery',function(){ //copiando da pasta de origim e colando no destino
+gulp.task('materialize',function(){ //copiando da pasta de origim e colando no destino
 
+	gulp.src('bower_components/materialize/dist/css/materialize.min.css')
+		.pipe(gulp.dest('public/stylesheets'));
+	gulp.src('bower_components/materialize/dist/js/materialize.min.js')
+		.pipe(gulp.dest('public/javascripts'));
+	gulp.src('bower_components/materialize/dist/fonts/**/*')
+		.pipe(gulp.dest('public/fonts'));
+	console.log("materialize")
+});
+gulp.task('jquery',function(){ //copiando da pasta de origim e colando no destino
 	gulp.src('bower_components/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('public/javascripts'));
 	console.log("jquery")
 });
-
 gulp.task('fontawesome',function(){ //copiando da pasta de origim e colando no destino
 
 	gulp.src('bower_components/font-awesome/css/font-awesome.min.css')
