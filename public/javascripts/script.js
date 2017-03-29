@@ -41,20 +41,21 @@ function procura(campo){
 			
 
 				if ((this.nome.search(regex) != -1)) {
-					output += '<div class="col-md-6 well">';
-					output += '<div class="col-md-3"></div>';
-					output += '<div class="col-md-7">';
-					output += '<h5>' + this.nome + '</h5>';
-					output += '<p>' + this.id + '</p>'
+					output += '<div class ="col-md-4">';
+					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><div class="grid">';
+					output += '</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+this.imag+
+					'.jpg"/>';
+					output += '<figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-share">';
+					output += '</i></a></p></figcaption></figure></div>'
 					output += '</div>';
 					output += '</div>';
 
 				}
 			});
 
+		output += '</div>';
+		$('#filter-records').html(output);
 	});
-	output += '</div>';
-	$('#filter-records').html(output);
 }
 
 
@@ -69,7 +70,6 @@ function tableclean(){ //função que limpa a tabela
 
 function filtros(categoria){
 	tableclean();
-	console.log(categoria)
 	$.get(db, function(dados){	
 		for(var i = 0; i<dados.length;i++){
 		
