@@ -36,9 +36,7 @@ function procura(campo){
 		var regex = new RegExp(searchField, "i");
 		var output = '<div class="row">';
 		var count = 1;
-			$(dados).each(function(){
-				console.log(this);
-			
+			$(dados).each(function(){			
 
 				if ((this.nome.search(regex) != -1)) {
 					output += '<div class ="col-md-4">';
