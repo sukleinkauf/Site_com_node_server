@@ -59,14 +59,13 @@ body {
 /*.fa-heart{
 	color:red;
 	background-color: transparent;
+}*/
+.pintou {
+  color: black;
 }
-.reda{
-    color: black;
+.fa-heart:hover {
+  color: red;
 }
-.fa-heart:hover{
-	color: red;
-}
-*/
 /*-----------------*/
 /***** Kira *****/
 /*-----------------*/
@@ -87,8 +86,8 @@ body {
   margin: 10px 1% 0%;
   min-width: 87%;
   max-width: 275px;
-  max-height: 192px
-	width: 48%;
+  max-height: 192px;
+  width: 48%;
   height: auto;
   background: #3085a3;
   text-align: center;

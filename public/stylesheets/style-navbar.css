@@ -48,34 +48,52 @@ img.logo {
   margin: 0 auto;
   margin-left: 35%;
 }
-.overlay {
-  height: 0%;
+.resultssearch {
+  background-color: black;
+  position: absolute;
   width: 100%;
-  position: fixed;
-  z-index: 1;
+  z-index: 1000;
+}
+#filter-records {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#filter-records h3.nomeprincipal {
+  font-size: 148%;
+  color: #FFC9ED;
+  text-align: center;
+}
+#filter-records .grid figure figcaption,
+#filter-records .grid figure figcaption > a {
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow-y: hidden;
-  transition: 0.5s;
-}
-.overlay-content {
-  position: relative;
-  top: 10%;
   width: 100%;
-  text-align: center;
-  margin-top: 5%;
+  height: 100%;
+  font-size: 131%;
 }
-.overlay p {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 100%;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+#filter-records .grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 316px;
+  max-width: 315px;
+  max-height: 191px;
+  width: 48%;
 }
-.overlay a:hover,
-.overlay a:focus {
-  color: #f1f1f1;
+.fixednav {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background-color: white;
+  height: 10%;
+  z-index: 100;
+}
+.fixedlog {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  max-width: 216px !important;
+  max-height: 67px !important;
+  margin-left: 38% !important;
+  width: 40%;
 }

@@ -2,6 +2,7 @@ var trigger = $('.hamburger'),
 	overlay = $('.overlay'),
 	isClosed = false;
 	db="http://localhost:5000/db/produtos"
+	db2="http://localhost:5000/db/encomendas"
 
 function hamburger_cross() { //função que muda classe do icone 
 
@@ -27,23 +28,21 @@ function procura(campo){
 	$.get(db, function(dados){
 		
 		var searchField = $(campo).val();
-		console.log(searchField);
 		if(searchField === '')  {
 			$('#filter-records').html('');
 			return;
 		}
 
-		var regex = new RegExp(searchField, "i");
+		var regex = new RegExp(searchField, "i");//salva o meu conteudo uma variavel não sendo case-sensitive
 		var output = '<div class="row">';
-		var count = 1;
-			$(dados).each(function(){			
+			$(dados).each(function(){	//procura por letra no nome;		
 
-				if ((this.nome.search(regex) != -1)) {
+				if ((this.nome.search(regex) != -1)) {//procura uma string para um valor especificado e retorna a posição da correspondência; se não encontra ele retorna -1
 					output += '<div class ="col-md-4">';
 					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><div class="grid">';
 					output += '</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+this.imag+
 					'.jpg"/>';
-					output += '<figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-share">';
+					output += '<figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-shopping-cart">';
 					output += '</i></a></p></figcaption></figure></div>'
 					output += '</div>';
 					output += '</div>';
@@ -53,6 +52,21 @@ function procura(campo){
 
 		output += '</div>';
 		$('#filter-records').html(output);
+	});
+}
+function cart(numero){
+	var cont =0;
+	$.get(db2, function(dados){
+		for(var i=0;i<dados.length;i++){	
+			if (dados[i].id==numero){
+				console.log(numero,dados[i].id);
+				cont=cont+1;
+				console.log(cont);
+				$('[data-toggle="tooltip"]').tooltip();
+				$('.contagem').html('');
+				$('.contagem').html('<p>'+cont+'</p>')				
+			}
+		};
 	});
 }
 
@@ -74,21 +88,28 @@ function filtros(categoria){
 			if(dados[i].categoria==categoria){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Produto Adicionado ao carrinho!" id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart" id="'+dados[i].id+'"></i><a href="#"><i class="fa fa-fw fa-share"></i></a></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Produto Adicionado ao carrinho!" id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
 }
-function heart(cora){
+function mudanav(){
+	if($(window).scrollTop() > 50) {
+		$(".navbar-fixed-top").addClass("fixednav");
+		$(".logo").addClass("fixedlog");
+	} else {
+		$(".navbar-fixed-top").removeClass("fixednav");
+		$(".logo").removeClass("fixedlog");
+    }
+};
 
-	console.log(cora)
-	var id =$(cora).parents('tr').data("id");
-	
-	$(id).toggleClass("red");
+
+function heart(btn){
+	$(btn).addClass("pintar");
 };
 
 function actions () {
@@ -114,10 +135,18 @@ function actions () {
 		filtros("Torta");
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
-		heart(this);
+		heart(this)
+		// heart(event.target.id);
+	});
+	$('#tabela').on("click", ".fa-shopping-cart", function(){
+		cart(event.target.id)
 	});
 	$('#text-search').keyup(function(){
 		procura(this);
+	});
+
+	 $(window).on("scroll", function() {
+		mudanav()
 	});
 }
 
@@ -127,3 +156,4 @@ $(document).ready(function () {
 	pesquisa();
 
 });
+
