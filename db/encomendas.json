@@ -1,0 +1,25 @@
+[{
+	"nome":"Galáxia",
+	"descrição":"Massa: Chocolate; Recheio: Creme de avelã: Nutella; Cobertura: Buttercream",
+	"preço":"7,00",
+	"peso":" 120g",
+	"categoria":"Cupcake",
+	"imag":"Galaxia",
+	"id":1
+},
+{	"nome":"Nozes",
+	"descrição":"Massa: Baunilha; Recheio: creme de nozes; Cobertura: Ganache de Chocolate ao Leite",
+	"preço":"6,50",
+	"peso":" 120g",
+	"categoria":"Cupcake",
+	"imag":"Nozes",
+	"id":2
+},
+{	"nome":"Cafe",
+	"descrição":"Massa: Chocolate; Recheio: Creme de café; Cobertura: Ganache de Chocolate ao Leite",
+	"preço":"6,00",
+	"peso":" 120g",
+	"categoria":"Cupcake",
+	"imag":"Cafe",
+	"id":3
+}]
