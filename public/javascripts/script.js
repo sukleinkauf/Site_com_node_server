@@ -54,12 +54,12 @@ function procura(campo){
 		$('#filter-records').html(output);
 	});
 }
+
 function cart(numero){
 	var cont =0;
 	$.get(db2, function(dados){
 		for(var i=0;i<dados.length;i++){	
 			if (dados[i].id==numero){
-				console.log(numero,dados[i].id);
 				cont=cont+1;
 				console.log(cont);
 				$('[data-toggle="tooltip"]').tooltip();
