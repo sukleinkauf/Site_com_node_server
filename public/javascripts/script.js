@@ -4,6 +4,12 @@ var trigger = $('.hamburger'),
 	db="http://localhost:5000/db/produtos"
 	db2="http://localhost:5000/db/encomendas"
 
+function abrir_fecharmenu(){
+	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
+		$('#wrapper').toggleClass('toggled');
+	});
+}
+
 function hamburger_cross() { //função que muda classe do icone 
 
 	if (isClosed == true) {          
@@ -71,11 +77,7 @@ function cart(numero){
 }
 
 
-function abrir_fecharmenu(){
-	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
-		$('#wrapper').toggleClass('toggled');
-	});  
-}
+
 function tableclean(){ //função que limpa a tabela
 	$("#tabela").html(""); 
 }
@@ -99,10 +101,10 @@ function filtros(categoria){
 }
 function mudanav(){
 	if($(window).scrollTop() > 50) {
-		$(".navbar-fixed-top").addClass("fixednav");
+		$(".navbar").addClass("fixednav");
 		$(".logo").addClass("fixedlog");
 	} else {
-		$(".navbar-fixed-top").removeClass("fixednav");
+		$(".navbar").removeClass("fixednav");
 		$(".logo").removeClass("fixedlog");
     }
 };

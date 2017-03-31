@@ -83,11 +83,13 @@ img.logo {
   width: 48%;
 }
 .fixednav {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  /*	transition: 0.5s;
+	-webkit-transition:  0.5s;*/
   background-color: #E16AA0;
   height: 10%;
+  width: 100%;
   z-index: 100;
+  position: fixed;
 }
 .fixedlog {
   transition: 0.5s;
