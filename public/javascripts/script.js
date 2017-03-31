@@ -60,9 +60,9 @@ function procura(campo){
 		$('#filter-records').html(output);
 	});
 }
-
+var cont =0;
 function cart(numero){
-	var cont =0;
+	
 	$.get(db2, function(dados){
 		for(var i=0;i<dados.length;i++){	
 			if (dados[i].id==numero){
@@ -70,7 +70,7 @@ function cart(numero){
 				console.log(cont);
 				$('[data-toggle="tooltip"]').tooltip();
 				$('.contagem').html('');
-				$('.contagem').html('<p>'+cont+'</p>')				
+				$('.contagem').append('<p>'+cont+'</p>')				
 			}
 		};
 	});
