@@ -9,7 +9,7 @@ var index = require('./routes/index');
 var catalogo = require('./routes/catalogo');
 var saibamais = require('./routes/sobre');
 var produtos = require('./routes/db');
-var encomendas = require('./routes/db2');
+var produtoindividual = require('./routes/produto');
 // var encomendas= require('./routes/encomendas');
 
 var app = express();
@@ -29,9 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/catalogo', catalogo);
 app.use('/db/produtos', produtos);
-app.use('/db/encomendas', encomendas);
+// app.use('/db/encomendas', encomendas);
 app.use('/saibamais', saibamais);
-// app.use('/encomendas', encomendas);
+app.use('/', produtoindividual);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
