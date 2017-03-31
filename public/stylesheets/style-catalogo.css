@@ -56,16 +56,17 @@ body {
   font-size: 170%;
   text-align: center;
 }
-/*.fa-heart{
-	color:red;
-	background-color: transparent;
-}*/
-.pintou {
+.fa-heart {
+  color: black;
+  background-color: transparent;
+}
+.pintar {
   color: black;
 }
-.fa-heart:hover {
-  color: red;
+/*.fa-heart:hover{
+	color: red;
 }
+*/
 /*-----------------*/
 /***** Kira *****/
 /*-----------------*/
