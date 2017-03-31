@@ -1,4 +1,5 @@
 var trigger = $('.hamburger'),
+	cont =0;
 	overlay = $('.overlay'),
 	isClosed = false;
 	db="http://localhost:5000/db/produtos"
@@ -48,7 +49,7 @@ function procura(campo){
 					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><div class="grid">';
 					output += '</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+this.imag+
 					'.jpg"/>';
-					output += '<figcaption><p><a href="https://www.facebook.com/"><i class="fa fa-fw fa-thumbs-o-up"></i></a><a href="#"><i class="fa fa-fw fa-info"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-shopping-cart">';
+					output += '<figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" >';
 					output += '</i></a></p></figcaption></figure></div>'
 					output += '</div>';
 					output += '</div>';
@@ -60,23 +61,74 @@ function procura(campo){
 		$('#filter-records').html(output);
 	});
 }
-var cont =0;
-function cart(numero){
-	
+
+
+function cart(cart){
+
+	var cart = $(cart).parents('p').data("id");
+
 	$.get(db2, function(dados){
 		for(var i=0;i<dados.length;i++){	
-			if (dados[i].id==numero){
+			if (dados[i].id==cart){
+				var produto = dados[i].id
 				cont=cont+1;
-				console.log(cont);
-				$('[data-toggle="tooltip"]').tooltip();
 				$('.contagem').html('');
 				$('.contagem').append('<p>'+cont+'</p>')				
+				// compras(produto);
 			}
 		};
 	});
 }
 
+// function compras(produto){
+// 	console.log(produto);
+// 	var data;
+// 	$.get(db, function(dados){
+// 		for(var i=0;i<dados.length;i++){
+// 			// console.log(dados[i].id);
+// 			if (dados[i].id==produto){
+// 				data={
+// 					nome:dados[i].nome,
+// 					descrição:dados[i].descrição,
+// 					preço:dados[i].preço,
+// 					peso:dados[i].peso,
+// 					categoria:dados[i].categoria,
+// 					imag:dados[i].imag,
+// 					id:dados[i].id};
+// 			}	
+// 		}
+// 	ajax("POST",db2,data);
+// 	});
+// }
 
+// function ajax(tipo, url, dados){//requisição ajax, conforme dados recebidos
+
+// 	$.ajax({
+// 		type: tipo,
+// 		url: url,
+// 		data: dados,
+// 		success: function(){
+// 			avisos(msg);
+// 			tabelatoda();
+// 		},
+// 		error: function(){
+// 			msg=("Ops! Algo deu errado, tente novamente!");
+// 			avisosdois(msg);
+// 		}
+// 	})
+	
+// }
+// function heart(coracao){
+// 	var id = $(coracao).parents('p').data("id");
+// 	var cor ="rgb(225,0,0,0)";
+// 	console.log(id);
+// 	if(($(coracao).css("color"))==cor){
+// 		$(id).css({"color":"rgb(0,0,0,0)"});
+// 	} else{
+// 		$(id).css({"color":"rgb(225,0,0,0)"});
+// 	}
+// 	console.log($(coracao).css("color"));
+// }
 
 function tableclean(){ //função que limpa a tabela
 	$("#tabela").html(""); 
@@ -90,15 +142,16 @@ function filtros(categoria){
 			if(dados[i].categoria==categoria){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Produto Adicionado ao carrinho!" id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart"  id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Produto Adicionado ao carrinho!" id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
 }
+
 function mudanav(){
 	if($(window).scrollTop() > 50) {
 		$(".navbar").addClass("fixednav");
@@ -109,10 +162,6 @@ function mudanav(){
     }
 };
 
-
-function heart(btn){
-	$(btn).addClass("pintar");
-};
 
 function actions () {
 	abrir_fecharmenu();
@@ -136,19 +185,19 @@ function actions () {
 	$('#torta').click(function(){
 		filtros("Torta");
 	});
-	$('#tabela').on("click", ".fa-heart", function(){
-		heart(this)
-		// heart(event.target.id);
-	});
+	// $('#tabela').on("click", ".fa-heart", function(){
+	// 	heart(this);
+	// 	// heart(event.target.id);
+	// });
 	$('#tabela').on("click", ".fa-shopping-cart", function(){
-		cart(event.target.id)
+		cart(this);
 	});
 	$('#text-search').keyup(function(){
 		procura(this);
 	});
 
 	 $(window).on("scroll", function() {
-		mudanav()
+		mudanav();
 	});
 }
 
