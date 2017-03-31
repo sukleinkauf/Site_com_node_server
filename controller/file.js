@@ -17,6 +17,14 @@ module.exports ={
 			callback(data);
 		});
 	},
+	// checkProduto: function(data, params){
+	// 	for(var i=0;i<data.length;i++){
+	// 		if(data[i].id==params){
+	// 			return i;
+
+	// 		}
+	// 	}
+	// },
 
 	// write: function(dataJson, res){
 	// 	fs.writeFile(__dirname + "/../" + 'db/products.json', dataJson, function(err){
