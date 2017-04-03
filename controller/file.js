@@ -1,19 +1,19 @@
 var fs = require('fs');
 
 module.exports ={
-	read: function(callback){
+	read: function(callback){ //função de leitura de json de produtos
 		fs.readFile(__dirname + "/../" + "db/products.json", 'utf8',function(err, data){
 			if(err)
 				return console.log(err);
-			data = JSON.parse(data);
+			data = JSON.parse(data); //transforma json em objeto javascript
 			callback(data);
 		});
 	},
-	readEncomendas: function(callback){
+	readEncomendas: function(callback){ //função de leitura de json de encomendas
 		fs.readFile(__dirname + "/../" + "db/encomendas.json", 'utf8',function(err, data){
 			if(err)
 				return console.log(err);
-			data = JSON.parse(data);
+			data = JSON.parse(data); //transforma json em objeto javascript
 			callback(data);
 		});
 	},

@@ -6,12 +6,15 @@
 @colorquatro: #279636;
 @colorcinco: #7d5d81;
 
+/*função de transição utilizada no programa*/
 .transition(@parametro){
 	-webkit-transition: @parametro;
 	-moz-transition: @parametro;
 	-o-transition: @parametro;
 	transition: @parametro;	
 }
+
+/*função de transformação de componentes*/
 .rotate(@parametro){
 	-webkit-transform: @parametro;
 	-moz-transform: @parametro;
@@ -25,10 +28,7 @@
 	background-color: transparent;
 }
 
-
-/*-------------------------------*/
-/*           Wrappers            */
-/*-------------------------------*/
+/*Aqui inicia configuração do menu lateral*/
 
 #wrapper {
 	padding-left: 0;
@@ -62,7 +62,6 @@
 #page-content-wrapper {
 	width: 100%;
 	margin-top: 2%;
-	/*padding-left: 3%;*/
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -70,9 +69,8 @@
 	margin-right: -220px;
 }
 
-/*-------------------------------*/
 /*     Sidebar nav styles        */
-/*-------------------------------*/
+
 
 .sidebar-nav {
 	position: absolute;
@@ -179,9 +177,7 @@
 	line-height: 44px;
 }
 
-/*-------------------------------*/
 /*       Hamburger-Cross         */
-/*-------------------------------*/
 
 .hamburger {
 	position: fixed;
@@ -295,9 +291,8 @@
   -webkit-transition: all .35s ease-in-out;
 }
 
-/*-------------------------------*/
 /*            Overlay            */
-/*-------------------------------*/
+
 
 .overlay {
 	position: fixed;

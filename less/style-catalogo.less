@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
 /*fonte oficial dos titulos*/
-@Colorfont: #3A59A9;
-
 html, 
 body { 
 	height: 100%;
@@ -12,6 +10,7 @@ body {
     position: relative;
     overflow-x: hidden;
 }
+
 .container{
 	width: 90%;
 	background-color: #FFFFFF;
@@ -19,7 +18,7 @@ body {
 	padding: 5%;
 	font-family: 'Sofia', cursive;
 }
-
+/*estilo de mapa do site*/
 .breadcrumb{
 	background-color: transparent;
 	text-decoration: none;
@@ -36,48 +35,46 @@ body {
 	}
 
 }
+
 .row.titulo{
 	text-align: center;
 	margin-bottom: 5%;
 }
 
+/*filtros de produtos*/
 .filtros{
 	margin-top: 5%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
 	.pergunta{
 		margin-bottom: 3%;
 		margin-left: 20%;
 	}
 }
+
+/*imagens pequenas para filtros de produtos*/
 .imgfiltro{
 	width: 100%;
 	height: 100px;
 	margin: 0 auto;
 	padding: 2%;
-
 }
-.filtro{
-	cursor: pointer;
-}
-
+/* nome do produtos do catalogo*/
 .nomeprincipal{
 	font-size: 170%;
 	text-align: center;
 }
+/*classes de coração para colocar nos desejos de produtos*/
 .fa-heart{
 	color:black;
 	background-color: transparent;
 }
+
 .pintar{
     color: black;
 }
-/*.fa-heart:hover{
-	color: red;
-}
-*/
-/*-----------------*/
-/***** Kira *****/
-/*-----------------*/
+
+/*A partir daqui inicia o efeito encontrado nas imagens do catalogo: kira*/
 .grid {
 	position: relative;
 	clear: both;
@@ -88,7 +85,6 @@ body {
 	text-align: center;
 }
 
-/* Common style */
 .grid figure {
 	position: relative;
 	float: left;
@@ -136,8 +132,6 @@ body {
 	font-size: 135%;
 }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 50%;
@@ -203,7 +197,6 @@ figure.effect-kira figcaption::before {
 	-webkit-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 }
-
 
 figure.effect-kira:hover img {
 	opacity: 0.5;
