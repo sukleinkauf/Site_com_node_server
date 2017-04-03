@@ -128,7 +128,32 @@ function mudanav(){ // função que muda navbar superior conforme movimento do m
 		$(".logo").removeClass("fixedlog");
     }
 };
+function abrirjanelaprodutos(){
+	var nome =$('#nome').val();
+	var email =$('#email').val();
+	var quantidade =$('#quantidade').val();
+	var teste=("http://localhost:5000/encomendas?nome="+nome+"&email="+email+"&quantidade"+quantidade);
+	console.log(teste);
+}
 
+function carousel(){
+	$('#myCarousel').carousel({
+		interval: 40000
+	});
+
+	$('.carousel .item').each(function(){
+		var next = $(this).next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().appendTo($(this));
+		if (next.next().length>0) {
+			next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+		}else {
+			$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+		}
+	});
+}
 
 function actions () {//ações que chamam as funções
 	abrir_fecharmenu();
@@ -159,7 +184,11 @@ function actions () {//ações que chamam as funções
 		procura(this);
 	});
 
-	 $(window).on("scroll", function() {
+	$('#saveencomenda').click(function(){
+		abrirjanelaprodutos();
+	});
+
+	$(window).on("scroll", function() {
 		mudanav();
 	});
 }
@@ -168,6 +197,6 @@ $(document).ready(function () {
 	actions();
 	filtros("0");
 	pesquisa();
-
+	carousel()
 });
 
