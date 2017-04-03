@@ -5,7 +5,8 @@ html
 		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
-		link(rel='stylesheet', href='/stylesheets/style-catalogo.css')
+		link(rel='stylesheet', href='/stylesheets/style-produtoclicado.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/stylesheets/style-menu.css')
 		link(rel='stylesheet', href='/stylesheets/style-navbar.css')
 		script(src='/javascripts/jquery.min.js')
@@ -14,7 +15,94 @@ html
 	body
 		include navbar
 		include menu
-		.container
+		.container.one
 			.row
-				p=data
-				p=id
+				.col-md-4
+					.figure
+						img.productselect(src= "../images/"+produto.imag+".jpg" alt=""+produto.nome)
+				.col-md-6
+					.informationproduct
+						h3.titleproduct=produto.nome
+						h3=produto.valor
+						p=produto.descrição
+						h5="Tamanho do "+ produto.categoria
+						h5=produto.peso
+						a(href="http://localhost:5000/catalogo" class="linkcat")="Categoria "+produto.categoria
+			.row
+				.col.md-12
+					h3 Descrição:
+					h5=produto.descrição+"."
+					h4 Como fazer o pedido: 
+						a(data-toggle="modal" data-target="#squarespaceModal") Fazer encomenda do produto 
+			.row.outros
+				h3 Outros produtos do catalogo: 
+				.col-md-12
+					#myCarousel.carousel.slide
+						.carousel-inner
+							.item.active
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+1].imag+".jpg" class="img-responsive") 
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+2].imag+".jpg" class="img-responsive")  
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+3].imag+".jpg" class="img-responsive") 
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+4].imag+".jpg" class="img-responsive") 
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+5].imag+".jpg" class="img-responsive")  
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+6].imag+".jpg" class="img-responsive") 
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+7].imag+".jpg" class="img-responsive") 
+							.item
+								.col-lg-4.col-xs-4.col-md-4.col-sm-4
+								a(href="http://localhost:5000/catalogo")
+									img(src="../images/"+data[produto.id+8].imag+".jpg" class="img-responsive") 
+						a(class="left carousel-control" href="#myCarousel" data-slide="prev")
+							i(class="glyphicon glyphicon-chevron-left")
+						a(class="right carousel-control" href="#myCarousel" data-slide="next")
+							i(class="glyphicon glyphicon-chevron-right")
+		#squarespaceModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalLabel', aria-hidden='true')
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button.close(type='button', data-dismiss='modal')
+							span(aria-hidden='true') &times;
+							span.sr-only Close
+						#lineModalLabel.modal-title=produto.nome
+				.modal-body
+					form
+						.form-group
+							label(for='nome') Nome: 
+							|  
+							input#nome.form-control(type='nome', placeholder='Nome completo')
+						.form-group
+							label(for='email') Email: 
+							|  
+							input#email.form-control(type='email', placeholder='Email para contato')
+						.form-group
+							label(for='email') Quantidade: 
+							|  
+							input#quantidade.form-control(type='quantidade', placeholder='Quantidade')
+							p.help-block="Seu produto custa : "+produto.valor+" para cada "+produto.peso 
+							p.help-block A data de entrega do produto é combinada por email
+
+					.modal-footer
+						.btn-group.btn-group-justified(role='group', aria-label='group button')
+							.btn-group(role='group')
+								button.btn.btn-default(type='button', data-dismiss='modal', role='button') Fechar
+							.btn-group(role='group')
+								button#saveencomenda.btn.btn-default.btn-hover-green(type='button', data-action='save', role='button') Salvar encomenda
