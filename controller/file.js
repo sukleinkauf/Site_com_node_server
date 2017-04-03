@@ -18,6 +18,7 @@ module.exports ={
 		});
 	},
 	// checkProduto: function(data, params){
+	// 	data = JSON.parse(data);
 	// 	for(var i=0;i<data.length;i++){
 	// 		if(data[i].id==params){
 	// 			return i;
