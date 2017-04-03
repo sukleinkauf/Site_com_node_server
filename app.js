@@ -10,7 +10,8 @@ var catalogo = require('./routes/catalogo');
 var saibamais = require('./routes/sobre');
 var produtos = require('./routes/db');
 var produtoindividual = require('./routes/produto');
-// var encomendas= require('./routes/encomendas');
+var dbencomendas = require('./routes/db2');
+var encomendas = require('./routes/encomendas');
 
 var app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/catalogo', catalogo);
 app.use('/db/produtos', produtos);
-// app.use('/db/encomendas', encomendas);
+app.use('/db/encomendas', dbencomendas);
+app.use('/encomendas', encomendas);
 app.use('/saibamais', saibamais);
 app.use('/', produtoindividual);
 
