@@ -83,9 +83,9 @@
   font-size: 120%;
 }
 .sidebar-nav li:first-child,
-a:hover,
-a:active,
-a:focus {
+.sidebar-nav a:hover,
+.sidebar-nav a:active,
+.sidebar-nav a:focus {
   background-color: #1A1A1A;
 }
 .sidebar-nav li:nth-child(2):before {
