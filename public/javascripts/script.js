@@ -1,9 +1,6 @@
-var trigger = $('.hamburger'),
-	cont =0;
-	overlay = $('.overlay'),
-	isClosed = false;
-	db="http://localhost:5000/db/produtos"
-	db2="http://localhost:5000/db/encomendas"
+// variaveis de banco de dados
+var	db="http://localhost:5000/db/produtos",
+	db2="http://localhost:5000/db/encomendas";
 
 function abrir_fecharmenu(){
 	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
@@ -11,32 +8,18 @@ function abrir_fecharmenu(){
 	});
 }
 
-function hamburger_cross() { //função que muda classe do icone 
-
-	if (isClosed == true) {          
-		overlay.hide();
-		trigger.removeClass('is-open');
-		trigger.addClass('is-closed');
-		isClosed = false;
-	} else{
-		overlay.show();
-		trigger.removeClass('is-closed');
-		trigger.addClass('is-open');
-		isClosed = true;
-	}
-}
-
-function pesquisa(){
+function pesquisa(){ //função que abre a caixa de pesquisa
 	$("#search").click(function(){
 		$("input").toggle();	
 	});
 }
-function procura(campo){
+
+function procura(campo){ // função que procura produto em dados json
 	$.get(db, function(dados){
 		
-		var searchField = $(campo).val();
+		var searchField = $(campo).val(); //salva valor digitado em variavel
 		if(searchField === '')  {
-			$('#filter-records').html('');
+			$('#filter-records').html('');//se vazio, a div não mostra nenhum  conteudo
 			return;
 		}
 
@@ -58,12 +41,12 @@ function procura(campo){
 			});
 
 		output += '</div>';
-		$('#filter-records').html(output);
+		$('#filter-records').html(output);//inclui a variavel contendo o resultado da pesaquisa na div selecionada. 
 	});
 }
 
 
-function cart(cart){
+function cart(cart){ //contagem do carrinho
 
 	var cart = $(cart).parents('p').data("id");
 
@@ -100,22 +83,6 @@ function cart(cart){
 // 	ajax("POST",db2,data);
 // 	});
 // }
-
-// function ajax(tipo, url, dados){//requisição ajax, conforme dados recebidos
-
-// 	$.ajax({
-// 		type: tipo,
-// 		url: url,
-// 		data: dados,
-// 		success: function(){
-// 			avisos(msg);
-// 			tabelatoda();
-// 		},
-// 		error: function(){
-// 			msg=("Ops! Algo deu errado, tente novamente!");
-// 			avisosdois(msg);
-// 		}
-// 	})
 	
 // }
 // function heart(coracao){
@@ -130,11 +97,11 @@ function cart(cart){
 // 	console.log($(coracao).css("color"));
 // }
 
-function tableclean(){ //função que limpa a tabela
+function tableclean(){ //função que limpa a tabela de catalogo
 	$("#tabela").html(""); 
 }
 
-function filtros(categoria){
+function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
 	tableclean();
 	$.get(db, function(dados){	
 		for(var i = 0; i<dados.length;i++){
@@ -152,7 +119,7 @@ function filtros(categoria){
 	});
 }
 
-function mudanav(){
+function mudanav(){ // função que muda navbar superior conforme movimento do mouse
 	if($(window).scrollTop() > 50) {
 		$(".navbar").addClass("fixednav");
 		$(".logo").addClass("fixedlog");
@@ -163,12 +130,8 @@ function mudanav(){
 };
 
 
-function actions () {
+function actions () {//ações que chamam as funções
 	abrir_fecharmenu();
-
-	trigger.click(function () {
-		hamburger_cross();      
-	}); 
 
 	$('#bolo').click(function(){
 		filtros("Bolo");
