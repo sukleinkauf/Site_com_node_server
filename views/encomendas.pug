@@ -13,7 +13,24 @@ html
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
 	body
-		include navbar
-		include menu
+		include includes/layouts/navbar
+		include includes/layouts/menu
 		.container.one
 			.row
+				h3 Sua encomenda foi realizada com sucesso! Confira os dados abaixo e selecione a alternativa desejada:
+				h4 Informações do pedido:
+				table.table.table-responsive.table-hover
+					thead
+						tr#informe
+							th Codigo do pedido
+							th Nome Cliente
+							th Email
+							th Produto
+							th Quantidade
+					tbody#compras
+						tr
+							th=""+params.id
+							th=""+params.nomeCliente
+							th=""+params.email
+							th=""+params.produto
+							th=""+params.quantidade

@@ -8,8 +8,10 @@ var file = require('./../controller/file');//importando documento file de  contr
 router.get('/', function(req, res) {
 	fs.readFile(__dirname + '/../db/encomendas.json', 'utf8', function(err, data){ 
 
-		// data = JSON.parse(data);
-		// var params = req.query;//pegando id do produto enviado por url
+		var params = req.query;//pegando id do produto enviado por url
+		data = JSON.parse(data);
+		includeid(params)
+		paramsok= file.includeid(params, data);
 		// var checkname=0;
 
 		// checkname = file.checkProduto(data,params);
@@ -20,8 +22,8 @@ router.get('/', function(req, res) {
 		// }else{
 		// 	alert("Atenção! Produto já encomendado. Tem certeza que deseja continuar?");
 		// }
-
-		res.render('encomendas', {data});//renderizando página e passando parametros data e id
+		console.log(paramsok)
+		res.render('encomendas', {params});//renderizando página e passando parametros data e id
 	});
 });
 

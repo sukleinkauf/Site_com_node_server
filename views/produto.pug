@@ -13,8 +13,8 @@ html
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
 	body
-		include navbar
-		include menu
+		include includes/layouts/navbar
+		include includes/layouts/menu
 		.container.one
 			.row
 				.col-md-4
@@ -82,7 +82,7 @@ html
 						button.close(type='button', data-dismiss='modal')
 							span(aria-hidden='true') &times;
 							span.sr-only Close
-						#lineModalLabel.modal-title=produto.nome
+						#lineModalLabel(data-value=produto.nome).modal-title=produto.nome
 				.modal-body
 					form
 						.form-group
@@ -103,6 +103,6 @@ html
 					.modal-footer
 						.btn-group.btn-group-justified(role='group', aria-label='group button')
 							.btn-group(role='group')
-								button.btn.btn-default(type='button', data-dismiss='modal', role='button') Fechar
+								button#cancelaencomenda.btn.btn-default(type='button', data-dismiss='modal', role='button') Fechar
 							.btn-group(role='group')
 								button#saveencomenda.btn.btn-default.btn-hover-green(type='button', data-action='save', role='button') Salvar encomenda

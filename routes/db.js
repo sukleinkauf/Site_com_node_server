@@ -4,9 +4,11 @@ var fs = require('fs');
 var file = require('./../controller/file'); //importando documento file de  controller
 
 
-router.get('/', function(req, res) {
+router.get('/:id', function(req, res) {
 	file.read(function(data){
-		res.json(data);	//printando json de produtos em pagina do servidor para manipular em javascript com as informações
+		var id = req.params.id
+		console.log(id)
+		res.json(data);	//printando json de encomendas em pagina do servidor para manipular com javascript
 	});
 });
 
