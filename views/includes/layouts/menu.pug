@@ -1,0 +1,22 @@
+#wrapper
+	.overlay
+	nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top (role="navegation")
+		ul.nav.sidebar-nav
+			li.sidebar-brand
+				a(href='http://localhost:5000/') Sweet Feellings
+				li.active
+					a(href='http://localhost:5000/saibamais', id="linkmenu2") História
+				li
+					a(href='#', id="linkmenu3") Contato
+				li
+					a(href='http://localhost:5000/catalogo', id="linkmenu4") Produtos
+				li
+					a(href='http://localhost:5000/encomendas', id="linkmenu5") Encomendas
+				li
+					a(href='#', id="linkmenu6") Carrinho
+	#page-content-wrapper
+		#nav-icon1.hamburger.is-closed(data-toggle="offcanvas") 
+			span.hamb-top
+			span.hamb-middle
+			span.hamb-bottom
+
