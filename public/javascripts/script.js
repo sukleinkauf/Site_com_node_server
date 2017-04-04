@@ -1,21 +1,23 @@
 // variaveis de banco de dados
-var	db="http://localhost:5000/db/produtos",
-	db2="http://localhost:5000/db/encomendas";
+var	db="http://localhost:5000/db/produtos/",
+	db2="http://localhost:5000/db/encomendas/";
 
 function abrir_fecharmenu(){
 	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
 		$('#wrapper').toggleClass('toggled');
 	});
-}
+};
 
 function pesquisa(){ //função que abre a caixa de pesquisa
 	$("#search").click(function(){
 		$("input").toggle();	
 	});
-}
+};
+
 function tooltip(){
     $('[data-toggle="tooltip"]').tooltip(); 
-}
+};
+
 function procura(campo){ // função que procura produto em dados json
 	$.get(db, function(dados){
 		
@@ -45,64 +47,101 @@ function procura(campo){ // função que procura produto em dados json
 		output += '</div>';
 		$('#filter-records').html(output);//inclui a variavel contendo o resultado da pesaquisa na div selecionada. 
 	});
-}
+};
 
 var cont=0;
-function cart(cart){ //contagem do carrinho
+function cartnumber(elem){ //contagem do carrinho
 
-	var cart = $(cart).parents('p').data("id");
+	cont=cont+1;
+	$('.contagem').html('');
+	$('.contagem').append('<p>'+cont+'</p>')				
+};
 
-	console.log(cart)
+function cart2number(cart){ //contagem do carrinho
+
+	cont=cont-1;
+	$('.contagem').html('');
+	$('.contagem').append('<p>'+cont+'</p>')				
+
+};
+
+function wishlist(elem){ //Adicionar produto na lista de desejos
+
+	var elem = $(elem).parents('p').data("id");
 	$.get(db, function(dados){
 		for(var i=0;i<dados.length;i++){	
-			if (dados[i].id==cart){
-				var produto = dados[i].id
-				cont=cont+1;
-				$('.contagem').html('');
-				$('.contagem').append('<p>'+cont+'</p>')				
+			if (dados[i].id==elem){
+				produto = dados[i]
+				favorite(dados[i]);		
 			}
 		};
 	});
-}
+};
 
-function heart(elem){ //coração vermelho
 
-	// var cart = $(cart).parents('p').data("id");
+function favorite(data){
+	var id =data.id
+	console.log("paaassou")
+	window.location.href=('http://localhost:5000/catalogo/'+id)
+};
 
-	console.log(elem)
+// function ajax(tipo, url, dados){//requisição ajax, conforme dados recebidos
+// 	console.log(dados)
+// 	$.ajax({
+// 		type: tipo,
+//  		url: url,
+//  		data: dados,
+//         success: function(){
+//         	console.log("Chegou");
+// 		},
+// 		error: function(){
+// 		}
+// 	})
+	
+// }
+
+
+function heart(elem){ //pinta o coração de vermelho e muda estado de preferencia no produto
+
+
 	$(elem).removeClass("fa-heart-o");
 	$(elem).addClass("fa-heart");
-}
+};
+
 function heart2(elem){ //coração vazio
 
-	// var cart = $(cart).parents('p').data("id");
-
-	console.log(elem)
 	$(elem).removeClass("fa-heart");
 	$(elem).addClass("fa-heart-o");
-}
+};
 
 function tableclean(){ //função que limpa a tabela de catalogo
 	$("#tabela").html(""); 
-}
+};
 
 function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
 	tableclean();
+	var coracao=0;
 	$.get(db, function(dados){	
 		for(var i = 0; i<dados.length;i++){
-		
+				
+			if(dados[i].preferido=="Não"){
+				coracao ="fa-heart-o"
+			}else{
+				coracao ="fa-heart"
+				cartnumber();
+			}
 			if(dados[i].categoria==categoria){
-				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
-					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart-o"></i></p></figcaption></figure></div></div></div>');
+					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
+						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
+						'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw'+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart-o"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
-}
+};
 
 function mudanav(){ // função que muda navbar superior conforme movimento do mouse
 	if($(window).scrollTop() > 50) {
@@ -113,15 +152,19 @@ function mudanav(){ // função que muda navbar superior conforme movimento do m
 		$(".logo").removeClass("fixedlog");
     }
 };
-function abrirjanelaprodutos(){
+
+function abrirjanelaprodutos(){//setando parametros na url
+	var produto = $('#lineModalLabel').data("value");
+	console.log(produto);
 	var nome =$('#nome').val();
 	var email =$('#email').val();
 	var quantidade =$('#quantidade').val();
-	window.open("http://localhost:5000/encomendas?nome="+nome+"&email="+email+"&quantidade="+quantidade);
+	window.open("http://localhost:5000/encomendas?nomeCliente="+nome+"&produto="+produto+"&email="+email+"&quantidade="+quantidade);
+	window.close("")
 
-}
+};
 
-function carousel(){
+function carousel(){//trabalhando com carousel
 	$('#myCarousel').carousel({
 		interval: 40000
 	});
@@ -138,7 +181,7 @@ function carousel(){
 			$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
 		}
 	});
-}
+};;
 
 function actions () {//ações que chamam as funções
 	abrir_fecharmenu();
@@ -160,12 +203,12 @@ function actions () {//ações que chamam as funções
 	});
 	$('#tabela').on("click", ".fa-heart-o", function(){
 		heart(this);
+		cartnumber(this);
+		wishlist(this);
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
 		heart2(this);
-	});
-	$('#tabela').on("click", ".fa-shopping-cart", function(){
-		cart(this);
+		cart2number(this);
 	});
 
 	$('#text-search').keyup(function(){
@@ -175,11 +218,10 @@ function actions () {//ações que chamam as funções
 	$('#saveencomenda').click(function(){
 		abrirjanelaprodutos();
 	});
-
 	$(window).on("scroll", function() {
 		mudanav();
 	});
-}
+};
 
 $(document).ready(function () {
 	actions();
