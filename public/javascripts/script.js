@@ -13,7 +13,9 @@ function pesquisa(){ //função que abre a caixa de pesquisa
 		$("input").toggle();	
 	});
 }
-
+function tooltip(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+}
 function procura(campo){ // função que procura produto em dados json
 	$.get(db, function(dados){
 		
@@ -32,8 +34,8 @@ function procura(campo){ // função que procura produto em dados json
 					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><div class="grid">';
 					output += '</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+this.imag+
 					'.jpg"/>';
-					output += '<figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><i class="fa fa-fw fa-info"></i><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart" >';
-					output += '</i></a></p></figcaption></figure></div>'
+					output += '<figcaption><p><p data-id="'+this.id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+this.id+'"><i class="fa fa-fw fa-info"></i></a>';
+					output += '</a></p></figcaption></figure></div>'
 					output += '</div>';
 					output += '</div>';
 
@@ -45,57 +47,40 @@ function procura(campo){ // função que procura produto em dados json
 	});
 }
 
-
+var cont=0;
 function cart(cart){ //contagem do carrinho
 
 	var cart = $(cart).parents('p').data("id");
 
-	$.get(db2, function(dados){
+	console.log(cart)
+	$.get(db, function(dados){
 		for(var i=0;i<dados.length;i++){	
 			if (dados[i].id==cart){
 				var produto = dados[i].id
 				cont=cont+1;
 				$('.contagem').html('');
 				$('.contagem').append('<p>'+cont+'</p>')				
-				// compras(produto);
 			}
 		};
 	});
 }
 
-// function compras(produto){
-// 	console.log(produto);
-// 	var data;
-// 	$.get(db, function(dados){
-// 		for(var i=0;i<dados.length;i++){
-// 			// console.log(dados[i].id);
-// 			if (dados[i].id==produto){
-// 				data={
-// 					nome:dados[i].nome,
-// 					descrição:dados[i].descrição,
-// 					preço:dados[i].preço,
-// 					peso:dados[i].peso,
-// 					categoria:dados[i].categoria,
-// 					imag:dados[i].imag,
-// 					id:dados[i].id};
-// 			}	
-// 		}
-// 	ajax("POST",db2,data);
-// 	});
-// }
-	
-// }
-// function heart(coracao){
-// 	var id = $(coracao).parents('p').data("id");
-// 	var cor ="rgb(225,0,0,0)";
-// 	console.log(id);
-// 	if(($(coracao).css("color"))==cor){
-// 		$(id).css({"color":"rgb(0,0,0,0)"});
-// 	} else{
-// 		$(id).css({"color":"rgb(225,0,0,0)"});
-// 	}
-// 	console.log($(coracao).css("color"));
-// }
+function heart(elem){ //coração vermelho
+
+	// var cart = $(cart).parents('p').data("id");
+
+	console.log(elem)
+	$(elem).removeClass("fa-heart-o");
+	$(elem).addClass("fa-heart");
+}
+function heart2(elem){ //coração vazio
+
+	// var cart = $(cart).parents('p').data("id");
+
+	console.log(elem)
+	$(elem).removeClass("fa-heart");
+	$(elem).addClass("fa-heart-o");
+}
 
 function tableclean(){ //função que limpa a tabela de catalogo
 	$("#tabela").html(""); 
@@ -109,11 +94,11 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 			if(dados[i].categoria==categoria){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart"  id="'+dados[i].id+'"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart-o"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart"></i><i class="fa fa-fw fa-shopping-cart"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw fa-heart-o"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -132,8 +117,8 @@ function abrirjanelaprodutos(){
 	var nome =$('#nome').val();
 	var email =$('#email').val();
 	var quantidade =$('#quantidade').val();
-	var teste=("http://localhost:5000/encomendas?nome="+nome+"&email="+email+"&quantidade"+quantidade);
-	console.log(teste);
+	window.open("http://localhost:5000/encomendas?nome="+nome+"&email="+email+"&quantidade="+quantidade);
+
 }
 
 function carousel(){
@@ -173,13 +158,16 @@ function actions () {//ações que chamam as funções
 	$('#torta').click(function(){
 		filtros("Torta");
 	});
-	// $('#tabela').on("click", ".fa-heart", function(){
-	// 	heart(this);
-	// 	// heart(event.target.id);
-	// });
+	$('#tabela').on("click", ".fa-heart-o", function(){
+		heart(this);
+	});
+	$('#tabela').on("click", ".fa-heart", function(){
+		heart2(this);
+	});
 	$('#tabela').on("click", ".fa-shopping-cart", function(){
 		cart(this);
 	});
+
 	$('#text-search').keyup(function(){
 		procura(this);
 	});
@@ -197,6 +185,7 @@ $(document).ready(function () {
 	actions();
 	filtros("0");
 	pesquisa();
-	carousel()
+	carousel();
+	tooltip();
 });
 
