@@ -12,8 +12,8 @@ html
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
 	body
-		include navbar
-		include menu
+		include includes/layouts/navbar
+		include includes/layouts/menu
 		.container.one
 			.row
 				.col-md-12
@@ -57,4 +57,4 @@ html
 							a.icoLinkedin.icone(href='#', title='Linkedin')
 								i.fa.fa-linkedin
 
-		include footer
+		include includes/layouts/footer
