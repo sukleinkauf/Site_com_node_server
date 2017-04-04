@@ -17,21 +17,25 @@ module.exports ={
 			callback(data);
 		});
 	},
-	// checkProduto: function(data, params){
-	// 	data = JSON.parse(data);
-	// 	for(var i=0;i<data.length;i++){
-	// 		if(data[i].id==params){
-	// 			return i;
+	checkProduto: function(data, params){
+		var check= 0;
+		for(var i=0;i<data.length;i++){
+			if(data[i].nome==params.nome){
+				check = 1;
+			}
+		}
+		if (check==0){
+			return true;
+		}else{
+			return false;
+		}
+	},
 
-	// 		}
-	// 	}
-	// },
-
-	// write: function(dataJson, res){
-	// 	fs.writeFile(__dirname + "/../" + 'db/products.json', dataJson, function(err){
-	// 		if(err)
-	// 			return console.log(err);
-	// 		res.json({'msg': 'Usuário inserido com sucesso!'});
-	// 	});
-	// }
+	write: function(dataJson, res){
+		fs.writeFile(__dirname + "/../" + 'db/encomendas.json', dataJson, function(err){
+			if(err)
+				return console.log(err);
+			res.json({'msg': 'Usuário inserido com sucesso!'});
+		});
+	}
 }
