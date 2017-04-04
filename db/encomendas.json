@@ -1,18 +1,1 @@
-{ "João":[{
-		"Pedido":"Cupcake Galáxia",
-		"Quantidade":10,
-		"valorUnitario":"7,00",
-		"valorTotal":"70,00",
-		"categoria":"Cupcake",
-		"imag":"Galaxia",
-		"codigo":12
-	},
-	{	"nome":"Nozes",
-		"Quantidade":10,
-		"valorUnitario":"6,50",
-		"valorTotal":"65,50",
-		"categoria":"Cupcake",
-		"imag":"Nozes",
-		"id":2
-	}]
-}
+[{"nomeCliente":"Gustavo Bit","Pedido":"Cupcake Galáxia","Quantidade":10,"valorUnitario":"7,00","valorTotal":"70,00","categoria":"Cupcake","imag":"Galaxia","codigo":12},{"nomeCliente":"Gustavo Bit","Pedido":"Nozes","Quantidade":10,"valorUnitario":"6,50","valorTotal":"65,50","categoria":"Cupcake","imag":"Nozes","codigo":12}]
