@@ -1,30 +1,6 @@
 extends layout
 
 block content
-	//- #myModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
-	//- 	.modal-dialog
-	//- 		.modal-content
-	//- 			.modal-header
-	//- 				button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
-	//- 				h4#myModalLabel.modal-titleid More About Joe
-	//- 			.modal-body
-	//- 				center
-	//- 				img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle")
-	//- 				h3.media-heading Joe Sixpack 
-	//- 				span
-	//- 					strong Skills:
-	//- 					span.label.label-warning" HTML5/CSS
-	//- 					span.label.label-info" Adobe CS 5.5
-	//- 					span.label.label-info" Microsoft Office
-	//- 					span.label.label-success" Windows XP, Vista, 7
-	//- 				hr
-	//- 				center
-	//- 				p.text-left
-	//- 					strong Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.
-	//- 				br
-	//- 			.modal-footer
-	//- 				center
-	//- 				button(type="button" class="btn btn-default" data-dismiss="modal") I've heard enough about Joe
 	.container.one 
 		.row.sobrenos
 			.col-md-12
@@ -37,28 +13,8 @@ block content
 				.destaque
 					span.title Destaques
 						.produtosdestaques
-							//- section.section.section--nav(id="Xusni")
-							//- 	span.link-copy
-							//- 	nav.nav.nav--xusni
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[34].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[35].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[36].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[37].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[38].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[39].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[40].nome
-							//- 		button.nav__item(aria-label="Item 1")
-							//- 			span.nav__item-title data[41].nome
-							//- 	.mockup-slider
-							//- 		img(src="../images/"+data[34].imag+".jpg"  alt=""+data[34].nome)
-							//- 		h3.mockup-slider__title Destaques
+							- for (var x = 0; x < data.length; x++)
+								if data[x].categoria == "Boloformato"
 									.col-md-4
 										h3.nomeprincipal=data[x].nome
 										div.grid
@@ -67,11 +23,10 @@ block content
 												figcaption
 													p
 														a(href="https://www.facebook.com/")
-															i.fa.fa-fw.fa-thumbs-o-up
-														a(href="#aboutModal" data-toggle="modal" data-target="#myModal")
-															i.fa.fa-fw.fa-info
-														a(href="#")
-															i.fa.fa-fw.fa-heart
-														a(href="#")
-															i.fa.fa-fw.fa-share
+															i.fa.fa-fw.fa-thumbs-o-up(data-toggle="tooltip"  data-placement="bottom" title="Gostou? Curte aí!")
+														a(href="http://localhost:5000/catalogo")
+															i.fa.fa-external-link-square(data-toggle="tooltip"  data-placement="bottom" title="Vamos ao catalogo?")
+
+
+	
 

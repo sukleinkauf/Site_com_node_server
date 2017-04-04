@@ -4,6 +4,7 @@ html
 		title= title
 		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style-sobre.css')
 		link(rel='stylesheet', href='/stylesheets/style-menu.css')
 		link(rel='stylesheet', href='/stylesheets/style-navbar.css')
@@ -14,20 +15,15 @@ html
 		include navbar
 		include menu
 		.container.one
+			.row
+				.col-md-12
+					.mapa
+						nav
+							.nav-wrapper
+								.col.s12
+									a(href='http://localhost:5000/').breadcrumb Inicial 
+									a(href="#").breadcrumb  > História
 			.row.sobrenos
-				ul.social-network.social-circle
-					li
-						a(href="#" class="icoRss" title="Rss") 
-							i.fa.fa-rss.Icon.fa-3x
-					li
-						a(href="#" class="icoRss" title="Rss") 
-							i.fa.fa-facebook.Icon.fa-3x
-					li
-						a(href="#" class="icoRss" title="Rss") 
-							i.fa.fa-twitter.Icon.fa-3x
-					li
-						a(href="#" class="icoRss" title="Rss") 
-							i.fa.fa-google-plus.Icon.fa-3x
 				.col-md-12
 					#saibaMais
 
@@ -40,5 +36,25 @@ html
 							p De um desejo de fazer o que se gosta, mudar o rumo da vida. Nossos doces são pedacinho da infância, o bolo da vovó, aquele feito no aconchego da nossa casa e que deixa aquele cheirinho gostoso de carinho e chocolate. 
 							p Acreditamos na importância das coisas feitas à mão, em que temos a oportunidade de colocar um pouco de delicadeza, criatividade e atenção aos detalhes. E foi assim desde a primeira fornada e será assim até o fim. Por isso, convidamos você a dar sua primeira mordida e ter o seu momento de parada!
 					.col-md-6.fundosaiba
+			.row
+				.col-md-4
+				.col-md-6
+					p.contatos Entre em contato:
+					ul.social-network.social-circle
+						li
+							a.icoRss.icone(href='#', title='Rss')
+								i.fa.fa-rss
+						li
+							a.icoFacebook.icone(href='#', title='Facebook')
+								i.fa.fa-facebook
+						li
+							a.icoTwitter.icone(href='#', title='Twitter')
+								i.fa.fa-twitter
+						li
+							a.icoGoogle.icone(href='#', title='Google +')
+								i.fa.fa-google-plus
+						li
+							a.icoLinkedin.icone(href='#', title='Linkedin')
+								i.fa.fa-linkedin
 
 		include footer
