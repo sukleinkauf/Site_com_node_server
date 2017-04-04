@@ -5,7 +5,9 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"Galaxia",
-	"id":1
+	"id":1,
+	"preferido":"Não"
+
 },
 {	"nome":"Cupcake Nozes",
 	"descrição":"Cupcake de baunilha com recheio de creme de nozes e cobertura: Ganache de Chocolate ao Leite",
@@ -13,7 +15,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"Nozes",
-	"id":2
+	"id":2,
+	"preferido":"Sim"
 },
 {	"nome":"Cupcake Cafe",
 	"descrição":"Cupcake de chocolate com recheio de Creme de café e cobertura: Ganache de Chocolate ao Leite",
@@ -21,7 +24,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"Cafe",
-	"id":3
+	"id":3,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake mm's",
 	"descrição":"Cupcake de chocolate com recheio de mm's com cobertura e Chantilly com confeitos e cereja",
@@ -29,7 +33,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"mm's",
-	"id":4
+	"id":4,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Morango",
 	"descrição":"Cupcake de chocolate com recheio de Mousse de morango e cobertura: Chantilly com confeitos de chocolate",
@@ -37,7 +42,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"morango",
-	"id":5
+	"id":5,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Rainbow",
 	"descrição":"Cupcake de chocolate com recheio de Creme de tuti-frutti e cobertura: Chantilly ",
@@ -45,7 +51,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"rainbow",
-	"id":6
+	"id":6,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Oreo",
 	"descrição":"Cupcake de chocolate com recheio de Creme com oreo e cobertura: Chantilly com Oreo esfarelado",
@@ -53,7 +60,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"Oreo",
-	"id":7
+	"id":7,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Ice",
 	"descrição":"Cupcake de chocolate com recheio de Sorvete e cobertura: Chantilly",
@@ -61,7 +69,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"Ice",
-	"id":8
+	"id":8,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Stikadinho",
 	"descrição":"Cupcake de chocolate com recheio de Stikadinho e cobertura: Ganache de Chocolate Meio Amargo",
@@ -69,7 +78,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"stikadinho",
-	"id":9
+	"id":9,
+	"preferido":"Não"
 },
 {	"nome":"Cupcake Kinder Bueno",
 	"descrição":"Cupcake de chocolate com recheio de Kinder Bueno e cobertura: Ganache de Chocolate Branco com Kinder Bueno",
@@ -77,7 +87,8 @@
 	"peso":" 120g",
 	"categoria":"Cupcake",
 	"imag":"KinderBueno",
-	"id":10
+	"id":10,
+	"preferido":"Não"
 },
 {	"nome":"Doce Romeu e Julieta",
 	"descrição":"Doce de queijo minas e goiabada",
@@ -85,7 +96,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"RomeuJulieta",
-	"id":11
+	"id":11,
+	"preferido":"Não"
 },
 {	"nome":"Doce Paçoca",
 	"descrição":"Doce de paçoca",
@@ -93,7 +105,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"pacoca",
-	"id":12
+	"id":12,
+	"preferido":"Não"
 },
 {	"nome":"Doce Moranguinho",
 	"descrição":"Doce de morango",
@@ -101,7 +114,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"moranguinho",
-	"id":13
+	"id":13,
+	"preferido":"Não"
 },
 {	"nome":"Doce Sensação",
 	"descrição":"Doce de chocolate e creme de morango",
@@ -109,7 +123,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"sensação",
-	"id":14
+	"id":14,
+	"preferido":"Não"
 },
 {	"nome":"Doce Beijinho",
 	"descrição":"Doce de coco",
@@ -117,7 +132,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"beijinho",
-	"id":15
+	"id":15,
+	"preferido":"Não"
 },
 {	"nome":"Doce Leite Ninho",
 	"descrição":"Doce de leite ninho com recheio Nutella",
@@ -125,7 +141,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"Leiteninho",
-	"id":16
+	"id":16,
+	"preferido":"Não"
 },
 {	"nome":"Doce Casadinho",
 	"descrição":"Doce de chocolate e coco",
@@ -133,7 +150,8 @@
 	"peso":"100 unidades",
 	"categoria":"Doces",
 	"imag":"casadinho",
-	"id":17
+	"id":17,
+	"preferido":"Não"
 },
 {	"nome":"Torta de Bombom",
 	"descrição":"Torta de chocolate com recheio de Mousse de chocolate, bombom, leite condensado e cobertura de Ganache de chocolate e bombom",
@@ -141,7 +159,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortabombom",
-	"id":18
+	"id":18,
+	"preferido":"Não"
 },
 {	"nome":"Torta Ouro Branco",
 	"descrição":"Torta com pão de ló e recheio de Mousse de chocolate branco, bombom Ouro Branco, leite condensado e cobertura de Ganache de chocolate branco, chantilly e bombom",
@@ -149,7 +168,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortaourobranco",
-	"id":19
+	"id":19,
+	"preferido":"Não"
 },
 {	"nome":"Torta Kinder Bueno",
 	"descrição":"Torta com pão de ló e recheio de Mousse de chocolate branco, Kinder Bueno, leite condensado e cobertura de Brigadeiros",
@@ -157,7 +177,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortakinderbueno",
-	"id":20
+	"id":20,
+	"preferido":"Não"
 },
 {	"nome":"Torta MM's",
 	"descrição":"Torta com pão de ló e recheio de Mousse de chocolate branco, MM's, leite condensado e cobertura de pasta americana p/ decoração",
@@ -165,7 +186,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"Tortamm's",
-	"id":21
+	"id":21,
+	"preferido":"Não"
 },
 {	"nome":"Torta Churros",
 	"descrição":"Torta de churros com recheio de doce de leite",
@@ -173,7 +195,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortachurros",
-	"id":22
+	"id":22,
+	"preferido":"Não"
 },
 {	"nome":"Torta de morango",
 	"descrição":"Torta com pão de Ló e recheio de Morango com chantilly e cobertura de Morango com chantilly",
@@ -181,7 +204,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortamorango",
-	"id":23
+	"id":23,
+	"preferido":"Não"
 },
 {	"nome":"Torta de Prestígio",
 	"descrição":"Torta de chocolate com recheio de Creme de coco e cobertura de Ganache de chocolate",
@@ -189,7 +213,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortaprestigio",
-	"id":24
+	"id":24,
+	"preferido":"Não"
 },
 {	"nome":"Torta de Brigadeiro",
 	"descrição":"Torta de chocolate com recheio de Brigadeiro e cobertura de Brigadeiro",
@@ -197,7 +222,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"TortaBrigadeiro",
-	"id":25
+	"id":25,
+	"preferido":"Não"
 },
 {	"nome":"Torta de Suflair",
 	"descrição":"Torta de chocolate com recheio de Chocolate Suflair  e cobertura de Ganache de brigadeiro com raspas de cocolate",
@@ -205,7 +231,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"tortasuflair",
-	"id":26
+	"id":26,
+	"preferido":"Não"
 },
 {	"nome":"Torta Marta Rocha",
 	"descrição":"Torta com pão de Ló e recheio de Chantilly com suspiro  e cobertura de Chantilly ",
@@ -213,7 +240,8 @@
 	"peso":"1kg",
 	"categoria":"Torta",
 	"imag":"TortaMartaRocha",
-	"id":27
+	"id":27,
+	"preferido":"Não"
 },
 {	"nome":"Bolo de Cenoura",
 	"descrição":"Bolo de Cenoura com recheio de Ganache",
@@ -221,7 +249,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolodecenoura",
-	"id":28
+	"id":28,
+	"preferido":"Não"
 },
 {	"nome":"Bolo de Chocolate",
 	"descrição":"Bolo de Chocolate com recheio de Ganache e cobertura de Ganache com raspas de chocolate ",
@@ -229,7 +258,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolodechocolate",
-	"id":29
+	"id":29,
+	"preferido":"Não"
 },
 {	"nome":"Bolo de Coco",
 	"descrição":"Bolo de coco com recheio de Leite de coco e cobertura de Leite de coco com coco",
@@ -237,7 +267,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolodecoco",
-	"id":30
+	"id":30,
+	"preferido":"Não"
 },
 {	"nome":"Bolo de Laranja",
 	"descrição":"Bolo de Laranja com recheio de Creme de laranja e cobertura de Caldo de laranja",
@@ -245,7 +276,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolodelaranja",
-	"id":31
+	"id":31,
+	"preferido":"Não"
 },
 {	"nome":"Bolo de Limão",
 	"descrição":"Bolo de limão com recheio de Creme de limão e cobertura de Chantilly com limão",
@@ -253,7 +285,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolodelimão",
-	"id":32
+	"id":32,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Nega Maluca",
 	"descrição":"Bolo de chocolate com recheio de Brigadeiro e cobertura de Brigadeiro",
@@ -261,7 +294,8 @@
 	"peso":"100g",
 	"categoria":"Bolo",
 	"imag":"bolonegamaluca",
-	"id":33
+	"id":33,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Barbie",
 	"descrição":"Recheio e massa a escolher",
@@ -269,7 +303,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolobarbie",
-	"id":34
+	"id":34,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Galinha Pintadinha",
 	"descrição":"Recheio e massa a escolher",
@@ -277,7 +312,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bologalinha",
-	"id":35
+	"id":35,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Gravata",
 	"descrição":"Recheio e massa a escolher",
@@ -285,7 +321,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bologravata",
-	"id":36
+	"id":36,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Gravida",
 	"descrição":"Recheio e massa a escolher",
@@ -293,7 +330,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bologravida",
-	"id":37
+	"id":37,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Maquiagem",
 	"descrição":"Recheio e massa a escolher",
@@ -301,7 +339,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolomaquiagem",
-	"id":38
+	"id":38,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Moto",
 	"descrição":"Recheio e massa a escolher",
@@ -309,7 +348,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolomoto",
-	"id":39
+	"id":39,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Notas Musicais",
 	"descrição":"Recheio e massa a escolher",
@@ -317,7 +357,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolonotas",
-	"id":40
+	"id":40,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Osso",
 	"descrição":"Recheio e massa a escolher",
@@ -325,7 +366,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"boloosso",
-	"id":41
+	"id":41,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Sorvete",
 	"descrição":"Recheio e massa a escolher",
@@ -333,7 +375,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolosorvete",
-	"id":42
+	"id":42,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Super Homem",
 	"descrição":"Recheio e massa a escolher",
@@ -341,7 +384,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolosuperhomem",
-	"id":43
+	"id":43,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Violão",
 	"descrição":"Recheio e massa a escolher",
@@ -349,7 +393,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"boloviolão",
-	"id":44
+	"id":44,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Whisky",
 	"descrição":"Recheio e massa a escolher",
@@ -357,7 +402,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolowhisky",
-	"id":45
+	"id":45,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Zumbi",
 	"descrição":"Recheio e massa a escolher",
@@ -365,7 +411,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolozumbi",
-	"id":46
+	"id":46,
+	"preferido":"Não"
 	},
 {	"nome":"Bolo Fotografia",
 	"descrição":"Recheio e massa a escolher",
@@ -373,7 +420,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolofoto",
-	"id":47
+	"id":47,
+	"preferido":"Não"
 	},
 {	"nome":"Bolo Homem Aranha",
 	"descrição":"Recheio e massa a escolher",
@@ -381,7 +429,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolohomemaranha",
-	"id":48
+	"id":48,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Mulher Maravilha",
 	"descrição":"Recheio e massa a escolher",
@@ -389,7 +438,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolomulhermaravilha",
-	"id":49
+	"id":49,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Minions",
 	"descrição":"Recheio e massa a escolher",
@@ -397,7 +447,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolominion",
-	"id":50
+	"id":50,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Mickey",
 	"descrição":"Recheio e massa a escolher",
@@ -405,7 +456,8 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolomickey",
-	"id":51
+	"id":51,
+	"preferido":"Não"
 },
 {	"nome":"Bolo Minnie",
 	"descrição":"Recheio e massa a escolher",
@@ -413,5 +465,6 @@
 	"peso":"1kg",
 	"categoria":"Boloformato",
 	"imag":"bolominie",
-	"id":52
+	"id":52,
+	"preferido":"Não"
 }]
