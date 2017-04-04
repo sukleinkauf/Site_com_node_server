@@ -102,3 +102,7 @@ a:hover {
   color: black;
   height: 100%;
 }
+#saveencomenda,
+#cancelaencomenda {
+  background-color: #E16AA0;
+}
