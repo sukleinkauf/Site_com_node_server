@@ -6,9 +6,23 @@ var file = require('./../controller/file');//importando documento file de  contr
 
 /* GET products listing. */
 router.get('/', function(req, res) {
-	var params = req.query;//pegando id do produto enviado por url
-	console.log(params)
-	res.render('encomendas', {});//renderizando página e passando parametros data e id
+	fs.readFile(__dirname + '/../db/encomendas.json', 'utf8', function(err, data){ 
+
+		// data = JSON.parse(data);
+		// var params = req.query;//pegando id do produto enviado por url
+		// var checkname=0;
+
+		// checkname = file.checkProduto(data,params);
+		// if(checkname==true){
+		// 	data.push(params);
+		// 	var dataJson = JSON.stringify(data); 
+		// 	file.write(dataJson, res);
+		// }else{
+		// 	alert("Atenção! Produto já encomendado. Tem certeza que deseja continuar?");
+		// }
+
+		res.render('encomendas', {data});//renderizando página e passando parametros data e id
+	});
 });
 
 module.exports = router;
