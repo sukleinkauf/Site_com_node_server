@@ -9,6 +9,9 @@
   margin-top: 2%;
   cursor: pointer;
 }
+#core {
+  color: black;
+}
 #navbar {
   width: 100%;
   height: 13%;
@@ -18,7 +21,7 @@
 i {
   font-size: 10%;
   float: right;
-  margin-top: 1%;
+  margin-top: 1.5%;
   margin-right: 5%;
 }
 .contagem {
@@ -32,8 +35,8 @@ i {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  margin-top: -53%;
-  margin-left: 83%;
+  margin-top: -59%;
+  margin-left: 71%;
   z-index: -1;
 }
 p.contagem {
@@ -81,8 +84,8 @@ img.logo {
   width: 48%;
 }
 .fixednav {
-  /*	transition: 0.5s;
-	-webkit-transition:  0.5s;*/
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
   background-color: #E16AA0;
   height: 10%;
   width: 100%;
@@ -90,8 +93,8 @@ img.logo {
   position: fixed;
 }
 .fixedlog {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  transition: 0.9s;
+  -webkit-transition: 0.9s;
   max-width: 216px !important;
   max-height: 67px !important;
   margin-left: 38% !important;
