@@ -5,7 +5,7 @@ module.exports ={
 		fs.readFile(__dirname + "/../" + "db/products.json", 'utf8',function(err, data){
 			if(err)
 				return console.log(err);
-			data = JSON.parse(data); //transforma json em objeto javascript
+			var data = JSON.parse(data); //transforma json em objeto javascript
 			callback(data);
 		});
 	},
