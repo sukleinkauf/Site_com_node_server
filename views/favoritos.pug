@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+		link(rel='stylesheet', href='/stylesheets/style-produtoclicado.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/style-menu.css')
+		link(rel='stylesheet', href='/stylesheets/style-navbar.css')
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/bootstrap.min.js')
+		script(src='/javascripts/script.js')
+	body
+		include includes/layouts/navbar
+		include includes/layouts/menu
+		.container.one
+			.row
+				.col-md-12
+					table.table.table-responsive.table-hover
+						thead
+							tr#informe
+								th Codigo do pedido
+								th Nome Cliente
+								th Email
+								th Produto
+								th Quantidade
+						tbody
+							tr
+								th=""+data.produtos[1].id
+								th=""+data.produtos[2].nome
+								th=""+data.produtos[3].descrição
+								th=""+data.produtos[4].peso
+								th=""+data.produtos[5].valor
+												
