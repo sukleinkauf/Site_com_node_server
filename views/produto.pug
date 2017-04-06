@@ -19,21 +19,21 @@ html
 			.row
 				.col-md-4
 					.figure
-						img.productselect(src= "../images/"+produto.imag+".jpg" alt=""+produto.nome)
+						img.productselect(src= "../images/"+item.imag+".jpg" alt=""+item.nome)
 				.col-md-6
 					.informationproduct
-						h3.titleproduct=produto.nome
-						h3=produto.valor
-						p=produto.descrição
-						h5="Tamanho do "+ produto.categoria
-						h5=produto.peso
-						a(href="http://localhost:5000/catalogo" class="linkcat")="Categoria "+produto.categoria
+						h3.titleproduct=item.nome
+						h3=item.valor
+						p=item.descrição
+						h5="Tamanho do "+ item.categoria
+						h5=item.peso
+						a(href="http://localhost:5000/catalogo" class="linkcat")="Categoria "+item.categoria
 			.row
 				.col.md-12
 					h3 Descrição:
-					h5=produto.descrição+"."
+					h5=item.descrição+"."
 					h4 Como fazer o pedido: 
-						a(data-toggle="modal" data-target="#squarespaceModal") Fazer encomenda do produto 
+						a(data-toggle="modal" data-target="#squarespaceModal") Fazer encomenda do produtos 
 			.row.outros
 				h3 Outros produtos do catalogo: 
 				.col-md-12
@@ -42,35 +42,35 @@ html
 							.item.active
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+1].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+1].imag+".jpg" class="img-responsive") 
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+2].imag+".jpg" class="img-responsive")  
+									img(src="../images/"+data.produtos[item.id+2].imag+".jpg" class="img-responsive")  
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+3].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+3].imag+".jpg" class="img-responsive") 
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+4].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+4].imag+".jpg" class="img-responsive") 
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+5].imag+".jpg" class="img-responsive")  
+									img(src="../images/"+data.produtos[item.id+5].imag+".jpg" class="img-responsive")  
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+6].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+6].imag+".jpg" class="img-responsive") 
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+7].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+7].imag+".jpg" class="img-responsive") 
 							.item
 								.col-lg-4.col-xs-4.col-md-4.col-sm-4
 								a(href="http://localhost:5000/catalogo")
-									img(src="../images/"+data[produto.id+8].imag+".jpg" class="img-responsive") 
+									img(src="../images/"+data.produtos[item.id+8].imag+".jpg" class="img-responsive") 
 						a(class="left carousel-control" href="#myCarousel" data-slide="prev")
 							i(class="glyphicon glyphicon-chevron-left")
 						a(class="right carousel-control" href="#myCarousel" data-slide="next")
@@ -82,7 +82,7 @@ html
 						button.close(type='button', data-dismiss='modal')
 							span(aria-hidden='true') &times;
 							span.sr-only Close
-						#lineModalLabel(data-value=produto.nome).modal-title=produto.nome
+						#lineModalLabel(data-value=item.nome).modal-title=item.nome
 				.modal-body
 					form
 						.form-group
@@ -97,8 +97,8 @@ html
 							label(for='email') Quantidade: 
 							|  
 							input#quantidade.form-control(type='quantidade', placeholder='Quantidade')
-							p.help-block="Seu produto custa : "+produto.valor+" para cada "+produto.peso 
-							p.help-block A data de entrega do produto é combinada por email
+							p.help-block="Seu produto custa : "+item.valor+" para cada "+item.peso 
+							p.help-block A data de entrega do produtos é combinada por email
 
 					.modal-footer
 						.btn-group.btn-group-justified(role='group', aria-label='group button')

@@ -31,7 +31,7 @@ function procura(campo){ // função que procura produto em dados json
 
 		var regex = new RegExp(searchField, "i");//salva o meu conteudo uma variavel não sendo case-sensitive
 		var output = '<div class="row">';
-			$(dados).each(function(){	//procura por letra no nome;		
+			$(dados.produtos).each(function(){	//procura por letra no nome;		
 
 				if ((this.nome.search(regex) != -1)) {//procura uma string para um valor especificado e retorna a posição da correspondência; se não encontra ele retorna -1
 					output += '<div class ="col-md-4">';
@@ -130,7 +130,7 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 			if(dados.produtos[i].categoria==categoria){
 					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
-						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw'+coracao+'"></i></p></figcaption></figure></div></div></div>');
+						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+

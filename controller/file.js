@@ -17,17 +17,17 @@ module.exports ={
 			callback(data);
 		});
 	},
-	includeid: function(params, data){
-		var tam=data.length;
-		var id=data[tam-1].id+1;
-		console.log("teste");
-		Object.defineProperty(params, "id", {
-			get: function () { return id; },
-			set: function (value) { id = value; },
-			enumerable: true
-		});
-		return params;
-	},
+	// includeid: function(params, data){
+	// 	var tam=data.length;
+	// 	var id=data[tam-1].id+1;
+	// 	console.log("teste");
+	// 	Object.defineProperty(params, "id", {
+	// 		get: function () { return id; },
+	// 		set: function (value) { id = value; },
+	// 		enumerable: true
+	// 	});
+	// 	return params;
+	// },
 	readProduto:function(params, data){
 		for(var i=0;i<data.length;i++){
 			if(data[i].id==params){

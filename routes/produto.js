@@ -9,12 +9,13 @@ router.get('/produto', function(req, res) {
 	var id = req.query.id;//pegando id do produto enviado por url
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
 		data = JSON.parse(data);
-		for(var i=0;i<data.length;i++){
-			if(data[i].id==id){
-				var produto=data[i];
+		for(var i=0;i<data.produtos.length;i++){
+			if(data.produtos[i].id==id){
+				var item=data.produtos[i];
+				console.log(data.produtos[i])
 			}
 		}
-		res.render('produto', {produto: produto, data:data});//renderizando página e passando parametros data e id
+		res.render('produto', {item: item, data:data});//renderizando página e passando parametros data e id
 	});
 });
 
