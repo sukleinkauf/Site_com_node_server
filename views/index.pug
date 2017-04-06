@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
 	.container.one 
 		.row.sobrenos
 			.col-md-12
@@ -13,13 +14,13 @@ block content
 				.destaque
 					span.title Destaques
 						.produtosdestaques
-							- for (var x = 0; x < data.length; x++)
-								if data[x].categoria == "Boloformato"
+							- for (var x = 0; x < data.produtos.length; x++)
+								if data.produtos[x].categoria == "Boloformato"
 									.col-md-4
-										h3.nomeprincipal=data[x].nome
+										h3.nomeprincipal=data.produtos[x].nome
 										div.grid
 											figure.effect-kira
-												img(src= "../images/"+data[x].imag+".jpg" alt=""+data[x].nome)
+												img(src= "../images/"+data.produtos[x].imag+".jpg" alt=""+data.produtos[x].nome)
 												figcaption
 													p
 														a(href="https://www.facebook.com/")
