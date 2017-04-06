@@ -66,19 +66,19 @@ function cart2number(cart){ //contagem do carrinho
 	$('.contagem').append('<p>'+cont+'</p>')				
 
 };
-
-// function wishlist(elem){ //Adicionar produto na lista de desejos
-
-// 	var elem = $(elem).parents('p').data("id");
-// 	$.get(db, function(dados){
-// 		for(var i=0;i<dados.length;i++){	
-// 			if (dados[i].id==elem){
-// 				produto = dados[i]
-// 				favorite(dados[i]);		
-// 			}
-// 		};
-// 	});
-// };
+var total =0;
+function valorTotal(elem, opera){
+		var valor =$(elem).parents('p').data("valor");
+		console.log(valor)
+	
+	if(opera == "+"){ 
+		total = parseFloat(valor) + parseFloat(total);
+	}
+	if(opera == ""){ 
+		total = parseFloat(valor) - parseFloat(total)
+	}
+	console.log(total)
+}
 
 function favorite(elem){
 	var id = $(elem).parents('p').data("id");
@@ -117,6 +117,7 @@ function tableclean(){ //função que limpa a tabela de catalogo
 
 function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
 	tableclean();
+	cont=0;
 	var coracao=0;
 	$.get(db.produtos, function(dados){
 		for(var i = 0; i<dados.produtos.length;i++){
@@ -130,11 +131,15 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 			if(dados.produtos[i].categoria==categoria){
 					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
-						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
+						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+dados.produtos[i].valor+
+						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
+						'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
-					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
+					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+dados.produtos[i].valor+
+					'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
+					'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -202,11 +207,13 @@ function actions () {//ações que chamam as funções
 		heart(this);
 		cartnumber(this);
 		favorite(this);
+		valorTotal(this, "+")
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
 		heart2(this);
 		cart2number(this);
 		favorite(this);
+		valorTotal(this, "-")
 	});
 
 	$('#text-search').keyup(function(){
