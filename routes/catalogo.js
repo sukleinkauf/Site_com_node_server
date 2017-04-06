@@ -7,7 +7,7 @@ var file = require('./../controller/file');
 router.get('/', function(req, res) {
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
 		data = JSON.parse(data);
-		res.render('index-catalogo', {data: data}); //renderizando pagina e enviando para view index-catalogo os dados json
+		res.render('index-catalogo'); //renderizando pagina e enviando para view index-catalogo os dados json
 	});
 });
 
