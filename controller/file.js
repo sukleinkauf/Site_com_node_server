@@ -28,21 +28,24 @@ module.exports ={
 		});
 		return params;
 	},
-	// checkProduto: function(data, params){
-	// 	data = JSON.parse(data);
-	// 	for(var i=0;i<data.length;i++){
-	// 		if(data[i].id==params){
-	// 			return i;
-
-	// 		}
-	// 	}
+	readProduto:function(params, data){
+		for(var i=0;i<data.length;i++){
+			if(data[i].id==params){
+				return i;
+			}
+		}
+	},
+	// deleteItem:function(posArr, data){
+	// 	var item = data[posArr];
+	// 	item.preferido = 'Sim';
+	//  	data.splice(posArr, 1);
+		
+	// 	return data;
 	// },
-
-	// write: function(dataJson, res){
-	// 	fs.writeFile(__dirname + "/../" + 'db/products.json', dataJson, function(err){
-	// 		if(err)
-	// 			return console.log(err);
-	// 		res.json({'msg': 'Usuário inserido com sucesso!'});
-	// 	});
-	// }
+	write: function(data, res){
+		fs.writeFile(__dirname + "/../" + 'db/products.json', data, 'utf-8', function(err){
+			if(err)
+				return console.log(err);
+		});
+	}
 }
