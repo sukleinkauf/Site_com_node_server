@@ -1,6 +1,9 @@
 // variaveis de banco de dados
-var	db="http://localhost:5000/db/produtos/",
-	db2="http://localhost:5000/db/encomendas/";
+var db = {
+	produtos:"http://localhost:5000/db/produtos/",
+	encomendas:"http://localhost:5000/db/encomendas/",
+	favorito: 'http://localhost:5000/catalogo/'
+}
 
 function abrir_fecharmenu(){
 	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
@@ -19,8 +22,7 @@ function tooltip(){
 };
 
 function procura(campo){ // função que procura produto em dados json
-	$.get(db, function(dados){
-		
+	$.get(db.produtos, function(dados){
 		var searchField = $(campo).val(); //salva valor digitado em variavel
 		if(searchField === '')  {
 			$('#filter-records').html('');//se vazio, a div não mostra nenhum  conteudo
@@ -65,40 +67,35 @@ function cart2number(cart){ //contagem do carrinho
 
 };
 
-function wishlist(elem){ //Adicionar produto na lista de desejos
+// function wishlist(elem){ //Adicionar produto na lista de desejos
 
-	var elem = $(elem).parents('p').data("id");
-	$.get(db, function(dados){
-		for(var i=0;i<dados.length;i++){	
-			if (dados[i].id==elem){
-				produto = dados[i]
-				favorite(dados[i]);		
-			}
-		};
-	});
+// 	var elem = $(elem).parents('p').data("id");
+// 	$.get(db, function(dados){
+// 		for(var i=0;i<dados.length;i++){	
+// 			if (dados[i].id==elem){
+// 				produto = dados[i]
+// 				favorite(dados[i]);		
+// 			}
+// 		};
+// 	});
+// };
+
+function favorite(elem){
+	var id = $(elem).parents('p').data("id");
+	ajax("GET", db.favorito+id);
 };
 
-
-function favorite(data){
-	var id =data.id
-	console.log("paaassou")
-	window.location.href=('http://localhost:5000/catalogo/'+id)
-};
-
-// function ajax(tipo, url, dados){//requisição ajax, conforme dados recebidos
-// 	console.log(dados)
-// 	$.ajax({
-// 		type: tipo,
-//  		url: url,
-//  		data: dados,
-//         success: function(){
-//         	console.log("Chegou");
-// 		},
-// 		error: function(){
-// 		}
-// 	})
-	
-// }
+function ajax(tipo, url){//requisição ajax, conforme dados recebidos
+	$.ajax({
+		dataType: "json",
+		type: tipo,
+		url: url,
+		success: function(result){
+		},
+		error: function(){
+		}
+	})
+}
 
 
 function heart(elem){ //pinta o coração de vermelho e muda estado de preferencia no produto
@@ -121,23 +118,23 @@ function tableclean(){ //função que limpa a tabela de catalogo
 function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
 	tableclean();
 	var coracao=0;
-	$.get(db, function(dados){	
-		for(var i = 0; i<dados.length;i++){
+	$.get(db.produtos, function(dados){
+		for(var i = 0; i<dados.produtos.length;i++){
 				
-			if(dados[i].preferido=="Não"){
+			if(dados.produtos[i].preferido=="Não"){
 				coracao ="fa-heart-o"
 			}else{
 				coracao ="fa-heart"
 				cartnumber();
 			}
-			if(dados[i].categoria==categoria){
-					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
-						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-						'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw'+coracao+'"></i></p></figcaption></figure></div></div></div>');
+			if(dados.produtos[i].categoria==categoria){
+					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
+						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
+						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw'+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
-				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados[i].nome+
-					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados[i].imag+
-					'.jpg"/><figcaption><p data-id="'+dados[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
+				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
+					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
+					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -204,11 +201,12 @@ function actions () {//ações que chamam as funções
 	$('#tabela').on("click", ".fa-heart-o", function(){
 		heart(this);
 		cartnumber(this);
-		wishlist(this);
+		favorite(this);
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
 		heart2(this);
 		cart2number(this);
+		favorite(this);
 	});
 
 	$('#text-search').keyup(function(){
