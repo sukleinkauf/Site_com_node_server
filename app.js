@@ -12,6 +12,7 @@ var produtos = require('./routes/db');
 var produtoindividual = require('./routes/produto');
 var dbencomendas = require('./routes/db2');
 var encomendas = require('./routes/encomendas');
+var favoritos = require('./routes/favoritos');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/db/encomendas', dbencomendas);
 app.use('/encomendas', encomendas);
 app.use('/saibamais', saibamais);
 app.use('/', produtoindividual);
+app.use('/favoritos', favoritos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
