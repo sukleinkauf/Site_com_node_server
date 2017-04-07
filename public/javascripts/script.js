@@ -67,17 +67,15 @@ function cart2number(cart){ //contagem do carrinho
 
 };
 var total =0;
-function valorTotal(elem, opera){
-		var valor =$(elem).parents('p').data("valor");
-		console.log(valor)
-	
+function valorTotal(valor, opera){
+
 	if(opera == "+"){ 
-		total = parseFloat(valor) + parseFloat(total);
+		total =  total + valor;
 	}
-	if(opera == ""){ 
-		total = parseFloat(valor) - parseFloat(total)
+	if(opera == "-"){ 
+		total = total -valor; 
 	}
-	console.log(total)
+	console.log("Soma: "+total)
 }
 
 function favorite(elem){
@@ -103,12 +101,14 @@ function heart(elem){ //pinta o coração de vermelho e muda estado de preferenc
 
 	$(elem).removeClass("fa-heart-o");
 	$(elem).addClass("fa-heart");
+	$(elem).tooltip({ title: "O produto está se sentindo amado!" });
 };
 
 function heart2(elem){ //coração vazio
 
 	$(elem).removeClass("fa-heart");
 	$(elem).addClass("fa-heart-o");
+	$(elem).tooltip({ title: "Amando esse produto? Demonstre, a vida é curta" });
 };
 
 function tableclean(){ //função que limpa a tabela de catalogo
@@ -119,13 +119,18 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	tableclean();
 	cont=0;
 	var coracao=0;
+	var tooltip = 0;
 	$.get(db.produtos, function(dados){
 		for(var i = 0; i<dados.produtos.length;i++){
 				
-			if(dados.produtos[i].preferido=="Não"){
+			if(dados.produtos[i].preferido== "não"){
 				coracao ="fa-heart-o"
+				tooltip ='"Amando esse produto? Demonstre, a vida é curta"'
+
 			}else{
 				coracao ="fa-heart"
+				tooltip ='"O produto está se sentindo amado!"'
+				valorTotal(dados.produtos[i].valor, "+")
 				cartnumber();
 			}
 			if(dados.produtos[i].categoria==categoria){
@@ -133,13 +138,13 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
 						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+dados.produtos[i].valor+
 						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
-						'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
+						'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
 					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+dados.produtos[i].valor+
 					'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
-					'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"></i></p></figcaption></figure></div></div></div>');
+					'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -207,13 +212,15 @@ function actions () {//ações que chamam as funções
 		heart(this);
 		cartnumber(this);
 		favorite(this);
-		valorTotal(this, "+")
+		var valor =$(this).parents('p').data("valor");
+		valorTotal(valor, "+")
 	});
 	$('#tabela').on("click", ".fa-heart", function(){
 		heart2(this);
 		cart2number(this);
 		favorite(this);
-		valorTotal(this, "-")
+		var valor =$(this).parents('p').data("valor");
+		valorTotal(valor, "-")
 	});
 
 	$('#text-search').keyup(function(){
