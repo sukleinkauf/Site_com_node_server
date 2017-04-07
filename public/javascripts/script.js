@@ -75,7 +75,7 @@ function valorTotal(valor, opera){
 	if(opera == "-"){ 
 		total = total -valor; 
 	}
-	console.log("Soma: "+total)
+	// $('#total').append( 
 }
 
 function favorite(elem){
