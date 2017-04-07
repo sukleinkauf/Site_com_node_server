@@ -87,7 +87,8 @@ gulp.task('nodemon', function () {//função nodemon que reenicia o servidor qua
 	})
 })
 
-gulp.task('default', ['nodemon','less','open']);
-	
+gulp.task('default', ['nodemon','less','open'], function(){
+	gulp.watch("./less/**/*.less", ['less']);
+});
 
 path.join(__dirname)//para saber onde eu estou
