@@ -17,10 +17,10 @@ router.get('/:fav', function(req, res) {
 	 	var posArr = file.readProduto(req.params.fav, data.produtos);
 	 	var item = data.produtos[posArr];
 
-	 	if(item.preferido == 'Não'){
-	 		item.preferido = 'Sim';
+	 	if(item.preferido == "não"){
+	 		item.preferido = "sim";
 	 	}else{
-	 		item.preferido = 'Não';
+	 		item.preferido = "não";
 	 	}
 
 	 	data.produtos.splice(posArr, 1);
