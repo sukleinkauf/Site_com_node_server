@@ -82,6 +82,10 @@ function favorite(elem){
 	var id = $(elem).parents('p').data("id");
 	ajax("GET", db.favorito+id);
 };
+function favorite2(elem){
+	var id = $(elem).parents('tr').data("id");
+	ajax("GET", db.favorito+id);
+};
 
 function ajax(tipo, url){//requisição ajax, conforme dados recebidos
 	$.ajax({
@@ -113,6 +117,7 @@ function heart2(elem){ //coração vazio
 
 function tableclean(){ //função que limpa a tabela de catalogo
 	$("#tabela").html(""); 
+	$("#favorites").html(""); 
 };
 
 function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
@@ -150,6 +155,28 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	});
 };
 
+function paginafavorites(){
+	tableclean();
+	$.get(db.produtos, function(dados){
+		for(var i = 0; i<dados.produtos.length;i++){
+			if(dados.produtos[i].preferido=="sim"){
+				$('#favorites').append('<tr data-id="'+dados.produtos[i].id
+				+'"><td><img src="../images/'+dados.produtos[i].imag+'.jpg" class="imagemtabela"/>'
+				+'</td><td>'+dados.produtos[i].id
+				+'</td><td>'+dados.produtos[i].nome
+				+'</td><td>'+dados.produtos[i].descrição
+				+'</td><td>R$ '+dados.produtos[i].peso
+				+'</td><td>R$ '+dados.produtos[i].valor
+				+'</td><td><input type="number" name="quantity" min="1" max="100">'
+				+'</td><td>'
+				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
+				+'</tr>');
+			}
+		}
+	});
+}
+
+// data-toggle="modal" data-target="#modaldesfavoritar"
 function mudanav(){ // função que muda navbar superior conforme movimento do mouse
 	if($(window).scrollTop() > 50) {
 		$(".navbar").addClass("fixednav");
@@ -162,7 +189,6 @@ function mudanav(){ // função que muda navbar superior conforme movimento do m
 
 function abrirjanelaprodutos(){//setando parametros na url
 	var produto = $('#lineModalLabel').data("value");
-	console.log(produto);
 	var nome =$('#nome').val();
 	var email =$('#email').val();
 	var quantidade =$('#quantidade').val();
@@ -222,6 +248,24 @@ function actions () {//ações que chamam as funções
 		var valor =$(this).parents('p').data("valor");
 		valorTotal(valor, "-")
 	});
+	// $('#favorites').on("click", ".fa-heart-o", function(){
+	// 	heart(this);
+	// 	cartnumber(this);
+	// 	favorite2(this);
+	// 	// var valor =$(this).parents('tr').data("valor");
+	// 	// valorTotal(valor, "+")
+	// 	paginafavorites()
+	// });
+	$('#favorites').on("click", ".fa-heart", function(){
+		console.log("teste")
+		heart2(this);
+		cart2number(this);
+		favorite2(this);
+		// var valor =$(this).parents('tr').data("valor");
+		// valorTotal(valor, "-")
+		paginafavorites();
+
+	});
 
 	$('#text-search').keyup(function(){
 		procura(this);
@@ -241,5 +285,6 @@ $(document).ready(function () {
 	pesquisa();
 	carousel();
 	tooltip();
+	paginafavorites();
 });
 
