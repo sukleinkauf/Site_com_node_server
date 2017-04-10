@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css?family=Gudea');
 /*fonte oficial dos titulos*/
+/*função de transição utilizada no programa*/
+/*função de transformação de componentes*/
 html,
 body {
   height: 100%;
@@ -10,23 +13,27 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+p.saiba-letra,
+.destaque,
+.titulo,
+.contatos {
+  font-family: 'Sofia', cursive;
+}
 .container.one {
   width: 70%;
   background-color: rgba(255, 255, 255, 0.6);
   margin-top: 5%;
   padding: 5%;
 }
-.row.sobrenos {
+.container.one .row.sobrenos {
   background-image: url(../images/cozinha3.png);
   background-size: 100%;
-  background-border: radius;
   background-repeat: no-repeat;
-  /*	background-attachment: fixed;*/
   height: 75%;
   padding-top: 25%;
   padding-bottom: 1%;
 }
-#saibaMais {
+.container.one .row.sobrenos #saibaMais {
   width: 40%;
   height: 40%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -34,53 +41,243 @@ body {
   margin-bottom: 2%;
   padding: 1%;
 }
-a.saiba {
+.container.one .row.sobrenos .icone.saiba {
   color: black;
   background-color: transparent;
   border-radius: 2%;
   margin-left: 35%;
   text-decoration: none;
 }
-p.saiba-letra {
+.container.one .row.sobrenos p.saiba-letra {
   color: #3A59A9;
-  font-family: 'Sofia', cursive;
   font-size: 200%;
   font-weight: bold;
   line-height: 30px;
 }
-.destaque {
-  font-family: 'Sofia', cursive;
+.container.one .destaque {
   color: #EE6E73;
   text-align: center;
   margin-top: 3%;
 }
-.title {
+.container.one .destaque .titledestaque {
   font-size: 250%;
 }
-.footerprincipal {
+.container.one .destaque .nomeprincipal {
+  font-size: 50%;
+}
+.container.one .row.sobrenos {
+  background-image: url(../images/cozinha3.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 75%;
+  padding-top: 25%;
+  padding-bottom: 35%;
+}
+.container.one .titulohistoria {
+  font-size: 200%;
+  color: #734431;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.container.one .textosaiba {
+  width: 100%;
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+  margin-right: 2%;
+}
+.container.one .fundosaiba {
+  background-image: url(../images/cozinha2.jpg);
+  height: 100%;
+  padding-bottom: 66%;
+}
+.container.one .contatos {
   font-size: 100%;
-  color: #5b352c;
+  margin-top: 6%;
+}
+.breadcrumb {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: -45px;
+}
+.breadcrumb:hover,
+.breadcrumb:focus {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+}
+.breadcrumb:before {
+  font-size: 0px;
 }
 .container.two {
   width: 70%;
   background-color: #F3BDC7;
   margin-top: 0%;
 }
-.ladodireito {
+.container.two .ladodireito {
   text-align: right;
   padding-top: 2%;
 }
-.ladoesquerdo {
+.container.two .ladoesquerdo {
   text-align: left;
   padding-top: 2%;
 }
-h2 {
+.container.two .dados {
   font-size: 112%;
   font-weight: bold;
   line-height: 40%;
 }
-.nomeprincipal {
+/* footer social icons que aparecem na pagina história */
+ul.social-network {
+  list-style: none;
+  display: inline;
+  padding: 0;
+}
+ul.social-network .redessociais {
+  display: inline;
+  margin: 0 5px;
+}
+/* footer social icons */
+.social-network .icone.icoRss:hover {
+  background-color: #F56505;
+}
+.social-network .icone.icoFacebook:hover {
+  background-color: #3B5998;
+}
+.social-network .icone.icoTwitter:hover {
+  background-color: #33ccff;
+}
+.social-network .icone.icoGoogle:hover {
+  background-color: #BD3518;
+}
+.social-network .icone.icoVimeo:hover {
+  background-color: #0590B8;
+}
+.social-network .icone.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+.icone.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+.social-circle i {
+  color: #fff;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.social-circle .redessociais .icone {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  padding-right: 2%;
+  padding-top: 3%;
+  background-color: #D3D3D3;
+}
+.social-circle .redessociais .redessociais i {
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+}
+.social-circle .redessociais .icone:hover i,
+.social-circle .redessociais .triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#navbar {
+  width: 100%;
+  height: 13%;
+  margin: 0 auto;
+  background-color: #E16AA0;
+}
+#navbar #text-search {
+  width: 20%;
+  float: right;
+  margin-top: 1%;
+  margin-right: 1%;
+  display: none;
+}
+#navbar #core {
+  color: black;
+}
+#navbar #core,
+#navbar #search {
+  float: right;
+  margin-top: 1.5%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+#navbar .contagem {
+  background: #FFC8ED;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  text-align: center;
   font-size: 50%;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin-top: -59%;
+  margin-left: 71%;
+  z-index: -1;
+  margin-bottom: 4%;
+}
+#navbar .logo {
+  max-width: 345px;
+  max-height: 86px;
+  width: 40%;
+  margin: 0 auto;
+  margin-left: 35%;
+}
+#navbar .resultssearch {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+#navbar #filter-records {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#navbar #filter-records h3.nomeprincipal {
+  font-size: 148%;
+  color: #FFC9ED;
+  text-align: center;
+}
+#navbar .fixednav {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background-color: #E16AA0;
+  height: 10%;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+}
+#navbar .fixedlog {
+  transition: 0.9s;
+  -webkit-transition: 0.9s;
+  max-width: 216px !important;
+  max-height: 67px !important;
+  margin-left: 38% !important;
+  width: 40%;
 }
 .grid {
   position: relative;
@@ -90,8 +287,8 @@ h2 {
   max-width: 1000px;
   list-style: none;
   text-align: center;
+  /* Common style */
 }
-/* Common style */
 .grid figure {
   position: relative;
   float: left;
@@ -102,7 +299,6 @@ h2 {
   max-height: 181px;
   width: 48%;
   height: auto;
-  background: #3085a3;
   text-align: center;
   cursor: pointer;
 }
@@ -113,7 +309,7 @@ h2 {
   max-width: 100%;
   opacity: 0.8;
 }
-.grid figure figcaption {
+.grid figure .efeitofig {
   padding: 2em;
   color: #011023;
   text-transform: uppercase;
@@ -121,12 +317,12 @@ h2 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.grid figure::before,
+.grid figure::after {
   pointer-events: none;
 }
-.grid figure figcaption,
-.grid figure figcaption > a {
+.grid figure .efeitofig,
+.grid figure .efeitofig > .inicial {
   position: absolute;
   top: 0;
   left: 0;
@@ -134,9 +330,7 @@ h2 {
   height: 100%;
   font-size: 50%;
 }
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
-.grid figure figcaption > a {
+.grid figure .efeitofig > .inicial {
   z-index: 1000;
   text-indent: 50%;
   white-space: nowrap;
@@ -151,26 +345,22 @@ h2 {
 .grid figure h2 span {
   font-weight: 800;
 }
-.grid figure h2,
-.grid figure p {
-  margin: 0;
-}
-.grid figure p {
+.grid figure .iconesimag {
   letter-spacing: 1px;
   font-size: 68.5%;
 }
-figure.effect-kira {
+.grid figure .effect-kira {
   background: #fff;
   text-align: left;
 }
-figure.effect-kira img {
+.grid figure .effect-kira img {
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-figure.effect-kira figcaption {
+figure.effect-kira .efeitofig {
   z-index: 1;
 }
-figure.effect-kira p {
+figure.effect-kira .iconesimag {
   padding: 0 0.5em;
   font-weight: 600;
   font-size: 100%;
@@ -181,15 +371,15 @@ figure.effect-kira p {
   -webkit-transform: translate3d(0, -10px, 0);
   transform: translate3d(0, -10px, 0);
 }
-figure.effect-kira p a {
+figure.effect-kira .iconesimag .inicial {
   margin: 0;
   color: #101010;
 }
-figure.effect-kira p a:hover,
-figure.effect-kira p a:focus {
+figure.effect-kira .iconesimag .inicial:hover,
+figure.effect-kira .iconesimag .inicial:focus {
   opacity: 0.6;
 }
-figure.effect-kira figcaption::before {
+figure.effect-kira .efeitofig::before {
   position: absolute;
   top: -64px;
   right: 2em;
@@ -208,12 +398,12 @@ figure.effect-kira figcaption::before {
 figure.effect-kira:hover img {
   opacity: 0.5;
 }
-figure.effect-kira:hover p {
+figure.effect-kira:hover .iconesimag {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-figure.effect-kira:hover figcaption::before {
+figure.effect-kira:hover .efeitofig::before {
   opacity: 0.7;
   -webkit-transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
   transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);

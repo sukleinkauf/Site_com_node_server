@@ -18,8 +18,8 @@
   margin: 0 auto;
   background-color: #E16AA0;
 }
-i {
-  font-size: 10%;
+#core,
+#search {
   float: right;
   margin-top: 1.5%;
   margin-right: 5%;
@@ -39,10 +39,10 @@ i {
   margin-left: 71%;
   z-index: -1;
 }
-p.contagem {
+.contagem {
   margin-bottom: 4%;
 }
-img.logo {
+.logo {
   max-width: 345px;
   max-height: 86px;
   width: 40%;

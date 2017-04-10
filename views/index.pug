@@ -12,7 +12,7 @@ block content
 		.row.produtos
 			.col-md-12
 				.destaque
-					span.title Destaques
+					span.titledestaque Destaques
 						.produtosdestaques
 							- for (var x = 0; x < data.produtos.length; x++)
 								if data.produtos[x].categoria == "Boloformato"
@@ -21,11 +21,11 @@ block content
 										div.grid
 											figure.effect-kira
 												img(src= "../images/"+data.produtos[x].imag+".jpg" alt=""+data.produtos[x].nome)
-												figcaption
-													p
-														a(href="https://www.facebook.com/")
+												figcaption.efeitofig
+													p.iconesimag
+														a.inicial(href="https://www.facebook.com/")
 															i.fa.fa-fw.fa-thumbs-o-up(data-toggle="tooltip"  data-placement="bottom" title="Gostou? Curte aí!")
-														a(href="http://localhost:5000/catalogo")
+														a.inicial(href="http://localhost:5000/catalogo")
 															i.fa.fa-external-link-square(data-toggle="tooltip"  data-placement="bottom" title="Vamos ao catalogo?")
 	include includes/layouts/footer
 
