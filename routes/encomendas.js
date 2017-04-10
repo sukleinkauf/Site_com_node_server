@@ -10,7 +10,6 @@ router.get('/', function(req, res) {
 
 		var params = req.query;//pegando id do produto enviado por url
 		data = JSON.parse(data);
-		includeid(params)
 		// paramsok= file.includeid(params, data);
 		// var checkname=0;
 
