@@ -3,7 +3,7 @@ extends layout
 block content
 
 	.container.one 
-		.row.sobrenos
+		.row.conheca
 			.col-md-12
 				#saibaMais
 					p.saiba-letra Faça uma pausa... 
@@ -19,8 +19,8 @@ block content
 									.col-md-4
 										h3.nomeprincipal=data.produtos[x].nome
 										div.grid
-											figure.effect-kira
-												img(src= "../images/"+data.produtos[x].imag+".jpg" alt=""+data.produtos[x].nome)
+											figure.fotodestaque.effect-kira
+												img.images(src= "../images/"+data.produtos[x].imag+".jpg" alt=""+data.produtos[x].nome)
 												figcaption.efeitofig
 													p.iconesimag
 														a.inicial(href="https://www.facebook.com/")

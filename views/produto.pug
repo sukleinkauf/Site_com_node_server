@@ -5,10 +5,7 @@ html
 		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
-		link(rel='stylesheet', href='/stylesheets/style-produtoclicado.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-		link(rel='stylesheet', href='/stylesheets/style-menu.css')
-		link(rel='stylesheet', href='/stylesheets/style-navbar.css')
 		script(src='/javascripts/jquery.min.js')
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
@@ -18,7 +15,7 @@ html
 		.container.one
 			.row
 				.col-md-4
-					.figure
+					.figureproduct
 						img.productselect(src= "../images/"+item.imag+".jpg" alt=""+item.nome)
 				.col-md-6
 					.informationproduct
@@ -28,7 +25,7 @@ html
 						h5="Tamanho do "+ item.categoria
 						h5=item.peso
 						a(href="http://localhost:5000/catalogo" class="linkcat")="Categoria "+item.categoria
-			.row
+			.row.descript
 				.col.md-12
 					h3 Descrição:
 					h5=item.descrição+"."
