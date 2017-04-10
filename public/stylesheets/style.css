@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Gudea');
 /*fonte oficial dos titulos*/
 /*função de transição utilizada no programa*/
-/*função de transformação de componentes*/
+.bg {
+  background-image: url(../images/cozinha3.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 html,
 body {
   height: 100%;
@@ -16,7 +20,12 @@ body {
 p.saiba-letra,
 .destaque,
 .titulo,
-.contatos {
+.contatos,
+.container.catalogo,
+.linhamenu:first-child .linkmenu,
+.informationproduct,
+.outros,
+.descript {
   font-family: 'Sofia', cursive;
 }
 .container.one {
@@ -25,7 +34,7 @@ p.saiba-letra,
   margin-top: 5%;
   padding: 5%;
 }
-.container.one .row.sobrenos {
+.container.one .row.conheca {
   background-image: url(../images/cozinha3.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -33,7 +42,7 @@ p.saiba-letra,
   padding-top: 25%;
   padding-bottom: 1%;
 }
-.container.one .row.sobrenos #saibaMais {
+.container.one .row.conheca #saibaMais {
   width: 40%;
   height: 40%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -41,14 +50,14 @@ p.saiba-letra,
   margin-bottom: 2%;
   padding: 1%;
 }
-.container.one .row.sobrenos .icone.saiba {
+.container.one .row.conheca .icone.saiba {
   color: black;
   background-color: transparent;
   border-radius: 2%;
   margin-left: 35%;
   text-decoration: none;
 }
-.container.one .row.sobrenos p.saiba-letra {
+.container.one .row.conheca p.saiba-letra {
   color: #3A59A9;
   font-size: 200%;
   font-weight: bold;
@@ -95,6 +104,107 @@ p.saiba-letra,
   font-size: 100%;
   margin-top: 6%;
 }
+.container.one .figureproduct {
+  height: 500%;
+  width: 100%;
+  margin: -7%;
+  margin-top: 15%;
+}
+.container.one .informationproduct {
+  text-align: center;
+  margin-left: 10%;
+}
+.container.one .titleproduct {
+  color: #E16AA0;
+}
+.container.one .descript {
+  font-size: 30%;
+}
+.container.one .productselect {
+  box-shadow: 0px 5px 10px #444;
+  max-height: 500px;
+  max-width: 100%;
+}
+.container.one .linkcat {
+  text-decoration: none;
+  color: black;
+}
+.container.one .linkcat:hover {
+  text-decoration: none;
+  font-size: 150%;
+  color: #E16AA0;
+}
+.container.one .outros {
+  text-align: center;
+  margin-top: 5%;
+}
+.container.one .outros .img-responsive {
+  max-height: 300px;
+  max-width: 100%;
+}
+.container.one .outros .carousel-inner .active.left {
+  left: -33%;
+}
+.container.one .outros .carousel-inner .next {
+  left: 33%;
+}
+.container.one .outros .carousel-inner .prev {
+  left: -33%;
+}
+.container.one .outros #myCarousel {
+  height: 256px;
+  width: 34%;
+  margin: 0 auto;
+}
+.container.one .outros .item:not(.prev) {
+  visibility: visible;
+}
+.container.one .outros .item.right:not(.prev) {
+  visibility: hidden;
+}
+.container.one .outros .rightest {
+  visibility: visible;
+}
+.container.one .outros .center {
+  margin-top: 50px;
+}
+.container.catalogo {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 5%;
+  padding: 5%;
+  /*filtros de produtos*/
+  /* nome do produtos do catalogo*/
+  /*classes de coração para colocar nos desejos de produtos*/
+}
+.container.catalogo .row.titulo {
+  text-align: center;
+  margin-bottom: 5%;
+}
+.container.catalogo .filtros {
+  margin-top: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  /*imagens pequenas para filtros de produtos*/
+}
+.container.catalogo .filtros .pergunta {
+  margin-bottom: 3%;
+  margin-left: 10%;
+}
+.container.catalogo .filtros .imgfiltro {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 2%;
+}
+.container.catalogo .nomeprincipal {
+  font-size: 170%;
+  text-align: center;
+}
+.container.catalogo .fa-heart {
+  color: red;
+  background-color: transparent;
+}
 .breadcrumb {
   background-color: transparent;
   text-decoration: none;
@@ -127,6 +237,39 @@ p.saiba-letra,
   font-size: 112%;
   font-weight: bold;
   line-height: 40%;
+}
+.table {
+  background-color: white;
+  font-family: 'Gudea', sans-serif;
+}
+.table .imagemtabela {
+  max-height: 150px;
+  max-width: 85%;
+}
+#squarespaceModal {
+  font-family: 'Gudea', sans-serif;
+  color: black;
+  height: 100%;
+}
+#squarespaceModal .modal-header {
+  padding-bottom: 5px;
+}
+#squarespaceModal .modal-footer {
+  padding: 0;
+}
+#squarespaceModal .modal-footer .btn-group button {
+  height: 40px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: none;
+  border-right: 1px solid #ddd;
+}
+#squarespaceModal .modal-footer .btn-group:last-child > button {
+  border-right: 0;
+}
+#squarespaceModal #saveencomenda,
+#squarespaceModal #cancelaencomenda {
+  background-color: #E16AA0;
 }
 /* footer social icons que aparecem na pagina história */
 ul.social-network {
@@ -161,7 +304,7 @@ ul.social-network .redessociais {
 .socialHoverClass {
   color: #44BCDD;
 }
-.social-circle i {
+.social-circle .icon {
   color: #fff;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
@@ -184,12 +327,12 @@ ul.social-network .redessociais {
   padding-top: 3%;
   background-color: #D3D3D3;
 }
-.social-circle .redessociais .redessociais i {
+.social-circle .redessociais .redessociais .icon {
   margin: 0;
   line-height: 50px;
   text-align: center;
 }
-.social-circle .redessociais .icone:hover i,
+.social-circle .redessociais .icone:hover .icon,
 .social-circle .redessociais .triggeredHover {
   -moz-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
@@ -279,6 +422,213 @@ ul.social-network .redessociais {
   margin-left: 38% !important;
   width: 40%;
 }
+/*Aqui inicia configuração do menu lateral*/
+.nav .open > .linkmenu,
+.nav .open > .linkmenu:hover,
+.nav .open > .linkmenu:focus {
+  background-color: transparent;
+}
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#wrapper.toggled {
+  padding-left: 220px;
+}
+#wrapper.toggled #sidebar-wrapper {
+  width: 220px;
+}
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -220px;
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  left: 220px;
+  width: 0;
+  height: 100%;
+  margin-left: -220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #1a1a1a;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+#sidebar-wrapper #page-content-wrapper {
+  width: 100%;
+  margin-top: 2%;
+}
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav .linhamenu {
+  position: relative;
+  line-height: 20px;
+  display: inline-block;
+  width: 100%;
+}
+.sidebar-nav .linhamenu:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 3px;
+  background-color: #1c1c1c;
+  -webkit-transition: width 0.2s ease-in;
+  -moz-transition: width 0.2s ease-in;
+  -o-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+.sidebar-nav .linhamenu:first-child .linkmenu {
+  color: #ec1b5a;
+  background-color: #1a1a1a;
+  font-size: 120%;
+}
+.sidebar-nav .linhamenu:nth-child(2):before {
+  background-color: #ec1b5a;
+}
+.sidebar-nav .linhamenu:nth-child(3):before {
+  background-color: #79aefe;
+}
+.sidebar-nav .linhamenu:nth-child(4):before {
+  background-color: #314190;
+}
+.sidebar-nav .linhamenu:nth-child(5):before {
+  background-color: #279636;
+}
+.sidebar-nav .linhamenu:nth-child(6):before {
+  background-color: #7d5d81;
+}
+.sidebar-nav .linhamenu:hover:before,
+.sidebar-nav .linhamenu.open:hover:before {
+  width: 100%;
+  -webkit-transition: width 0.2s ease-in;
+  -moz-transition: width 0.2s ease-in;
+  -o-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+.sidebar-nav .linhamenu .linkmenu {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 10px 15px 10px 30px;
+}
+.sidebar-nav .linhamenu .linkmenu:hover,
+.sidebar-nav .linhamenu .linkmenu:active,
+.sidebar-nav .linhamenu .linkmenu:focus,
+.sidebar-nav .linhamenu .open .linkmenu:hover,
+.sidebar-nav .linhamenu .open .linkmenu:active,
+.sidebar-nav .linhamenu .open .linkmenu:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+.sidebar-nav .linhamenu:first-child,
+.sidebar-nav .linkmenu:hover,
+.sidebar-nav .linkmenu:active,
+.sidebar-nav .linkmenu:focus {
+  background-color: #1A1A1A;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 20px;
+  line-height: 44px;
+}
+/*       Hamburger-Cross         */
+.hamburger {
+  position: fixed;
+  top: 4%;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 10%;
+  background: transparent;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+  cursor: pointer;
+}
+.hamburger .is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+}
+.hamburger .is-closed:before:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #1a1a1a;
+  -webkit-transition: all 0.35s ease-in-out;
+}
+.hamburger.is-closed .hamb-top {
+  top: 5px;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;
+}
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+}
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(250, 250, 250, 0.8);
+  z-index: 1;
+}
 .grid {
   position: relative;
   clear: both;
@@ -289,7 +639,7 @@ ul.social-network .redessociais {
   text-align: center;
   /* Common style */
 }
-.grid figure {
+.grid .fotodestaque {
   position: relative;
   float: left;
   overflow: hidden;
@@ -302,14 +652,13 @@ ul.social-network .redessociais {
   text-align: center;
   cursor: pointer;
 }
-.grid figure img {
+.grid .fotodestaque .images {
   position: relative;
   display: block;
   min-height: 100%;
   max-width: 100%;
-  opacity: 0.8;
 }
-.grid figure .efeitofig {
+.grid .fotodestaque .efeitofig {
   padding: 2em;
   color: #011023;
   text-transform: uppercase;
@@ -317,12 +666,12 @@ ul.social-network .redessociais {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.grid figure::before,
-.grid figure::after {
+.grid .fotodestaque::before,
+.grid .fotodestaque::after {
   pointer-events: none;
 }
-.grid figure .efeitofig,
-.grid figure .efeitofig > .inicial {
+.grid .fotodestaque .efeitofig,
+.grid .fotodestaque .efeitofig > .inicial {
   position: absolute;
   top: 0;
   left: 0;
@@ -330,7 +679,7 @@ ul.social-network .redessociais {
   height: 100%;
   font-size: 50%;
 }
-.grid figure .efeitofig > .inicial {
+.grid .fotodestaque .efeitofig > .inicial {
   z-index: 1000;
   text-indent: 50%;
   white-space: nowrap;
@@ -338,50 +687,24 @@ ul.social-network .redessociais {
   opacity: 0;
   margin-top: 3%;
 }
-.grid figure h2 {
-  font-weight: 300;
-  font-size: 60%;
-}
-.grid figure h2 span {
-  font-weight: 800;
-}
-.grid figure .iconesimag {
+.grid .fotodestaque .iconesimag {
   letter-spacing: 1px;
   font-size: 68.5%;
 }
-.grid figure .effect-kira {
+.grid .fotodestaque .effect-kira {
   background: #fff;
   text-align: left;
 }
-.grid figure .effect-kira img {
+.grid .fotodestaque .effect-kira .images {
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-figure.effect-kira .efeitofig {
+.grid .fotodestaque.effect-kira .efeitofig {
   z-index: 1;
 }
-figure.effect-kira .iconesimag {
-  padding: 0 0.5em;
-  font-weight: 600;
-  font-size: 100%;
-  line-height: 1.5;
-  opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0, -10px, 0);
-  transform: translate3d(0, -10px, 0);
-}
-figure.effect-kira .iconesimag .inicial {
-  margin: 0;
-  color: #101010;
-}
-figure.effect-kira .iconesimag .inicial:hover,
-figure.effect-kira .iconesimag .inicial:focus {
-  opacity: 0.6;
-}
-figure.effect-kira .efeitofig::before {
+.grid .fotodestaque.effect-kira .efeitofig::before {
   position: absolute;
-  top: -64px;
+  top: -56px;
   right: 2em;
   left: 2em;
   z-index: -1;
@@ -395,15 +718,35 @@ figure.effect-kira .efeitofig::before {
   -webkit-transform-origin: 50% 0;
   transform-origin: 50% 0;
 }
-figure.effect-kira:hover img {
+.grid .fotodestaque.effect-kira .iconesimag {
+  padding: 0 0.5em;
+  font-weight: 600;
+  font-size: 100%;
+  line-height: 1.5;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+.grid .fotodestaque.effect-kira .iconesimag .inicial {
+  margin-left: 8%;
+  color: #101010;
+  font-size: 140%;
+}
+.grid .fotodestaque.effect-kira .iconesimag .inicial:hover,
+.grid .fotodestaque.effect-kira .iconesimag .inicial:focus {
+  opacity: 0.6;
+}
+.grid .fotodestaque.effect-kira:hover .images {
   opacity: 0.5;
 }
-figure.effect-kira:hover .iconesimag {
+.grid .fotodestaque.effect-kira:hover .iconesimag {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-figure.effect-kira:hover .efeitofig::before {
+.grid .fotodestaque.effect-kira:hover .efeitofig::before {
   opacity: 0.7;
   -webkit-transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
   transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
