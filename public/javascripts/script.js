@@ -172,7 +172,7 @@ function paginafavorites(){
 				+'</td><td>'+dados.produtos[i].nome
 				+'</td><td>'+dados.produtos[i].descrição
 				+'</td><td>R$ '+dados.produtos[i].peso
-				+'</td><td>R$ '+valor
+				+'</td><td>R$ '+valor.toString().replace(".", ",")
 				+'</td><td><input type="number" name="quantity" min="1" max="100">'
 				+'</td><td>'
 				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
@@ -202,7 +202,9 @@ function abrirjanelaprodutos(){//setando parametros na url
 	window.close("")
 
 };
-
+function maskmoney(){//máscara para campo de valor
+	$("h3#valor").maskMoney({showSymbol:true, symbol:"R$", decimal:".", thousands:","});
+}
 function carousel(){//trabalhando com carousel
 	$('#myCarousel').carousel({
 		interval: 40000
@@ -285,5 +287,6 @@ $(document).ready(function () {
 	carousel();
 	tooltip();
 	paginafavorites();
+	maskmoney();
 });
 

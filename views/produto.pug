@@ -7,6 +7,7 @@ html
 		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/javascripts/jquery.min.js')
+		script(type='text/javascript', src='/javascripts/maskMoney.js')
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
 	body
@@ -17,10 +18,10 @@ html
 				.col-md-4
 					.figureproduct
 						img.productselect(src= "../images/"+item.imag+".jpg" alt=""+item.nome)
-				.col-md-6
+				.col-md-8
 					.informationproduct
 						h3.titleproduct=item.nome
-						h3=item.valor
+						h3#valor=item.valor
 						p=item.descrição
 						h5="Tamanho do "+ item.categoria
 						h5=item.peso
