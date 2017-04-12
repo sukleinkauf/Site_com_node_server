@@ -159,21 +159,35 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	});
 };
 
-function paginafavorites(){
+function valorproduto(valor, elem){
+	var soma= 0;
+	soma= valor*Number($(elem).val());
+	console.log(soma);
+	paginafavorites(soma)
+
+}
+// var total = 0; 
+// //faço um foreach percorrendo todos os inputs com a class soma e faço a soma na var criada acima 
+// $(".soma").each(function(){ 
+// 	total = total + Number($(this).val()); 
+// }); //mostro o total no input Sub Total $("#sub").val(total); });
+
+function paginafavorites(soma){
 	tableclean();
 	$.get(db.produtos, function(dados){
 		for(var i = 0; i<dados.produtos.length;i++){
 			var valor=setvalue(dados.produtos[i].valor);
-			console.log(valor)
 			if(dados.produtos[i].preferido=="sim"){
 				$('#favorites').append('<tr data-id="'+dados.produtos[i].id
+				+'"data-valor="'+valor
 				+'"><td><img src="../images/'+dados.produtos[i].imag+'.jpg" class="imagemtabela"/>'
 				+'</td><td>'+dados.produtos[i].id
 				+'</td><td>'+dados.produtos[i].nome
 				+'</td><td>'+dados.produtos[i].descrição
 				+'</td><td>R$ '+dados.produtos[i].peso
 				+'</td><td>R$ '+valor.toString().replace(".", ",")
-				+'</td><td><input type="number" name="quantity" min="1" max="100">'
+				+'</td><td><input type="number" name="quantity" min="1" value="1" max="50" class="soma">'
+				+'</td><td> '
 				+'</td><td>'
 				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
 				+'</tr>');
@@ -202,9 +216,9 @@ function abrirjanelaprodutos(){//setando parametros na url
 	window.close("")
 
 };
-function maskmoney(){//máscara para campo de valor
-	$("h3#valor").maskMoney({showSymbol:true, symbol:"R$", decimal:".", thousands:","});
-}
+// function maskmoney(){//máscara para campo de valor
+// 	$("h3#valor").maskMoney({showSymbol:true, symbol:"R$", decimal:".", thousands:","});
+// }
 function carousel(){//trabalhando com carousel
 	$('#myCarousel').carousel({
 		interval: 40000
@@ -278,6 +292,14 @@ function actions () {//ações que chamam as funções
 	$(window).on("scroll", function() {
 		mudanav();
 	});
+
+	$('#favorites').on('change', '.soma', function(){
+		var valor = $(this).parents('tr').data("valor");
+		valorproduto(valor,this);
+	});
+	// $("#quantity").on("change", function(){ 
+	// 	console.log('haha');
+	// });
 };
 
 $(document).ready(function () {
@@ -287,6 +309,6 @@ $(document).ready(function () {
 	carousel();
 	tooltip();
 	paginafavorites();
-	maskmoney();
+	// maskmoney();
 });
 
