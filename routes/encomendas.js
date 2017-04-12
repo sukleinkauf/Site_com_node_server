@@ -21,7 +21,6 @@ router.get('/', function(req, res) {
 		// }else{
 		// 	alert("Atenção! Produto já encomendado. Tem certeza que deseja continuar?");
 		// }
-		console.log(paramsok)
 		res.render('encomendas', {params});//renderizando página e passando parametros data e id
 	});
 });
