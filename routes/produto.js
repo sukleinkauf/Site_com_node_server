@@ -4,17 +4,12 @@ var fs = require('fs');
 var file = require('./../controller/file');//importando documento file de  controller
 
 
-/* GET products listing. */
-router.get('/produto', function(req, res) {
+router.get('/:prod', function(req, res) {
 	// var id = req.query.id;//pegando id do produto enviado por url
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
-		// data = JSON.parse(data);
-		// for(var i=0;i<data.produtos.length;i++){
-		// 	if(data.produtos[i].id==id){
-		// 		var item=data.produtos[i];
-		// 	}
-		// }
-		res.render('produto', {data:data});//renderizando página e passando parametros data e id
+		data = JSON.parse(data);
+		var produto = file.readselect(req.params.prod, data.produtos);
+		res.render('produto', {produto: produto});//renderizando página e passando parametros data e id
 	});
 });
 

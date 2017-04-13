@@ -15,92 +15,16 @@ html
 		include includes/layouts/menu
 		.container.one
 			.row
-				.col-md-4
+				.col-md-12 
+					h2.titleproduct=produto.nome
+			.row
+				.col-md-6
 					.figureproduct
-		//- 				img.productselect(src= "../images/"+item.imag+".jpg" alt=""+item.nome)
-		//- 		.col-md-8
-		//- 			.informationproduct
-		//- 				h3.titleproduct=item.nome
-		//- 				h3#valor=item.valor
-		//- 				p=item.descrição
-		//- 				h5="Tamanho do "+ item.categoria
-		//- 				h5=item.peso
-		//- 				a(href="http://localhost:5000/catalogo" class="linkcat")="Categoria "+item.categoria
-		//- 	.row.descript
-		//- 		.col.md-12
-		//- 			h3 Descrição:
-		//- 			h5=item.descrição+"."
-		//- 			h4 Como fazer o pedido: 
-		//- 				a(data-toggle="modal" data-target="#squarespaceModal") Fazer encomenda do produtos 
-		//- 	.row.outros
-		//- 		h3 Outros produtos do catalogo: 
-		//- 		.col-md-12
-		//- 			#myCarousel.carousel.slide
-		//- 				.carousel-inner
-		//- 					.item.active
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+1].imag+".jpg" class="img-responsive") 
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+2].imag+".jpg" class="img-responsive")  
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+3].imag+".jpg" class="img-responsive") 
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+4].imag+".jpg" class="img-responsive") 
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+5].imag+".jpg" class="img-responsive")  
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+6].imag+".jpg" class="img-responsive") 
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+7].imag+".jpg" class="img-responsive") 
-		//- 					.item
-		//- 						.col-lg-4.col-xs-4.col-md-4.col-sm-4
-		//- 						a(href="http://localhost:5000/catalogo")
-		//- 							img(src="../images/"+data.produtos[item.id+8].imag+".jpg" class="img-responsive") 
-		//- 				a(class="left carousel-control" href="#myCarousel" data-slide="prev")
-		//- 					i(class="glyphicon glyphicon-chevron-left")
-		//- 				a(class="right carousel-control" href="#myCarousel" data-slide="next")
-		//- 					i(class="glyphicon glyphicon-chevron-right")
-		//- #squarespaceModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalLabel', aria-hidden='true')
-		//- 	.modal-dialog
-		//- 		.modal-content
-		//- 			.modal-header
-		//- 				button.close(type='button', data-dismiss='modal')
-		//- 					span(aria-hidden='true') &times;
-		//- 					span.sr-only Close
-		//- 				#lineModalLabel(data-value=item.nome).modal-title=item.nome
-		//- 		.modal-body
-		//- 			form
-		//- 				.form-group
-		//- 					label(for='nome') Nome: 
-		//- 					|  
-		//- 					input#nome.form-control(type='nome', placeholder='Nome completo')
-		//- 				.form-group
-		//- 					label(for='email') Email: 
-		//- 					|  
-		//- 					input#email.form-control(type='email', placeholder='Email para contato')
-		//- 				.form-group
-		//- 					label(for='email') Quantidade: 
-		//- 					|  
-		//- 					input#quantidade.form-control(type='quantidade', placeholder='Quantidade')
-		//- 					p.help-block="Seu produto custa : "+item.valor+" para cada "+item.peso 
-		//- 					p.help-block A data de entrega do produtos é combinada por email
+						img.productselect(src= "../images/"+produto.imag+".jpg" alt=""+produto.nome)
+				.col-md-6.descript
+					h3=produto.valor
+					.row
+						.col-md-4
+							i.fa.fa-credit-card.fa-x3(aria-hidden='true')
 
-		//- 			.modal-footer
-		//- 				.btn-group.btn-group-justified(role='group', aria-label='group button')
-		//- 					.btn-group(role='group')
-		//- 						button#cancelaencomenda.btn.btn-default(type='button', data-dismiss='modal', role='button') Fechar
-		//- 					.btn-group(role='group')
-		//- 						button#saveencomenda.btn.btn-default.btn-hover-green(type='button', data-action='save', role='button') Salvar encomenda
+
