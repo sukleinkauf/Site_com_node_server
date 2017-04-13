@@ -37,7 +37,7 @@ body {
 	position: relative;
 	overflow-x: hidden;
 }
-p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:first-child .linkmenu, .informationproduct,.outros,.descript {
+p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:first-child .linkmenu, .informationproduct,.outros,.descript, .titleproduct {
 	font-family: 'Sofia', cursive;
 }
 
@@ -123,12 +123,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		margin-top: 6%;
 	}
 	// Incio do estilo da pagina do produto escolhido pelo usuário
-	.figureproduct{
-		height: 500%;
-		width: 100%;
-		margin: -7%;
-		margin-top: 15%;
-	}
 	.informationproduct{
 		text-align: center;
 		margin-left: 20%;
@@ -137,15 +131,16 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	.titleproduct{
 		color:#E16AA0;
 		font-size: 300%;
+		margin-bottom: 0;
+		text-align: center;
 	}
 	.descript{
-		font-size: 30%;
+		text-align: center;
 	}
 	.productselect{
 		box-shadow: 0px 5px 10px #444;
-		max-height: 280px;
+		max-height: 350px;
 		max-width: 131%;
-		margin-top: 10%;
 	}
 	.linkcat{
 		text-decoration: none;
@@ -446,23 +441,6 @@ ul.social-network .redessociais {
 		margin: 0 auto;
 		margin-left: 35%;
 	}
-	.resultssearch{
-
-		background-color: black;
-		position: absolute;
-		width: 100%;
-		z-index: 1000;
-	}
-
-	#filter-records {
-		transition: 0.5s;
-		-webkit-transition:  0.5s;
-		h3.nomeprincipal{
-			font-size: 148%;
-			color: #FFC9ED;
-			text-align: center;
-		}
-	}
 
 	.fixednav{
 		transition: 0.5s;
@@ -482,6 +460,34 @@ ul.social-network .redessociais {
 		margin-left: 38% !important;
 		width: 40%;
 
+	}
+}
+.resultssearch{
+	
+	// margin-top: 3%;
+	background-color: black;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+
+	#filter-records {
+		transition: 0.5s;
+		-webkit-transition:  0.5s;
+		h3.nomeprincipal{
+			font-size: 148%;
+			color: #FFC9ED;
+			text-align: center;
+			margin-bottom: 1%;
+		}
+		.imagemtabelapesquisa{
+			height: 184px;
+			width: 100%;
+		}
+		.valorsearch{
+			text-align: center;
+			color: #FFC9ED;
+			font-size: 120%;
+		}
 	}
 }
 /*Aqui inicia configuração do menu lateral*/
