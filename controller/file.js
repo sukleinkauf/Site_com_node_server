@@ -17,17 +17,6 @@ module.exports ={
 			callback(data);
 		});
 	},
-	// includeid: function(params, data){
-	// 	var tam=data.length;
-	// 	var id=data[tam-1].id+1;
-	// 	console.log("teste");
-	// 	Object.defineProperty(params, "id", {
-	// 		get: function () { return id; },
-	// 		set: function (value) { id = value; },
-	// 		enumerable: true
-	// 	});
-	// 	return params;
-	// },
 	readProduto:function(params, data){
 		for(var i=0;i<data.length;i++){
 			if(data[i].id==params){
@@ -35,13 +24,13 @@ module.exports ={
 			}
 		}
 	},
-	// deleteItem:function(posArr, data){
-	// 	var item = data[posArr];
-	// 	item.preferido = 'Sim';
-	//  	data.splice(posArr, 1);
-		
-	// 	return data;
-	// },
+	readselect:function(params, data){
+		for(var i=0;i<data.length;i++){
+			if(data[i].id==params){
+				return data[i];
+			}
+		}
+	},
 	write: function(data, res){
 		fs.writeFile(__dirname + "/../" + 'db/products.json', data, 'utf-8', function(err){
 			if(err)
