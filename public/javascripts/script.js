@@ -2,7 +2,8 @@
 var db = {
 	produtos:"http://localhost:5000/db/produtos/",
 	encomendas:"http://localhost:5000/db/encomendas/",
-	favorito: 'http://localhost:5000/catalogo/'
+	favorito: 'http://localhost:5000/catalogo/',
+	productselect:'http://localhost:5000/produto/'
 }
 
 function abrir_fecharmenu(){
@@ -31,15 +32,15 @@ function procura(campo){ // função que procura produto em dados json
 
 		var regex = new RegExp(searchField, "i");//salva o meu conteudo uma variavel não sendo case-sensitive
 		var output = '<div class="row">';
-			$(dados.produtos).each(function(){	//procura por letra no nome;		
+			$(dados.produtos).each(function(){	//procura por letra no nome;	
+				var valor=setvalue(this.valor);	
 
 				if ((this.nome.search(regex) != -1)) {//procura uma string para um valor especificado e retorna a posição da correspondência; se não encontra ele retorna -1
-					output += '<div class ="col-md-4">';
-					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><div class="grid">';
-					output += '</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+this.imag+
-					'.jpg"/>';
-					output += '<figcaption><p><p data-id="'+this.id+'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+this.id+'"><i class="fa fa-fw fa-info"></i></a>';
-					output += '</a></p></figcaption></figure></div>'
+					output += '<div class ="col-md-3">';
+					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><p class="valorsearch"> R$ '+valor.toString().replace(".", ",")
+					+'</p><div class="grid">';
+					output += '<img src="../images/'+this.imag+
+					'.jpg"/ class="imagemtabelapesquisa"></figure>'
 					output += '</div>';
 					output += '</div>';
 
@@ -78,25 +79,22 @@ function valorTotal(valor, opera){
 	// $('#total').append( 
 }
 
-function favorite(elem){
-	var id = $(elem).parents('p').data("id");
-	ajax("GET", db.favorito+id);
-};
-function favorite2(elem){
-	var id = $(elem).parents('tr').data("id");
+function favorite(id){
 	ajax("GET", db.favorito+id);
 };
 
 function ajax(tipo, url){//requisição ajax, conforme dados recebidos
 	$.ajax({
-		dataType: "json",
-		type: tipo,
 		url: url,
+		type: tipo,
+		dataType: "json",
 		success: function(result){
+			console.log(result);
 		},
 		error: function(){
+			alert("fail");
 		}
-	})
+	});
 }
 
 
@@ -146,14 +144,12 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
 						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+valor+
-						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
-						'""><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
+						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
 				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
 					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+valor+
-					'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="http://localhost:5000/produto?id='+dados.produtos[i].id+
-					'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
+					'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -257,25 +253,32 @@ function actions () {//ações que chamam as funções
 		filtros("Torta");
 	});
 	$('#tabela').on("click", ".fa-heart-o", function(){
+		var id = $(this).parents('p').data("id");
+		var valor =$(this).parents('p').data("valor");
 		heart(this);
 		cartnumber(this);
-		favorite(this);
-		var valor =$(this).parents('p').data("valor");
+		favorite(id);
 		valorTotal(valor, "+")
 	});
+	$('#tabela').on("click", ".fa-info", function(){
+		var id =$(this).parents('p').data("id");
+		productselect(id);
+	});
 	$('#tabela').on("click", ".fa-heart", function(){
+		var id = $(this).parents('p').data("id");
 		heart2(this);
 		cart2number(this);
-		favorite(this);
+		favorite(id);
 		var valor =$(this).parents('p').data("valor");
 		valorTotal(valor, "-")
 	});
 
 	$('#favorites').on("click", ".fa-heart", function(){
+		var id = $(this).parents('tr').data("id");
 		console.log("teste")
 		heart2(this);
 		cart2number(this);
-		favorite2(this);
+		favorite(id);
 		// var valor =$(this).parents('tr').data("valor");
 		// valorTotal(valor, "-")
 		paginafavorites();
@@ -297,9 +300,7 @@ function actions () {//ações que chamam as funções
 		var valor = $(this).parents('tr').data("valor");
 		valorproduto(valor,this);
 	});
-	// $("#quantity").on("change", function(){ 
-	// 	console.log('haha');
-	// });
+
 };
 
 $(document).ready(function () {
