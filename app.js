@@ -34,7 +34,7 @@ app.use('/db/produtos', produtos);
 app.use('/db/encomendas', dbencomendas);
 app.use('/encomendas', encomendas);
 app.use('/saibamais', saibamais);
-app.use('/', produtoindividual);
+app.use('/produto', produtoindividual);
 app.use('/favoritos', favoritos);
 
 // catch 404 and forward to error handler
