@@ -31,6 +31,10 @@ module.exports ={
 			}
 		}
 	},
+	valorcartao:function(valor){
+		var valorparcela = valor/2;
+		return valorparcela;
+	},
 	write: function(data, res){
 		fs.writeFile(__dirname + "/../" + 'db/products.json', data, 'utf-8', function(err){
 			if(err)
