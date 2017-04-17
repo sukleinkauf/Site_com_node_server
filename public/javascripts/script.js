@@ -53,14 +53,14 @@ function procura(campo){ // função que procura produto em dados json
 };
 
 var cont=0;
-function cartnumber(elem){ //contagem do carrinho
+function cartnumber(){ //contagem do carrinho
 
 	cont=cont+1;
 	$('.contagem').html('');
 	$('.contagem').append('<p>'+cont+'</p>')				
 };
 
-function cart2number(cart){ //contagem do carrinho
+function cart2number(){ //contagem do carrinho
 
 	cont=cont-1;
 	$('.contagem').html('');
@@ -92,7 +92,7 @@ function ajax(tipo, url){//requisição ajax, conforme dados recebidos
 			console.log(result);
 		},
 		error: function(){
-			alert("fail");
+			
 		}
 	});
 }
@@ -182,7 +182,11 @@ function paginafavorites(soma){
 				+'</td><td>'+dados.produtos[i].descrição
 				+'</td><td>R$ '+dados.produtos[i].peso
 				+'</td><td>R$ '+valor.toString().replace(".", ",")
-				+'</td><td><input type="number" name="quantity" min="1" value="1" max="50" class="soma">'
+				+'</td><td><div class="input-group number-spinner"><span class="input-group-btn data-dwn"><button class="btn btn-default btn-quantidade" data-dir="dwn" data-id="'+dados.produtos[i].id
+				+'"><span class="glyphicon glyphicon-minus"></span></button>'
+				+'</span><input type="text" class="form-control text-center inputnumber" value="1" min="1" max="40" id="quantidade'
+				+'"><span class="input-group-btn data-up"></div>'
+				+'<button class="btn btn-default btn-quantidade mais" data-dir="up"  data-id="'+dados.produtos[i].id+'"><span class="glyphicon glyphicon-plus"></span></button></span>'
 				+'</td><td> '
 				+'</td><td>'
 				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
@@ -191,6 +195,24 @@ function paginafavorites(soma){
 		}
 	});
 }
+
+function contagem(elem) { //função que muda quantidade de produto na tabela de favoritos
+	
+	var tipo = $(elem).data("dir");
+	var elemento=($("div").find("input"));
+	console.log(elemento);
+	if (tipo == 'up') {
+		$('#quantidade').val(parseInt($('#quantidade').val())+1);
+	}
+	if(tipo == 'dwn'){
+		var quantidade = $('#quantidade').val();
+		if (quantidade<1){
+			return;
+		}else{
+		$('#quantidade').val(parseInt($('#quantidade').val())-1);
+		}
+	}
+};
 
 // data-toggle="modal" data-target="#modaldesfavoritar"
 function mudanav(){ // função que muda navbar superior conforme movimento do mouse
@@ -256,7 +278,7 @@ function actions () {//ações que chamam as funções
 		var id = $(this).parents('p').data("id");
 		var valor =$(this).parents('p').data("valor");
 		heart(this);
-		cartnumber(this);
+		cartnumber();
 		favorite(id);
 		valorTotal(valor, "+")
 	});
@@ -267,7 +289,7 @@ function actions () {//ações que chamam as funções
 	$('#tabela').on("click", ".fa-heart", function(){
 		var id = $(this).parents('p').data("id");
 		heart2(this);
-		cart2number(this);
+		cart2number();
 		favorite(id);
 		var valor =$(this).parents('p').data("valor");
 		valorTotal(valor, "-")
@@ -275,15 +297,28 @@ function actions () {//ações que chamam as funções
 
 	$('#favorites').on("click", ".fa-heart", function(){
 		var id = $(this).parents('tr').data("id");
-		console.log("teste")
 		heart2(this);
-		cart2number(this);
+		cart2number();
 		favorite(id);
 		// var valor =$(this).parents('tr').data("valor");
 		// valorTotal(valor, "-")
 		paginafavorites();
 
 	});
+	$('.descript').on("click", ".fa-heart-o", function(){
+		var id = $(this).data("id");
+		console.log(id);
+		heart(this);
+		cartnumber();
+		favorite(id);
+	})
+	$('.descript').on("click", ".fa-heart", function(){
+		var id = $(this).data("id");
+		console.log(id);
+		heart2(this);
+		cart2number();
+		favorite(id);
+	})
 
 	$('#text-search').keyup(function(){
 		procura(this);
@@ -300,7 +335,9 @@ function actions () {//ações que chamam as funções
 		var valor = $(this).parents('tr').data("valor");
 		valorproduto(valor,this);
 	});
-
+	$('#favorites').on('mousedown', '.btn-quantidade', function(){
+		contagem(this)
+	});
 };
 
 $(document).ready(function () {
