@@ -22,9 +22,26 @@ html
 					.figureproduct
 						img.productselect(src= "../images/"+produto.imag+".jpg" alt=""+produto.nome)
 				.col-md-6.descript
-					h3=produto.valor
+					h4.valorproduto="R$:"+valor
 					.row
-						.col-md-4
-							i.fa.fa-credit-card.fa-x3(aria-hidden='true')
-
-
+						.col-md-2.iconesdecompra
+							i.fa.fa-credit-card.Icon.fa-3x.iconesdecartao(aria-hidden='true')
+							i.fa.fa-truck.Icon.fa-3x.iconesdeentrega(aria-hidden="true")
+							i.fa.fa-calendar.Icon.fa-3x(aria-hidden="true")
+						.col-md-1
+							div.linha-vertical
+							div.linha-vertical.baixo
+							div.linha-vertical.baixo
+						.col-md-8
+							p="2x de R$"+parcela+" com "
+								i.fa.fa-cc-paypal.Icon.fa-2x.cartao(aria-hidden="true")
+								i.fa.fa-cc-mastercard.Icon.fa-2x.cartao(aria-hidden="true")
+								i.fa.fa-cc-visa.Icon.fa-2x.cartao(aria-hidden="true")
+							p.entrega Entrega em todo Vale dos Sinos
+								p com frete gratuito nas compras acima de R$ 20,00
+							p.encomendas Encomendas com datas programáveis 
+								p no prazo minimo de 14 dias a partir da confirmação do pagamento
+					.row
+						.col.md-8
+							i.fa.fa-heart-o.Icon.fa-5x.coredoproduto(data-id=""+produto.id+"" data-toggle="tooltip" data-placement="bottom" title="Adicionar aos favoritos" aria-hidden='true')
+						
