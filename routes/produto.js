@@ -9,7 +9,10 @@ router.get('/:prod', function(req, res) {
 	fs.readFile(__dirname + '/../db/products.json', 'utf8', function(err, data){
 		data = JSON.parse(data);
 		var produto = file.readselect(req.params.prod, data.produtos);
-		res.render('produto', {produto: produto});//renderizando página e passando parametros data e id
+		var valorparcela=file.valorcartao(produto.valor);
+		var valor=(parseFloat(produto.valor).toFixed(2)).toString().replace(".", ",");
+
+		res.render('produto', {produto: produto, parcela: valorparcela, valor: valor});//renderizando página e passando parametros data e id
 	});
 });
 
