@@ -175,7 +175,7 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			margin-left: 285%;
 		}
 		.fa-heart{
-			color: red;
+			color: #E06DA4;
 		}
 		.valorproduto{
 			font-weight: bold;
@@ -252,24 +252,25 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	padding: 5%;
 	.row.titulo{
 		text-align: center;
-		margin-bottom: 5%;
+		margin-bottom: 3%;
 	}
 
 	/*filtros de produtos*/
 	.filtros{
-		margin-top: 5%;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		// margin-top: 5%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(234, 131, 178, 0.8);
 		cursor: pointer;
-		.pergunta{
-			margin-bottom: 3%;
-			margin-left: 10%;
-		}
+		text-align: center;
+		width: 20%;
+		padding: 1%;
+		background-color: white;
 		/*imagens pequenas para filtros de produtos*/
-		.imgfiltro{
-			width: 100%;
-			height: 100px;
-			margin: 0 auto;
-			padding: 2%;
+		.imgfiltros{
+			max-width: 100%;
+			max-height: 50px;
+		}
+		&:hover{
+			background-color: #EA83B2;
 		}
 	}
 	/* nome do produtos do catalogo*/
@@ -279,29 +280,11 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	}
 	/*classes de coração para colocar nos desejos de produtos*/
 	.fa-heart{
-		color:red;
+		color:#E06DA4;
 		background-color: transparent;
 	}
 }
-// Estilo do mapa do site encontrado nas paginas
-.breadcrumb{
-	background-color: transparent;
-	text-decoration: none;
-	cursor: pointer;
-	margin-right: -45px;
-	&:hover, 
-	&:focus{
-		background-color: transparent;
-		text-decoration: none;
-		color:white;
-	}
-	&:before{
-		font-size: 0px;
-	}
-
-}
-
-	// Estilo do footer das paginas
+// Estilo do footer das paginas
 .container.two{
 	width: 70%;
 	background-color: @colorfooter;
