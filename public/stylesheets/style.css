@@ -283,6 +283,7 @@ p.saiba-letra,
   font-size: 112%;
   font-weight: bold;
   line-height: 40%;
+  color: #693E2F;
 }
 .table {
   background-color: white;
@@ -304,8 +305,7 @@ p.saiba-letra,
 }
 .table .mais {
   float: right;
-  margin-top: -28%;
-  margin-right: 3%;
+  margin-right: 125%;
 }
 .table .inputnumber {
   width: 61%;
