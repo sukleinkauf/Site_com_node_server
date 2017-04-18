@@ -6,9 +6,10 @@ html
 		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-		script(src='/javascripts/jquery.min.js')
-		script(type='text/javascript', src='/javascripts/maskMoney.js')
 		script(src='/javascripts/bootstrap.min.js')
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/materialize.min.js')
+		script(type='text/javascript', src='/javascripts/maskMoney.js')
 		script(src='/javascripts/script.js')
 	body
 		include includes/layouts/navbar
@@ -41,6 +42,7 @@ html
 								p com frete gratuito nas compras acima de R$ 20,00
 							p.encomendas Encomendas com datas programáveis 
 								p no prazo minimo de 14 dias a partir da confirmação do pagamento
+								<input type="date" class="datepicker">
 					.row
 						.col.md-8
 							i.fa.fa-heart-o.Icon.fa-5x.coredoproduto(data-id=""+produto.id+"" data-toggle="tooltip" data-placement="bottom" title="Adicionar aos favoritos" aria-hidden='true')
