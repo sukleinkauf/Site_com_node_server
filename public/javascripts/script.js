@@ -155,19 +155,17 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	});
 };
 
-//numbers.forEach 
-//var total = 0; 
-// //faço um foreach percorrendo todos os inputs com a class soma e faço a soma na var criada acima 
-// $(".soma").each(function(){ 
-// 	total = total + Number($(this).val()); 
-// }); //mostro o total no input Sub Total $("#sub").val(total); });
-
 function paginafavorites(soma){
 	tableclean();
+	var totalinicial=0
+
 	$.get(db.produtos, function(dados){
+
 		for(var i = 0; i<dados.produtos.length;i++){
 			var valor=setvalue(dados.produtos[i].valor);
+
 			if(dados.produtos[i].preferido=="sim"){
+				totalinicial=totalinicial+dados.produtos[i].valor
 				$('#favorites').append('<tr data-id="'+dados.produtos[i].id
 				+'"><td><img src="../images/'+dados.produtos[i].imag+'.jpg" class="imagemtabela"/>'
 				+'</td><td>'+dados.produtos[i].id
@@ -177,23 +175,46 @@ function paginafavorites(soma){
 				+'</td><td>R$ '+valor.toString().replace(".", ",")
 				+'</td><td class="select-quantitade"><div class="input-group number-spinner"><span class="input-group-btn data-dwn"><button class="btn btn-default btn-quantidade" data-dir="dwn" data-id="'+dados.produtos[i].id
 				+'"><span class="glyphicon glyphicon-minus"></span></button>'
-				+'</span><input type="text" class="form-control text-center inputnumber quantidade" value="0" min="1" max="40"'
+				+'</span><input type="text" class="form-control text-center inputnumber quantidade" value="1" min="1" max="40"'
 				+'><span class="input-group-btn data-up">'
 				+'<button class="btn btn-default btn-quantidade mais" data-dir="up"  data-id="'+dados.produtos[i].id+'"><span class="glyphicon glyphicon-plus"></span></button></span></div>'
-				+'</td><td class="total">'
+				+'</td><td class="total-produto">'+valor.toString().replace(".", ",")
 				+'</td><td>'
 				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
 				+'</tr>');
 			}
 		}
+		totalinicial=setvalue(totalinicial).toString().replace(".", ",");
+		$("#total").append('<tr><td><h3>Total:</h3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+totalinicial+'</td></tr>');
 	});
 }
+
+//função que limpa os espaços de soma de valores na tabela
+function limpasomas(){
+	$(linhatotal).html("");
+	$("#total").html("");
+}
+
+function totalcompra(){
+	var total = 0; 
+	$(".total-produto").each(function(){
+  		total = total+parseFloat($(this).text());
+  		total = setvalue(total).toString().replace(".", ",");
+  		
+	});
+	$("#total").append('<tr><td><h3>Total:</h3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+total+'</td></tr>');
+
+}
+
+//seta o valor calculado na linha de total do produto
 function setvalorproduto(soma,elem){
 	var linha= $(elem).parents(".select-quantitade");
-	var linhatotal=$(linha).siblings(".total")
-	$(linhatotal).html("");
+	var linhatotal=$(linha).siblings(".total-produto")
+	limpasomas();
 	var soma=setvalue(soma).toString().replace(".", ",");
-	$(linhatotal).append('<div><p>'+soma+'</p></div>');
+	$(linhatotal).append(soma);
+
+	totalcompra();
 }
 
 //encontra o valor do produto no banco de dados, utilizando id do produto e multiplica pela quantidade selecionada
