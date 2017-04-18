@@ -190,10 +190,6 @@ function paginafavorites(soma){
 }
 
 //função que limpa os espaços de soma de valores na tabela
-function limpasomas(){
-	$(linhatotal).html("");
-	$("#total").html("");
-}
 
 function totalcompra(){
 	var total = 0; 
@@ -210,13 +206,17 @@ function totalcompra(){
 function setvalorproduto(soma,elem){
 	var linha= $(elem).parents(".select-quantitade");
 	var linhatotal=$(linha).siblings(".total-produto")
-	limpasomas();
+	limpasomas(linhatotal);
 	var soma=setvalue(soma).toString().replace(".", ",");
 	$(linhatotal).append(soma);
 
 	totalcompra();
 }
 
+function limpasomas(linhatotal){
+	$(linhatotal).html("");
+	$("#total").html("");
+}
 //encontra o valor do produto no banco de dados, utilizando id do produto e multiplica pela quantidade selecionada
 function valorxquantidade(qtn , elem){ 
 	var soma= 0;
