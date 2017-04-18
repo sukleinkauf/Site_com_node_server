@@ -155,14 +155,8 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	});
 };
 
-function valorproduto(valor, elem){
-	var soma= 0;
-	soma= valor*Number($(elem).val());
-	console.log(soma);
-	paginafavorites(soma)
-
-}
-// var total = 0; 
+//numbers.forEach 
+//var total = 0; 
 // //faço um foreach percorrendo todos os inputs com a class soma e faço a soma na var criada acima 
 // $(".soma").each(function(){ 
 // 	total = total + Number($(this).val()); 
@@ -175,19 +169,18 @@ function paginafavorites(soma){
 			var valor=setvalue(dados.produtos[i].valor);
 			if(dados.produtos[i].preferido=="sim"){
 				$('#favorites').append('<tr data-id="'+dados.produtos[i].id
-				+'"data-valor="'+valor
 				+'"><td><img src="../images/'+dados.produtos[i].imag+'.jpg" class="imagemtabela"/>'
 				+'</td><td>'+dados.produtos[i].id
 				+'</td><td>'+dados.produtos[i].nome
 				+'</td><td>'+dados.produtos[i].descrição
 				+'</td><td>R$ '+dados.produtos[i].peso
 				+'</td><td>R$ '+valor.toString().replace(".", ",")
-				+'</td><td><div class="input-group number-spinner"><span class="input-group-btn data-dwn"><button class="btn btn-default btn-quantidade" data-dir="dwn" data-id="'+dados.produtos[i].id
+				+'</td><td class="select-quantitade"><div class="input-group number-spinner"><span class="input-group-btn data-dwn"><button class="btn btn-default btn-quantidade" data-dir="dwn" data-id="'+dados.produtos[i].id
 				+'"><span class="glyphicon glyphicon-minus"></span></button>'
-				+'</span><input type="text" class="form-control text-center inputnumber" value="1" min="1" max="40" id="quantidade'
-				+'"><span class="input-group-btn data-up"></div>'
-				+'<button class="btn btn-default btn-quantidade mais" data-dir="up"  data-id="'+dados.produtos[i].id+'"><span class="glyphicon glyphicon-plus"></span></button></span>'
-				+'</td><td> '
+				+'</span><input type="text" class="form-control text-center inputnumber quantidade" value="0" min="1" max="40"'
+				+'><span class="input-group-btn data-up">'
+				+'<button class="btn btn-default btn-quantidade mais" data-dir="up"  data-id="'+dados.produtos[i].id+'"><span class="glyphicon glyphicon-plus"></span></button></span></div>'
+				+'</td><td class="total">'
 				+'</td><td>'
 				+'<i class="fa fa-heart fa-3x" aria-hidden="true"></i>'
 				+'</tr>');
@@ -195,23 +188,42 @@ function paginafavorites(soma){
 		}
 	});
 }
+function setvalorproduto(soma,elem){
+	var linha= $(elem).parents(".select-quantitade");
+	var linhatotal=$(linha).siblings(".total")
+	$(linhatotal).html("");
+	var soma=setvalue(soma).toString().replace(".", ",");
+	$(linhatotal).append('<div><p>'+soma+'</p></div>');
+}
 
-function contagem(elem) { //função que muda quantidade de produto na tabela de favoritos
+//encontra o valor do produto no banco de dados, utilizando id do produto e multiplica pela quantidade selecionada
+function valorxquantidade(qtn , elem){ 
+	var soma= 0;
+	var codigo = $(elem).parents('tr').data("id");
+
+	$.get(db.produtos, function(dados){
+		for(var i = 0; i<dados.produtos.length;i++){
+			if(dados.produtos[i].id==codigo){
+				soma = dados.produtos[i].valor*qtn;
+			}
+		}
+		setvalorproduto(soma, elem);
+	});
+}
+
+ //função que muda quantidade de produto na tabela de favoritos
+function contagem(elem) { 
 	
-	var tipo = $(elem).data("dir");
-	var elemento=($("div").find("input"));
-	console.log(elemento);
-	if (tipo == 'up') {
-		$('#quantidade').val(parseInt($('#quantidade').val())+1);
-	}
-	if(tipo == 'dwn'){
-		var quantidade = $('#quantidade').val();
-		if (quantidade<1){
-			return;
-		}else{
-		$('#quantidade').val(parseInt($('#quantidade').val())-1);
+	var qtn= $(elem).siblings(".quantidade").val();
+	if($(elem).hasClass('data-up')){
+		qtn++;
+	}else{
+		if(qtn > 0){
+			qtn--;
 		}
 	}
+	$(elem).siblings(".quantidade").val(qtn);
+	valorxquantidade(qtn, elem);
 };
 
 // data-toggle="modal" data-target="#modaldesfavoritar"
@@ -335,9 +347,13 @@ function actions () {//ações que chamam as funções
 		var valor = $(this).parents('tr').data("valor");
 		valorproduto(valor,this);
 	});
-	$('#favorites').on('mousedown', '.btn-quantidade', function(){
+	$('#favorites').on('mousedown', '.data-up, .data-dwn', function(){
 		contagem(this)
 	});
+	// $('.datepicker').pickadate({
+	// 	selectMonths: true, // Creates a dropdown to control month
+	// 	selectYears: 15 // Creates a dropdown of 15 years to control year
+	// });
 };
 
 $(document).ready(function () {
