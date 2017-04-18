@@ -10,12 +10,6 @@ var gulp = require('gulp'), //requerindo ao móduo gulp
 	nodemon = require('gulp-nodemon');
 
 
-// gulp.watch( 'src/less/*.less', ['less'] );
-// gulp.task('watch', function() {
-// 	gulp.watch('less/*.less', [
-// 		'less'
-// 	]);
-// });
 
 
 gulp.task('open', function(){ //função que abre janela ao iniciar servidor
