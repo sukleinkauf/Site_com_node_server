@@ -4,37 +4,22 @@ block content
 	.container.catalogo
 		.row
 			.col-md-12
-				.mapa
-					nav
-						.nav-wrapper
-							.col.s12
-								a(href='http://localhost:5000/').breadcrumb Inicial 
-								a(href="#!").breadcrumb  > Catalogo
-				.filtros
-					.row.pergunta
-						h3 O que você deseja ver? Clique para encontrar...
-					.row
-						.col-md-1
-						.col-md-2
-							.imgfiltro
-								img#bolo.filtro(src="../images/iconbolo.png")
-							p#bolo.filtro Bolos
-						.col-md-2
-							.imgfiltro
-								img#boloformato.filtro(src="../images/iconboloformato.png")
-							p#boloformato.filtro Bolos com Formatos 
-						.col-md-2
-							.imgfiltro
-								img#cupcake.filtro(src="../images/iconcupcake.png")
-							p#cupcake.filtro Cupcakes 					
-						.col-md-2
-							.imgfiltro
-								img#doces.filtro(src="../images/icondoces.png")
-							p#doces.filtro Docinhos						
-						.col-md-2
-							.imgfiltro
-								img#torta.filtro(src="../images/icontorta.png")
-							p#torta.filtro Torta
+				.row
+					#bolo.col-md-2.filtros
+						img.imgfiltros(src="../images/iconbolo.png")
+						p Bolos
+					#boloformato.col-md-2.filtros
+						img.imgfiltros(src="../images/iconboloformato.png")
+						p Bolos com Formatos 
+					#cupcake.col-md-2.filtros
+						img.imgfiltros(src="../images/iconcupcake.png")
+						p Cupcakes 					
+					#doces.col-md-2.filtros
+						img.imgfiltros(src="../images/icondoces.png")
+						p Docinhos						
+					#torta.col-md-2.filtros
+						img.imgfiltros(src="../images/icontorta.png")
+						p Torta
 			.col-md-12
 				.row.titulo
 					h1  Catalogo de Produtos:
