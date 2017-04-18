@@ -158,7 +158,7 @@ p.saiba-letra,
   margin-left: 285%;
 }
 .container.one .descript .fa-heart {
-  color: red;
+  color: #E06DA4;
 }
 .container.one .descript .valorproduto {
   font-weight: bold;
@@ -225,46 +225,31 @@ p.saiba-letra,
 }
 .container.catalogo .row.titulo {
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 .container.catalogo .filtros {
-  margin-top: 5%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(234, 131, 178, 0.8);
   cursor: pointer;
+  text-align: center;
+  width: 20%;
+  padding: 1%;
+  background-color: white;
   /*imagens pequenas para filtros de produtos*/
 }
-.container.catalogo .filtros .pergunta {
-  margin-bottom: 3%;
-  margin-left: 10%;
+.container.catalogo .filtros .imgfiltros {
+  max-width: 100%;
+  max-height: 50px;
 }
-.container.catalogo .filtros .imgfiltro {
-  width: 100%;
-  height: 100px;
-  margin: 0 auto;
-  padding: 2%;
+.container.catalogo .filtros:hover {
+  background-color: #EA83B2;
 }
 .container.catalogo .nomeprincipal {
   font-size: 170%;
   text-align: center;
 }
 .container.catalogo .fa-heart {
-  color: red;
+  color: #E06DA4;
   background-color: transparent;
-}
-.breadcrumb {
-  background-color: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  margin-right: -45px;
-}
-.breadcrumb:hover,
-.breadcrumb:focus {
-  background-color: transparent;
-  text-decoration: none;
-  color: white;
-}
-.breadcrumb:before {
-  font-size: 0px;
 }
 .container.two {
   width: 70%;
