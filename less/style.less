@@ -82,6 +82,12 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		color: #EE6E73;
 		text-align: center;
 		margin-top: 3%;
+		.efeitodestaque{
+			margin-top: 3%;
+			&:hover{
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+			}
+		}
 		.titledestaque{
 			font-size: 250%;
 		}
@@ -153,7 +159,7 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		}
 		.linha-vertical {
 			height: 60px;
-    		border-left: 2px solid;
+			border-left: 2px solid;
 			color: #C3C3C3;
 		}
 		.baixo{
@@ -180,8 +186,16 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		.valorproduto{
 			font-weight: bold;
 			margin-left: 22%;
-			margin-bottom: 6%;
+			margin-bottom: 3%;
 		}
+		.descript-final{
+			font-family: 'Gudea', sans-serif;
+		}
+	}
+	.linha-vertical-descript{
+		height:  175px;;
+		border-left: 2px solid;
+		color: #C3C3C3;
 	}
 	.productselect{
 		box-shadow: 0px 5px 10px #444;
@@ -276,6 +290,17 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	/* nome do produtos do catalogo*/
 	.nomeprincipal{
 		font-size: 170%;
+		text-align: center;
+		margin-bottom: 1%;
+		margin-top: 10%;
+	}
+	.produto-catalogo{
+		padding-bottom: 3%;
+		&:hover{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+		}	
+	}
+	.valor{
 		text-align: center;
 	}
 	/*classes de coração para colocar nos desejos de produtos*/
