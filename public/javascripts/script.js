@@ -141,15 +141,19 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 				cartnumber();
 			}
 			if(dados.produtos[i].categoria==categoria){
-					$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
-						'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
+					$('#tabela').append('<div class ="col-md-4 produto-catalogo"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
+						'</h3><p class="valor">R$ '+valor.toString().replace(".", ",")+'</p><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
 						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+valor+
-						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
+						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '
+						+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'
+						+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}else if(categoria==0){
-				$('#tabela').append('<div class ="col-md-4"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
-					'</h3><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
-					'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+valor+
-					'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
+				$('#tabela').append('<div class ="col-md-4 produto-catalogo"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
+						'</h3><p class="valor">R$ '+valor.toString().replace(".", ",")+'</p><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
+						'.jpg"/><figcaption><p data-id="'+dados.produtos[i].id+'" data-valor="'+valor+
+						'"><i class="fa fa-fw fa-thumbs-o-up"></i><a href="'+db.productselect+dados.produtos[i].id+'"><i class="fa fa-fw fa-info"></i></a><i class="fa fa-fw '
+						+coracao+'"data-toggle="tooltip" data-placement="bottom" title: "'
+						+tooltip+'" ></i></p></figcaption></figure></div></div></div>');
 			}
 		}
 	});
@@ -190,13 +194,17 @@ function paginafavorites(soma){
 }
 
 //função que limpa os espaços de soma de valores na tabela
+ 
 
 function totalcompra(){
-	var total = 0; 
+
+	var total = 0;
 	$(".total-produto").each(function(){
+		total=parseFloat(total)
   		total = total+parseFloat($(this).text());
+  		console.log(total)
+  		// console.log(parseFloat($(this).text()))
   		total = setvalue(total).toString().replace(".", ",");
-  		
 	});
 	$("#total").append('<tr><td><h3>Total:</h3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+total+'</td></tr>');
 
