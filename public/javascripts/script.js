@@ -6,23 +6,41 @@ var db = {
 	productselect:'http://localhost:5000/produto/'
 }
 
+//================== Estilos ========================
+
+//função que abre e fecha menu
 function abrir_fecharmenu(){
-	$('[data-toggle="offcanvas"]').click(function () { //função que abre e fecha menu
+	$('[data-toggle="offcanvas"]').click(function () { 
 		$('#wrapper').toggleClass('toggled');
 	});
 };
 
-function pesquisa(){ //função que abre a caixa de pesquisa
+function tooltip(){
+	$('[data-toggle="tooltip"]').tooltip(); 
+};
+
+// função que muda navbar superior conforme movimento do mouse
+function mudanav(){ 
+	if($(window).scrollTop() > 50) {
+		$(".navbar").addClass("fixednav");
+		$(".logo").addClass("fixedlog");
+	} else {
+		$(".navbar").removeClass("fixednav");
+		$(".logo").removeClass("fixedlog");
+    }
+};
+
+//================= Pesquisa =======================
+
+//função que abre a caixa de pesquisa
+function pesquisa(){ 
 	$("#search").click(function(){
 		$("input").toggle();	
 	});
 };
 
-function tooltip(){
-    $('[data-toggle="tooltip"]').tooltip(); 
-};
-
-function procura(campo){ // função que procura produto em dados json
+// função que procura produto em dados json
+function procura(campo){ 
 	$.get(db.produtos, function(dados){
 		var searchField = $(campo).val(); //salva valor digitado em variavel
 		if(searchField === '')  {
@@ -52,38 +70,44 @@ function procura(campo){ // função que procura produto em dados json
 	});
 };
 
+//================= Carrinho de compras =======================
 var cont=0;
-function cartnumber(){ //contagem do carrinho
+
+//contagem do carrinho
+function cartnumber(){ 
 
 	cont=cont+1;
 	$('.contagem').html('');
 	$('.contagem').append('<p>'+cont+'</p>')				
 };
 
-function cart2number(){ //contagem do carrinho
+//contagem do carrinho
+function cart2number(){ 
 
 	cont=cont-1;
 	$('.contagem').html('');
 	$('.contagem').append('<p>'+cont+'</p>')				
 
 };
-var total =0;
-function valorTotal(valor, opera){
+// var total =0;
+// function valorTotal(valor, opera){
 
-	if(opera == "+"){ 
-		total =  total + valor;
-	}
-	if(opera == "-"){ 
-		total = total -valor; 
-	}
-	// $('#total').append( 
-}
+// 	if(opera == "+"){ 
+// 		total =  total + valor;
+// 	}
+// 	if(opera == "-"){ 
+// 		total = total -valor; 
+// 	}
+// 	// $('#total').append( 
+// }
 
-function favorite(id){
+//chama função ajax passando id como parametro na url para mudar estado de preferencia do produto
+function favorite(id){ 
 	ajax("GET", db.favorito+id);
 };
 
-function ajax(tipo, url){//requisição ajax, conforme dados recebidos
+//requisição ajax, conforme dados recebidos
+function ajax(tipo, url){
 	$.ajax({
 		url: url,
 		type: tipo,
@@ -96,35 +120,41 @@ function ajax(tipo, url){//requisição ajax, conforme dados recebidos
 		}
 	});
 }
-function tooltip(){
-	 $('[data-toggle="tooltip"]').tooltip();  
-}
 
-function heart(elem){ //pinta o coração de vermelho e muda estado de preferencia no produto
-
+//pinta o coração de vermelho e muda estado de preferencia no produto
+function heart(elem){ 
 
 	$(elem).removeClass("fa-heart-o");
 	$(elem).addClass("fa-heart");
-	$(elem).tooltip({ title: "O produto está se sentindo amado!" });
+	// $(elem).tooltip({ title: "O produto está se sentindo amado!" });
 };
 
-function heart2(elem){ //coração vazio
+//coração vazio
+function heart2(elem){ 
 
 	$(elem).removeClass("fa-heart");
 	$(elem).addClass("fa-heart-o");
-	$(elem).tooltip({ title: "Amando esse produto? Demonstre, a vida é curta" });
+	// $(elem).tooltip({ title: "Amando esse produto? Demonstre, a vida é curta" });
 };
 
-function tableclean(){ //função que limpa a tabela de catalogo
+//============================ Funções de uso geral(limpeza, formato dinheiro e etc.) =================================
+
+//função que limpa a tabela de catalogo
+function tableclean(){ 
 	$("#tabela").html(""); 
 	$("#favorites").html(""); 
 };
+
+//função que seta os zeros depois da virgula no valor
 function setvalue(value){
 	var valor=(parseFloat(value).toFixed(2));
 	return valor;
 }
 
-function filtros(categoria){ //função que lê os dados e print o catalogo conforme filtro
+//============================ Impressão do catalogo =================================
+
+//função que lê os dados e print o catalogo conforme filtro
+function filtros(categoria){ 
 	tableclean();
 	cont=0;
 	var coracao=0;
@@ -134,11 +164,11 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 			var valor=setvalue(dados.produtos[i].valor);
 			if(dados.produtos[i].preferido== "não"){
 				coracao ="fa-heart-o"
-				tooltip ='"Amando esse produto? Demonstre, a vida é curta"'
+				// tooltip ='"Amando esse produto? Demonstre, a vida é curta"'
 
 			}else{
 				coracao ="fa-heart"
-				tooltip ='"O produto está se sentindo amado!"'
+				// tooltip ='"O produto está se sentindo amado!"'
 				valorTotal(dados.produtos[i].valor, "+")
 				cartnumber();
 			}
@@ -161,6 +191,9 @@ function filtros(categoria){ //função que lê os dados e print o catalogo conf
 	});
 };
 
+//============================ Impressão do catalogo =================================
+
+//função que imprime a tabbela de produtos favoritos
 function paginafavorites(soma){
 	tableclean();
 	var totalinicial=0
@@ -196,8 +229,12 @@ function paginafavorites(soma){
 }
 
 //função que limpa os espaços de soma de valores na tabela
+function limpasomas(linhatotal){
+	$(linhatotal).html("");
+	$("#total").html("");
+}
  
-
+ //função que seta total da compra nos produtos favoritos
 function totalcompra(){
 
 	var total = 0;
@@ -223,10 +260,6 @@ function setvalorproduto(soma,elem){
 	totalcompra();
 }
 
-function limpasomas(linhatotal){
-	$(linhatotal).html("");
-	$("#total").html("");
-}
 //encontra o valor do produto no banco de dados, utilizando id do produto e multiplica pela quantidade selecionada
 function valorxquantidade(qtn , elem){ 
 	var soma= 0;
@@ -257,47 +290,35 @@ function contagem(elem) {
 	valorxquantidade(qtn, elem);
 };
 
-// data-toggle="modal" data-target="#modaldesfavoritar"
-function mudanav(){ // função que muda navbar superior conforme movimento do mouse
-	if($(window).scrollTop() > 50) {
-		$(".navbar").addClass("fixednav");
-		$(".logo").addClass("fixedlog");
-	} else {
-		$(".navbar").removeClass("fixednav");
-		$(".logo").removeClass("fixedlog");
-    }
-};
 
-function abrirjanelaprodutos(){//setando parametros na url
-	var produto = $('#lineModalLabel').data("value");
-	var nome =$('#nome').val();
-	var email =$('#email').val();
-	var quantidade =$('#quantidade').val();
-	window.open("http://localhost:5000/encomendas?nomeCliente="+nome+"&produto="+produto+"&email="+email+"&quantidade="+quantidade);
-	window.close("")
+// function abrirjanelaprodutos(){//setando parametros na url
+// 	var produto = $('#lineModalLabel').data("value");
+// 	var nome =$('#nome').val();
+// 	var email =$('#email').val();
+// 	var quantidade =$('#quantidade').val();
+// 	window.open("http://localhost:5000/encomendas?nomeCliente="+nome+"&produto="+produto+"&email="+email+"&quantidade="+quantidade);
+// 	window.close("")
 
-};
-// function maskmoney(){//máscara para campo de valor
-// 	$("h3#valor").maskMoney({showSymbol:true, symbol:"R$", decimal:".", thousands:","});
-// }
-function carousel(){//trabalhando com carousel
-	$('#myCarousel').carousel({
-		interval: 40000
-	});
+// };
 
-	$('.carousel .item').each(function(){
-		var next = $(this).next();
-		if (!next.length) {
-			next = $(this).siblings(':first');
-		}
-		next.children(':first-child').clone().appendTo($(this));
-		if (next.next().length>0) {
-			next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-		}else {
-			$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-		}
-	});
-};;
+// function carousel(){//trabalhando com carousel
+// 	$('#myCarousel').carousel({
+// 		interval: 40000
+// 	});
+
+// 	$('.carousel .item').each(function(){
+// 		var next = $(this).next();
+// 		if (!next.length) {
+// 			next = $(this).siblings(':first');
+// 		}
+// 		next.children(':first-child').clone().appendTo($(this));
+// 		if (next.next().length>0) {
+// 			next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+// 		}else {
+// 			$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+// 		}
+// 	});
+// };;
 
 function actions () {//ações que chamam as funções
 	abrir_fecharmenu();
@@ -343,8 +364,6 @@ function actions () {//ações que chamam as funções
 		heart2(this);
 		cart2number();
 		favorite(id);
-		// var valor =$(this).parents('tr').data("valor");
-		// valorTotal(valor, "-")
 		paginafavorites();
 
 	});
@@ -395,6 +414,5 @@ $(document).ready(function () {
 	tooltip();
 	paginafavorites();
 	tooltip();
-	// maskmoney();
 });
 
