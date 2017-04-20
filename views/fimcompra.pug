@@ -1,0 +1,29 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/bootstrap.min.js')
+		script(src='/javascripts/script.js')
+	body
+		include includes/layouts/navbar
+		include includes/layouts/menu
+		.container.one
+			.row
+				.col.md-4
+					img.imagemfim(src="/images/comidafofa.jpg")
+				.col.md-8
+					div.despedida
+						p PARABÉNS! Você acaba de adiquirir 
+						p produtos de qualidades que chegaram
+						p dentro do prazo solicitado. 
+						p Todos os produtos são feitos com muito amor
+						p e carinho por nossos colaboradores 
+						pe esperamos que façam você e sua 
+						p família terem um momento de pausa.
+			.row
+				a.waves-effect.waves-light.btn.btn-fim(href="http://localhost:5000") Voltar ao site

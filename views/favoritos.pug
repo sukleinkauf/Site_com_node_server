@@ -28,7 +28,13 @@ html
 								th Valor total
 								th Desfavoritar
 						tbody#favorites
-						tfoot#total
+					div#total
+					div.botoesdecompra
+						p="Possibilidade de escolha na data de entrega"+":"
+						<input type="date" class="datepicker">
+						a(href="http://localhost:5000/fimdacompra")
+							button.btn.btn-info.btn-lg.btn-compra(type='button') Comprar Agora
+
 					//- .center
 					//- 	p
 					//- 		.input-group

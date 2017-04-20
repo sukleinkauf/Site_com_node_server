@@ -43,17 +43,23 @@ html
 								p com frete gratuito nas compras acima de R$ 20,00
 							p.encomendas Encomendas com datas programáveis 
 								p no prazo minimo de 14 dias a partir da confirmação do pagamento
-								<input type="date" class="datepicker">
 					.row
-						.col.md-8
-							i.fa.fa-heart-o.Icon.fa-5x.coredoproduto(data-id=""+produto.id+"" data-toggle="tooltip" data-placement="bottom" title="Adicionar aos favoritos" aria-hidden='true')
+						.col-md-12
+							div.itensdecompra
+								a.waves-effect.waves-light.btn.btn-compra(href="http://localhost:5000/fimdacompra") Comprar Agora
+								i.fa.fa-heart-o.Icon.fa-4x.coredoproduto(data-id=""+produto.id+"" data-toggle="tooltip" data-placement="bottom" title="Adicionar aos favoritos!" aria-hidden='true')
 			.row.descript-final
 				.col-md-1
 					div.linha-vertical-descript
 				.col-md-11
+
 					h5 Descrição do produto:
 					p=produto.descrição
 					p=produto.valor+"a cada "+produto.peso
 					p=produto.disponibilidade+" com frete gratuito em todo Vale dos Sinos nas compras acima de R$ 20,00."
-					
+					p="Possibilidade de escolha na data de entrega"+":"
+					<input type="date" class="datepicker">
+
+
+	
 
