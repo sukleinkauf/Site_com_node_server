@@ -4,9 +4,10 @@ html
 		title= title
 		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
-		//- link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/materialize.min.js')
 		script(src='/javascripts/bootstrap.min.js')
 		script(src='/javascripts/script.js')
 	body
@@ -30,20 +31,7 @@ html
 						tbody#favorites
 					div#total
 					div.botoesdecompra
-						p="Possibilidade de escolha na data de entrega"+":"
+						p="Escolha na data de entrega"+":"
 						<input type="date" class="datepicker">
 						a(href="http://localhost:5000/fimdacompra")
 							button.btn.btn-info.btn-lg.btn-compra(type='button') Comprar Agora
-
-					//- .center
-					//- 	p
-					//- 		.input-group
-					//- 			span.input-group-btn
-					//- 				button.btn.btn-default.btn-number(type="button", disabled="disabled", data-type="minus", data-field="quant[1]")
-					//- 					span.glyphicon.glyphicon-minus
-					//- 				|		
-					//- 				input.form-control.input-number(type="text", name="quant[1]", value="1", min="1", max="10")
-					//- 				|
-					//- 				span.input-group-btn
-					//- 					button.btn.btn-default.btn-number(type="button", data-type="plus", data-field="quant[1]")
-					//- 						span.glyphicon.glyphicon-plus

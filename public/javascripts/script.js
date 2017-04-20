@@ -89,17 +89,6 @@ function cart2number(){
 	$('.contagem').append('<p>'+cont+'</p>')				
 
 };
-// var total =0;
-// function valorTotal(valor, opera){
-
-// 	if(opera == "+"){ 
-// 		total =  total + valor;
-// 	}
-// 	if(opera == "-"){ 
-// 		total = total -valor; 
-// 	}
-// 	// $('#total').append( 
-// }
 
 //chama função ajax passando id como parametro na url para mudar estado de preferencia do produto
 function favorite(id){ 
@@ -169,7 +158,8 @@ function filtros(categoria){
 			}else{
 				coracao ="fa-heart"
 				// tooltip ='"O produto está se sentindo amado!"'
-				valorTotal(dados.produtos[i].valor, "+")
+				// valorTotal(dados.produtos[i].valor, "+")
+				console.log("favorito")
 				cartnumber();
 			}
 			if(dados.produtos[i].categoria==categoria){
@@ -291,35 +281,6 @@ function contagem(elem) {
 };
 
 
-// function abrirjanelaprodutos(){//setando parametros na url
-// 	var produto = $('#lineModalLabel').data("value");
-// 	var nome =$('#nome').val();
-// 	var email =$('#email').val();
-// 	var quantidade =$('#quantidade').val();
-// 	window.open("http://localhost:5000/encomendas?nomeCliente="+nome+"&produto="+produto+"&email="+email+"&quantidade="+quantidade);
-// 	window.close("")
-
-// };
-
-// function carousel(){//trabalhando com carousel
-// 	$('#myCarousel').carousel({
-// 		interval: 40000
-// 	});
-
-// 	$('.carousel .item').each(function(){
-// 		var next = $(this).next();
-// 		if (!next.length) {
-// 			next = $(this).siblings(':first');
-// 		}
-// 		next.children(':first-child').clone().appendTo($(this));
-// 		if (next.next().length>0) {
-// 			next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-// 		}else {
-// 			$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-// 		}
-// 	});
-// };;
-
 function actions () {//ações que chamam as funções
 	abrir_fecharmenu();
 
@@ -344,7 +305,7 @@ function actions () {//ações que chamam as funções
 		heart(this);
 		cartnumber();
 		favorite(id);
-		valorTotal(valor, "+")
+		// valorTotal(valor, "+")
 	});
 	$('#tabela').on("click", ".fa-info", function(){
 		var id =$(this).parents('p').data("id");
@@ -356,11 +317,12 @@ function actions () {//ações que chamam as funções
 		cart2number();
 		favorite(id);
 		var valor =$(this).parents('p').data("valor");
-		valorTotal(valor, "-")
+		// valorTotal(valor, "-")
 	});
 
 	$('#favorites').on("click", ".fa-heart", function(){
 		var id = $(this).parents('tr').data("id");
+		$("#total").html("");
 		heart2(this);
 		cart2number();
 		favorite(id);
@@ -400,17 +362,17 @@ function actions () {//ações que chamam as funções
 	$('#favorites').on('mousedown', '.data-up, .data-dwn', function(){
 		contagem(this)
 	});
-	// $('.datepicker').pickadate({
-	// 	selectMonths: true, // Creates a dropdown to control month
-	// 	selectYears: 15 // Creates a dropdown of 15 years to control year
-	// });
+	$('.datepicker').pickadate({
+		selectMonths: true, // Creates a dropdown to control month
+		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
 };
 
 $(document).ready(function () {
 	actions();
 	filtros("0");
 	pesquisa();
-	carousel();
+	// carousel();
 	tooltip();
 	paginafavorites();
 	tooltip();

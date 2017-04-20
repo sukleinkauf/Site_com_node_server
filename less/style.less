@@ -41,6 +41,8 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	font-family: 'Sofia', cursive;
 }
 
+//==========> Estilo da pagina inicial, pagina final de compra, Pagina da história e produto escolhido pelo usuário <===================
+
 .container.one{
 	width: 70%;
 	background-color: @Colorcontainer;
@@ -77,17 +79,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			line-height: 30px;
 		}
 	}
-	//estilos da pagina de final de compra
-	.despedida{
-		text-align: center;
-		font-size: 190%;
-		font-family: 'Gudea', sans-serif;
-		font-weight: bold;
-	}
-	.btn-fim{
-		background-color: #E06DA4;
-		margin-left: 16%;
-	}
 	// Estilo produtos da pagina inicial
 	.destaque{
 		color: #EE6E73;
@@ -106,6 +97,27 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			font-size: 50%;
 		}
 	}
+
+	//estilos da pagina de final de compra
+	.imagemfim{
+		max-width: 100%;
+		max-height: 265px;
+	}
+	.despedida{
+		text-align: center;	
+		font-size: 139%;
+		margin-top: 7%;
+		font-family: 'Gudea', sans-serif;
+		font-weight: bold;
+		p {
+			margin: -4px 0 10px;
+		}
+	}
+	.btn-fim{
+		background-color: #E06DA4;
+		margin-left: 16%;
+	}
+
 	// Inicio dos estilos da pagina história
 	.row.sobrenos{
 		.bg;
@@ -232,6 +244,7 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			color: #E16AA0;
 		}
 	}
+
 	.outros{
 		text-align: center;
 		margin-top:5%;
@@ -278,6 +291,8 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 
 	}
 }
+//=====================================> Estilo da catalogo e  pagina de favoritos  <=========================================
+
 // Estilos do catalogo
 .container.catalogo{
 	width: 90%;
@@ -366,14 +381,19 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		}
 	}
 	.botoesdecompra{
-		margin-left: 70%;
+		margin-left: 1%;
+		margin-top: 2%;
 		.btn-compra{
 			background-color: #E06DA4;
 			border-color: #E06DA4;
-			margin-left: 10%;
+			margin-left: 77%;
+			margin-top: 1%;
 		}
 	}
 }
+
+//=====================================> Estilo do footer das paginas <=========================================
+
 // Estilo do footer das paginas
 .container.two{
 	width: 70%;
@@ -478,6 +498,7 @@ ul.social-network .redessociais {
 	}
 }
 
+//=====================================> Estilo do navbar das paginas <=========================================
 // Estilos da navbar
 #navbar {
 	width: 100%;
@@ -529,8 +550,8 @@ ul.social-network .redessociais {
 	}
 
 	.fixednav{
-		transition: 0.5s;
-		-webkit-transition:  0.5s;
+		transition: all 0.5s;
+		-webkit-transition:  all 0.5s;
 		background-color: @Colornavbar;
 		height: 10%;
 		width: 100%;
@@ -539,8 +560,8 @@ ul.social-network .redessociais {
 	}
 
 	.fixedlog{
-		transition: 0.9s;
-		-webkit-transition:  0.9s;
+		transition: all  0.9s;
+		-webkit-transition: all 0.9s;
 		max-width: 216px !important;
 		max-height: 67px !important;
 		margin-left: 38% !important;
@@ -576,6 +597,7 @@ ul.social-network .redessociais {
 		}
 	}
 }
+//=====================================> Estilo do menu lateral das paginas <=========================================
 /*Aqui inicia configuração do menu lateral*/
 
 .nav .open > .linkmenu, 
@@ -786,6 +808,7 @@ ul.social-network .redessociais {
 	background-color: rgba(250,250,250,.8);
 	z-index: 1;
 }
+//===================================> Estilo das imagens encontradas na pagina inicial <=========================================
 
 // Estilo das imagens encontradas na pagina inicial
 .grid {
@@ -918,4 +941,11 @@ ul.social-network .redessociais {
 			transform: translate3d(0,5em,0) scale3d(1,1,1);
 		}
 	}
+}
+
+.picker__date-display {
+	background-color: #EA83B2;
+}
+.picker__weekday-display{
+	background-color: #EA83B2;
 }

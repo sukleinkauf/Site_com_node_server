@@ -64,16 +64,6 @@ p.saiba-letra,
   font-weight: bold;
   line-height: 30px;
 }
-.container.one .despedida {
-  text-align: center;
-  font-size: 190%;
-  font-family: 'Gudea', sans-serif;
-  font-weight: bold;
-}
-.container.one .btn-fim {
-  background-color: #E06DA4;
-  margin-left: 16%;
-}
 .container.one .destaque {
   color: #EE6E73;
   text-align: center;
@@ -90,6 +80,24 @@ p.saiba-letra,
 }
 .container.one .destaque .nomeprincipal {
   font-size: 50%;
+}
+.container.one .imagemfim {
+  max-width: 100%;
+  max-height: 265px;
+}
+.container.one .despedida {
+  text-align: center;
+  font-size: 139%;
+  margin-top: 7%;
+  font-family: 'Gudea', sans-serif;
+  font-weight: bold;
+}
+.container.one .despedida p {
+  margin: -4px 0 10px;
+}
+.container.one .btn-fim {
+  background-color: #E06DA4;
+  margin-left: 16%;
 }
 .container.one .row.sobrenos {
   background-image: url(../images/cozinha3.png);
@@ -331,12 +339,14 @@ p.saiba-letra,
   margin: 2%;
 }
 .container.catalogo .botoesdecompra {
-  margin-left: 70%;
+  margin-left: 1%;
+  margin-top: 2%;
 }
 .container.catalogo .botoesdecompra .btn-compra {
   background-color: #E06DA4;
   border-color: #E06DA4;
-  margin-left: 10%;
+  margin-left: 77%;
+  margin-top: 1%;
 }
 .container.two {
   width: 70%;
@@ -477,8 +487,8 @@ ul.social-network .redessociais {
   margin-left: 35%;
 }
 #navbar .fixednav {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
   background-color: #E16AA0;
   height: 10%;
   width: 100%;
@@ -486,8 +496,8 @@ ul.social-network .redessociais {
   position: fixed;
 }
 #navbar .fixedlog {
-  transition: 0.9s;
-  -webkit-transition: 0.9s;
+  transition: all  0.9s;
+  -webkit-transition: all 0.9s;
   max-width: 216px !important;
   max-height: 67px !important;
   margin-left: 38% !important;
@@ -846,4 +856,10 @@ ul.social-network .redessociais {
   opacity: 0.7;
   -webkit-transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
   transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
+}
+.picker__date-display {
+  background-color: #EA83B2;
+}
+.picker__weekday-display {
+  background-color: #EA83B2;
 }
