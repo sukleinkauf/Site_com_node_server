@@ -39,8 +39,8 @@ function procura(campo){ // função que procura produto em dados json
 					output += '<div class ="col-md-3">';
 					output += '<h3 class="nomeprincipal">'+this.nome+'</h3><p class="valorsearch"> R$ '+valor.toString().replace(".", ",")
 					+'</p><div class="grid">';
-					output += '<img src="../images/'+this.imag+
-					'.jpg"/ class="imagemtabelapesquisa"></figure>'
+					output += '<a href="'+db.productselect+this.id+'"><img src="../images/'+this.imag+
+					'.jpg"/ class="imagemtabelapesquisa"></a></figure>'
 					output += '</div>';
 					output += '</div>';
 
@@ -96,7 +96,9 @@ function ajax(tipo, url){//requisição ajax, conforme dados recebidos
 		}
 	});
 }
-
+function tooltip(){
+	 $('[data-toggle="tooltip"]').tooltip();  
+}
 
 function heart(elem){ //pinta o coração de vermelho e muda estado de preferencia no produto
 
@@ -189,7 +191,7 @@ function paginafavorites(soma){
 			}
 		}
 		totalinicial=setvalue(totalinicial).toString().replace(".", ",");
-		$("#total").append('<tr><td><h3>Total:</h3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+totalinicial+'</td></tr>');
+		$("#total").append('<h3 class="totalvalor">Total: '+totalinicial+'</h3>');
 	});
 }
 
@@ -206,7 +208,7 @@ function totalcompra(){
   		// console.log(parseFloat($(this).text()))
   		total = setvalue(total).toString().replace(".", ",");
 	});
-	$("#total").append('<tr><td><h3>Total:</h3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+total+'</td></tr>');
+	$("#total").append('<h3 class="totalvalor">Total: '+total+'</h3>');
 
 }
 
@@ -392,6 +394,7 @@ $(document).ready(function () {
 	carousel();
 	tooltip();
 	paginafavorites();
+	tooltip();
 	// maskmoney();
 });
 
