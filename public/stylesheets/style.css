@@ -64,6 +64,16 @@ p.saiba-letra,
   font-weight: bold;
   line-height: 30px;
 }
+.container.one .despedida {
+  text-align: center;
+  font-size: 190%;
+  font-family: 'Gudea', sans-serif;
+  font-weight: bold;
+}
+.container.one .btn-fim {
+  background-color: #E06DA4;
+  margin-left: 16%;
+}
 .container.one .destaque {
   color: #EE6E73;
   text-align: center;
@@ -160,9 +170,6 @@ p.saiba-letra,
   color: #E06DA4;
   margin-bottom: 0;
 }
-.container.one .descript .coredoproduto {
-  margin-left: 285%;
-}
 .container.one .descript .fa-heart {
   color: #E06DA4;
 }
@@ -174,10 +181,21 @@ p.saiba-letra,
 .container.one .descript .descript-final {
   font-family: 'Gudea', sans-serif;
 }
+.container.one .descript .itensdecompra {
+  margin-top: 2%;
+}
+.container.one .descript .itensdecompra .btn-compra {
+  background-color: #E06DA4;
+  margin-right: 15%;
+}
+.container.one .descript .itensdecompra .coredoproduto {
+  padding-top: 3%;
+}
 .container.one .linha-vertical-descript {
-  height: 175px;
+  height: 150px;
   border-left: 2px solid;
   color: #C3C3C3;
+  margin-left: 100%;
 }
 .container.one .productselect {
   box-shadow: 0px 5px 10px #444;
@@ -276,6 +294,50 @@ p.saiba-letra,
   color: #E06DA4;
   background-color: transparent;
 }
+.container.catalogo .table {
+  background-color: white;
+  font-family: 'Gudea', sans-serif;
+}
+.container.catalogo .table .imagemtabela {
+  max-height: 150px;
+  max-width: 85%;
+}
+.container.catalogo .table .input-group {
+  margin-top: 3%;
+}
+.container.catalogo .table .btn-quantidade {
+  font-size: 11px;
+  padding: 4px 6px;
+  color: #eee;
+  background-color: #E06DA4;
+  border-color: #E06DA4;
+}
+.container.catalogo .table .mais {
+  float: right;
+  margin-right: 125%;
+}
+.container.catalogo .table .inputnumber {
+  width: 61%;
+  height: 25px;
+}
+.container.catalogo #total {
+  font-family: 'Gudea', sans-serif;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+}
+.container.catalogo #total .totalvalor {
+  float: right;
+  margin: 2%;
+}
+.container.catalogo .botoesdecompra {
+  margin-left: 70%;
+}
+.container.catalogo .botoesdecompra .btn-compra {
+  background-color: #E06DA4;
+  border-color: #E06DA4;
+  margin-left: 10%;
+}
 .container.two {
   width: 70%;
   background-color: #F3BDC7;
@@ -294,57 +356,6 @@ p.saiba-letra,
   font-weight: bold;
   line-height: 40%;
   color: #693E2F;
-}
-.table {
-  background-color: white;
-  font-family: 'Gudea', sans-serif;
-}
-.table .imagemtabela {
-  max-height: 150px;
-  max-width: 85%;
-}
-.table .input-group {
-  margin-top: 3%;
-}
-.table .btn-quantidade {
-  font-size: 11px;
-  padding: 4px 6px;
-  color: #eee;
-  background-color: #E06DA4;
-  border-color: #E06DA4;
-}
-.table .mais {
-  float: right;
-  margin-right: 125%;
-}
-.table .inputnumber {
-  width: 61%;
-  height: 25px;
-}
-#squarespaceModal {
-  font-family: 'Gudea', sans-serif;
-  color: black;
-  height: 100%;
-}
-#squarespaceModal .modal-header {
-  padding-bottom: 5px;
-}
-#squarespaceModal .modal-footer {
-  padding: 0;
-}
-#squarespaceModal .modal-footer .btn-group button {
-  height: 40px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border: none;
-  border-right: 1px solid #ddd;
-}
-#squarespaceModal .modal-footer .btn-group:last-child > button {
-  border-right: 0;
-}
-#squarespaceModal #saveencomenda,
-#squarespaceModal #cancelaencomenda {
-  background-color: #E16AA0;
 }
 /* footer social icons que aparecem na pagina história */
 ul.social-network {
