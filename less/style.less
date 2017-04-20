@@ -77,6 +77,17 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			line-height: 30px;
 		}
 	}
+	//estilos da pagina de final de compra
+	.despedida{
+		text-align: center;
+		font-size: 190%;
+		font-family: 'Gudea', sans-serif;
+		font-weight: bold;
+	}
+	.btn-fim{
+		background-color: #E06DA4;
+		margin-left: 16%;
+	}
 	// Estilo produtos da pagina inicial
 	.destaque{
 		color: #EE6E73;
@@ -177,9 +188,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			color:#E06DA4;
 			margin-bottom: 0;
 		}
-		.coredoproduto{
-			margin-left: 285%;
-		}
 		.fa-heart{
 			color: #E06DA4;
 		}
@@ -191,11 +199,23 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		.descript-final{
 			font-family: 'Gudea', sans-serif;
 		}
+		.itensdecompra{
+			margin-top:2%;
+			.btn-compra{
+				background-color: #E06DA4;
+				margin-right: 15%;
+			}
+			.coredoproduto{
+				padding-top: 3%;
+			}
+		}
 	}
+	
 	.linha-vertical-descript{
-		height:  175px;;
+		height:  150px;;
 		border-left: 2px solid;
 		color: #C3C3C3;
+		margin-left: 100%;
 	}
 	.productselect{
 		box-shadow: 0px 5px 10px #444;
@@ -308,6 +328,51 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		color:#E06DA4;
 		background-color: transparent;
 	}
+	//estilo pagina de favoritos
+	.table{
+		background-color: white;
+		font-family: 'Gudea', sans-serif;
+		.imagemtabela{
+			max-height: 150px;
+			max-width: 85%;
+		}
+		.input-group{
+			margin-top: 3%;
+		}
+		.btn-quantidade{
+			font-size: 11px;
+			padding: 4px 6px;
+			color: #eee;
+			background-color: #E06DA4;
+			border-color: #E06DA4;
+		}
+		.mais{
+			float: right;
+			margin-right: 125%;
+		}
+		.inputnumber{
+			width: 61%;
+			height: 25px;
+		}
+	}
+	#total{
+		font-family: 'Gudea', sans-serif;
+		font-weight: bold;
+		height: 50px;
+		width: 100%;
+		.totalvalor{
+			float: right;
+			margin: 2%;
+		}
+	}
+	.botoesdecompra{
+		margin-left: 70%;
+		.btn-compra{
+			background-color: #E06DA4;
+			border-color: #E06DA4;
+			margin-left: 10%;
+		}
+	}
 }
 // Estilo do footer das paginas
 .container.two{
@@ -328,59 +393,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		font-weight: bold;
 		line-height: 40%;
 		color: #693E2F;
-	}
-}
-.table{
-	background-color: white;
-	font-family: 'Gudea', sans-serif;
-	.imagemtabela{
-		max-height: 150px;
-		max-width: 85%;
-	}
-	.input-group{
-		margin-top: 3%;
-	}
-	.btn-quantidade{
-		font-size: 11px;
-		padding: 4px 6px;
-		color: #eee;
-		background-color: #E06DA4;
-		border-color: #E06DA4;
-	}
-	.mais{
-		float: right;
-		margin-right: 125%;
-	}
-	.inputnumber{
-		width: 61%;
-		height: 25px;
-	}
-}
-// Modal de compra do produto
-#squarespaceModal{
-	font-family: 'Gudea', sans-serif;
-	color: black;
-	height: 100%;
-	.modal-header {
-		padding-bottom: 5px;
-	}
-
-	.modal-footer {
-		padding: 0;
-
-		.btn-group button {
-			height:40px;
-			border-top-left-radius : 0;
-			border-top-right-radius : 0;
-			border: none;
-			border-right: 1px solid #ddd;
-		}
-		.btn-group:last-child > button {
-			border-right: 0;
-		}
-	}
-	#saveencomenda, #cancelaencomenda{
-		background-color: #E16AA0;
 	}
 }
 
