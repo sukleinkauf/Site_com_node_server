@@ -140,6 +140,13 @@ function setvalue(value){
 	return valor;
 }
 
+function aviso(msg){
+	$('#aviso').fadeIn('fast', function(){
+	});
+	$( "#textoaviso" ).html("<h3>"+msg+"</h3>");
+	$('#aviso').fadeOut(2500, function(){
+	});
+}
 //============================ Impressão do catalogo =================================
 
 //função que lê os dados e print o catalogo conforme filtro
@@ -160,6 +167,7 @@ function filtros(categoria){
 				tooltip ='"O produto está se sentindo amado!"'
 				cartnumber();
 			}
+			console.log(tooltip);
 			if(dados.produtos[i].categoria==categoria){
 					$('#tabela').append('<div class ="col-md-4 produto-catalogo"><h3 class="nomeprincipal">'+dados.produtos[i].nome+
 						'</h3><p class="valor">R$ '+valor.toString().replace(".", ",")+'</p><div class="grid"><figure class="effect-kira"><img src="../images/'+dados.produtos[i].imag+
@@ -332,6 +340,7 @@ function actions () {//ações que chamam as funções
 		cartnumber();
 		favorite(id);
 	})
+
 	$('.descript').on("click", ".fa-heart", function(){
 		var id = $(this).data("id");
 		heart2(this);
@@ -343,9 +352,6 @@ function actions () {//ações que chamam as funções
 		procura(this);
 	});
 
-	$('#saveencomenda').click(function(){
-		abrirjanelaprodutos();
-	});
 	$(window).on("scroll", function() {
 		mudanav();
 	});
@@ -354,12 +360,21 @@ function actions () {//ações que chamam as funções
 		var valor = $(this).parents('tr').data("valor");
 		valorproduto(valor,this);
 	});
+
 	$('#favorites').on('mousedown', '.data-up, .data-dwn', function(){
 		contagem(this)
 	});
+
+	$("#core").mousemove(function(){
+	 	tooltip();
+	});
+
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
+	$('.enviarmsg').click(function(){
+		aviso("Mensagem enviada com Sucesso!");
 	});
 };
 
@@ -367,7 +382,6 @@ $(document).ready(function () {
 	actions();
 	filtros("0");
 	pesquisa();
-	// carousel();
 	tooltip();
 	paginafavorites();
 	tooltip();

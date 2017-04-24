@@ -1,0 +1,52 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/materialize.min.js')
+		script(src='/javascripts/bootstrap.min.js')
+		script(src='/javascripts/script.js')
+	body
+		include includes/layouts/navbar
+		include includes/layouts/menu
+		.container.one
+			.col-md-12
+				#aviso.alert.alert-success(role='alert')
+					strong#textoaviso
+			section#contact.content-section.text-center
+				.contact-section
+					.container
+						h2.titulofaleconosco Fale conosco
+						p
+						| Responderemos suas dúvidas e questões em até dois dias úteis.
+						.row
+							.col-md-8.col-md-offset-2
+								form.form-horizontal
+									.form-group
+										label(for='exampleInputName2') Nome
+										|
+										input#exampleInputName2.form-control(type='text', placeholder='Samantha Reiter')
+									.form-group
+										label(for='exampleInputEmail2') Email
+										|  
+										input#exampleInputEmail2.form-control(type='email', placeholder='samantha.reiter@example.com')
+									.form-group
+										label(for='exampleInputText') Sua mensagem
+										textarea.form-control(placeholder='Description')
+										|
+									button.btn.btn-default.enviarmsg(type='submit' data-toggle="modal" data-target="#myModal") Enviar Mensagem
+			
+	//- #myModal.modal.fade(role='dialog')
+	//- 	.modal-dialog.modal-sm
+	//- 		.modal-content
+	//- 			.modal-header
+	//- 				button.close(type='button', data-dismiss='modal') &times;
+	//- 				h4.modal-title
+	//- 			.modal-body
+	//- 				p Mensagem enviada com sucesso! .
+	//- 			.modal-footer
+	//- 				button.btn.btn-default(type='button', data-dismiss='modal') Fechar

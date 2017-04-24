@@ -26,8 +26,18 @@ p.saiba-letra,
 .informationproduct,
 .outros,
 .valorproduto,
-.titleproduct {
+.titleproduct,
+.titulofaleconosco {
   font-family: 'Sofia', cursive;
+}
+.despedida,
+.textosaiba,
+.descript,
+.descript-final,
+.table,
+#total,
+#contact {
+  font-family: 'Gudea', sans-serif;
 }
 .container.one {
   width: 70%;
@@ -95,7 +105,6 @@ p.saiba-letra,
   text-align: center;
   font-size: 139%;
   margin-top: 7%;
-  font-family: 'Gudea', sans-serif;
   font-weight: bold;
 }
 .container.one .despedida p {
@@ -123,7 +132,6 @@ p.saiba-letra,
 .container.one .textosaiba {
   width: 100%;
   text-align: center;
-  font-family: 'Gudea', sans-serif;
   margin-right: 2%;
 }
 .container.one .fundosaiba {
@@ -148,7 +156,6 @@ p.saiba-letra,
 }
 .container.one .descript {
   text-align: center;
-  font-family: 'Gudea', sans-serif;
 }
 .container.one .descript .iconesdecartao {
   color: #E06DA4;
@@ -192,15 +199,13 @@ p.saiba-letra,
   margin-left: 22%;
   margin-bottom: 3%;
 }
-.container.one .descript .descript-final {
-  font-family: 'Gudea', sans-serif;
-}
 .container.one .descript .itensdecompra {
   margin-top: 2%;
+  margin-left: 29%;
 }
 .container.one .descript .itensdecompra .btn-compra {
   background-color: #E06DA4;
-  margin-right: 15%;
+  margin-bottom: 2%;
 }
 .container.one .descript .itensdecompra .coredoproduto {
   padding-top: 3%;
@@ -260,6 +265,21 @@ p.saiba-letra,
 .container.one .outros .center {
   margin-top: 50px;
 }
+.container.one #contact {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  margin: 0 auto;
+}
+.container.one #contact .titulofaleconosco {
+  margin-bottom: 5%;
+}
+.container.one #contact .enviarmsg {
+  background-color: #E06DA4;
+  border-color: #E06DA4;
+}
+.container.one #aviso {
+  display: none;
+}
 .container.catalogo {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
@@ -310,7 +330,6 @@ p.saiba-letra,
 }
 .container.catalogo .table {
   background-color: white;
-  font-family: 'Gudea', sans-serif;
 }
 .container.catalogo .table .imagemtabela {
   max-height: 150px;
@@ -318,6 +337,7 @@ p.saiba-letra,
 }
 .container.catalogo .table .input-group {
   margin-top: 3%;
+  width: 90%;
 }
 .container.catalogo .table .btn-quantidade {
   font-size: 11px;
@@ -326,16 +346,11 @@ p.saiba-letra,
   background-color: #E06DA4;
   border-color: #E06DA4;
 }
-.container.catalogo .table .mais {
-  float: right;
-  margin-right: 190%;
-}
 .container.catalogo .table .inputnumber {
-  width: 61%;
+  width: 134%;
   height: 25px;
 }
 .container.catalogo #total {
-  font-family: 'Gudea', sans-serif;
   font-weight: bold;
   height: 50px;
   width: 100%;
@@ -452,7 +467,7 @@ ul.social-network .redessociais {
   margin: 0 auto;
 }
 #navbar #text-search {
-  width: 20%;
+  width: 10%;
   float: right;
   margin-top: 1%;
   margin-right: 1%;
@@ -503,6 +518,10 @@ ul.social-network .redessociais {
   z-index: 100;
   position: fixed;
 }
+#navbar .fixednav #search,
+#navbar .fixednav #core {
+  margin-top: 1%;
+}
 #navbar .fixednav > :not(.fixedlog, #search) {
   filter: blur(2px);
 }
@@ -514,7 +533,6 @@ ul.social-network .redessociais {
   margin-left: 38% !important;
   width: 40%;
   margin-left: 40% !important;
-  margin-top: 1% !important;
 }
 .resultssearch {
   background-color: black;

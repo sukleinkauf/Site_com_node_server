@@ -37,9 +37,13 @@ body {
 	position: relative;
 	overflow-x: hidden;
 }
-p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:first-child .linkmenu, .informationproduct,.outros,.valorproduto, .titleproduct {
+p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:first-child .linkmenu, .informationproduct,.outros,.valorproduto, .titleproduct, .titulofaleconosco{
 	font-family: 'Sofia', cursive;
 }
+.despedida,.textosaiba, .descript, .descript-final, .table, #total, #contact{
+	font-family: 'Gudea', sans-serif
+}
+
 
 //==========> Estilo da pagina inicial, pagina final de compra, Pagina da história e produto escolhido pelo usuário <===================
 
@@ -113,7 +117,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		text-align: center;	
 		font-size: 139%;
 		margin-top: 7%;
-		font-family: 'Gudea', sans-serif;
 		font-weight: bold;
 		p {
 			margin: -4px 0 10px;
@@ -143,7 +146,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	.textosaiba{
 		width: 100%;
 		text-align: center;
-		font-family: 'Gudea', sans-serif;
 		margin-right: 2%;
 	}
 
@@ -171,7 +173,6 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	}
 	.descript{
 		text-align: center;
-		font-family: 'Gudea', sans-serif;
 		.iconesdecartao{
 			color: #E06DA4;
 			margin-bottom: 100%;
@@ -214,14 +215,12 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			margin-left: 22%;
 			margin-bottom: 3%;
 		}
-		.descript-final{
-			font-family: 'Gudea', sans-serif;
-		}
 		.itensdecompra{
 			margin-top:2%;
+			margin-left: 29%;
 			.btn-compra{
 				background-color: #E06DA4;
-				margin-right: 15%;
+				margin-bottom: 2%;
 			}
 			.coredoproduto{
 				padding-top: 3%;
@@ -296,6 +295,22 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 		}
 
 	}
+	#contact{
+		background-color: rgba(255, 255, 255, 0.8);
+		width: 100%;
+		margin: 0 auto;
+
+		.titulofaleconosco{
+			margin-bottom: 5%;
+		}
+		.enviarmsg{
+			background-color: #E06DA4;
+			border-color: #E06DA4;
+		}
+	}
+	#aviso{
+		display: none;
+	}
 }
 //=====================================> Estilo da catalogo e  pagina de favoritos  <=========================================
 
@@ -352,13 +367,13 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 	//estilo pagina de favoritos
 	.table{
 		background-color: white;
-		font-family: 'Gudea', sans-serif;
 		.imagemtabela{
 			max-height: 150px;
 			max-width: 85%;
 		}
 		.input-group{
 			margin-top: 3%;
+			width: 90%;
 		}
 		.btn-quantidade{
 			font-size: 11px;
@@ -367,17 +382,12 @@ p.saiba-letra, .destaque, .titulo, .contatos,.container.catalogo,.linhamenu:firs
 			background-color: #E06DA4;
 			border-color: #E06DA4;
 		}
-		.mais{
-			float: right;
-			margin-right: 190%;
-		}
 		.inputnumber{
-			width: 61%;
+			width: 134%;
 			height: 25px;
 		}
 	}
 	#total{
-		font-family: 'Gudea', sans-serif;
 		font-weight: bold;
 		height: 50px;
 		width: 100%;
@@ -512,8 +522,8 @@ ul.social-network .redessociais {
 	margin: 0 auto;
 
 	#text-search{
-		width: 20%;
-		float:right;
+		width: 10%;
+		float: right;
 		margin-top: 1%;
 		margin-right: 1%;
 		display: none;
@@ -565,6 +575,9 @@ ul.social-network .redessociais {
 		width: 100%;
 		z-index: 100;
 		position: fixed;
+		#search, #core{
+			margin-top: 1%;
+		}
 	}
 	.fixednav>:not(.fixedlog, #search) {
 		filter: blur(2px);
@@ -578,7 +591,6 @@ ul.social-network .redessociais {
 		margin-left: 38% !important;
 		width: 40%;
 		margin-left: 40% !important;
-		margin-top: 1% !important;
 
 	}
 }

@@ -14,6 +14,7 @@ var dbencomendas = require('./routes/db2');
 var encomendas = require('./routes/encomendas');
 var favoritos = require('./routes/favoritos');
 var fimcompra = require('./routes/fimcompra');
+var contato = require('./routes/contato');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/saibamais', saibamais);
 app.use('/produto', produtoindividual);
 app.use('/favoritos', favoritos);
 app.use('/fimdacompra', fimcompra);
+app.use('/contato', contato);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
