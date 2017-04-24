@@ -19,8 +19,10 @@ router.get('/:fav', function(req, res) {
 
 	 	if(item.preferido == "não"){
 	 		item.preferido = "sim";
+	 		console.log("esse produto não era preferido");
 	 	}else{
 	 		item.preferido = "não";
+	 		console.log("esse produto era preferido");
 	 	}
 
 	 	data.produtos.splice(posArr, 1);

@@ -153,13 +153,11 @@ function filtros(categoria){
 			var valor=setvalue(dados.produtos[i].valor);
 			if(dados.produtos[i].preferido== "não"){
 				coracao ="fa-heart-o"
-				// tooltip ='"Amando esse produto? Demonstre, a vida é curta"'
+				tooltip ='"Amando esse produto? Demonstre, a vida é curta"'
 
 			}else{
 				coracao ="fa-heart"
-				// tooltip ='"O produto está se sentindo amado!"'
-				// valorTotal(dados.produtos[i].valor, "+")
-				console.log("favorito")
+				tooltip ='"O produto está se sentindo amado!"'
 				cartnumber();
 			}
 			if(dados.produtos[i].categoria==categoria){
@@ -290,7 +288,7 @@ function actions () {//ações que chamam as funções
 	$('#boloformato').click(function(){
 		filtros("Boloformato");
 	});
-	$('#cupcake').click(function(){
+	$('#cupcake').click(function(){ 
 		filtros("Cupcake");
 	});
 	$('#doces').click(function(){
@@ -316,8 +314,7 @@ function actions () {//ações que chamam as funções
 		heart2(this);
 		cart2number();
 		favorite(id);
-		var valor =$(this).parents('p').data("valor");
-		// valorTotal(valor, "-")
+
 	});
 
 	$('#favorites').on("click", ".fa-heart", function(){
@@ -331,14 +328,12 @@ function actions () {//ações que chamam as funções
 	});
 	$('.descript').on("click", ".fa-heart-o", function(){
 		var id = $(this).data("id");
-		console.log(id);
 		heart(this);
 		cartnumber();
 		favorite(id);
 	})
 	$('.descript').on("click", ".fa-heart", function(){
 		var id = $(this).data("id");
-		console.log(id);
 		heart2(this);
 		cart2number();
 		favorite(id);

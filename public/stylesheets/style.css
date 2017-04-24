@@ -64,6 +64,12 @@ p.saiba-letra,
   font-weight: bold;
   line-height: 30px;
 }
+.container.one .row.conheca .saiba {
+  color: #3A59A9;
+}
+.container.one .row.conheca .saiba:hover {
+  text-decoration: none;
+}
 .container.one .destaque {
   color: #EE6E73;
   text-align: center;
@@ -322,7 +328,7 @@ p.saiba-letra,
 }
 .container.catalogo .table .mais {
   float: right;
-  margin-right: 125%;
+  margin-right: 190%;
 }
 .container.catalogo .table .inputnumber {
   width: 61%;
@@ -444,7 +450,6 @@ ul.social-network .redessociais {
   width: 100%;
   height: 13%;
   margin: 0 auto;
-  background-color: #E16AA0;
 }
 #navbar #text-search {
   width: 20%;
@@ -459,23 +464,26 @@ ul.social-network .redessociais {
 #navbar #core,
 #navbar #search {
   float: right;
-  margin-top: 1.5%;
-  margin-right: 5%;
+  margin-top: 2%;
+  margin-right: 2%;
   cursor: pointer;
+}
+#navbar #search {
+  margin-right: 10%;
 }
 #navbar .contagem {
   background: #FFC8ED;
-  color: #fff;
+  color: black;
   width: 25px;
   height: 25px;
   vertical-align: middle;
   text-align: center;
-  font-size: 50%;
+  font-size: 69%;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  margin-top: -59%;
-  margin-left: 71%;
+  margin-top: -67%;
+  margin-left: 64%;
   z-index: -1;
   margin-bottom: 4%;
 }
@@ -484,16 +492,19 @@ ul.social-network .redessociais {
   max-height: 86px;
   width: 40%;
   margin: 0 auto;
-  margin-left: 35%;
+  margin-left: 38%;
 }
 #navbar .fixednav {
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
-  background-color: #E16AA0;
+  background-color: rgba(225, 106, 160, 0.8);
   height: 10%;
   width: 100%;
   z-index: 100;
   position: fixed;
+}
+#navbar .fixednav > :not(.fixedlog, #search) {
+  filter: blur(2px);
 }
 #navbar .fixedlog {
   transition: all  0.9s;
@@ -502,6 +513,8 @@ ul.social-network .redessociais {
   max-height: 67px !important;
   margin-left: 38% !important;
   width: 40%;
+  margin-left: 40% !important;
+  margin-top: 1% !important;
 }
 .resultssearch {
   background-color: black;
