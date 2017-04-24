@@ -1,9 +1,9 @@
 // variaveis de banco de dados
 var db = {
-	produtos:"http://localhost:5000/db/produtos/",
-	encomendas:"http://localhost:5000/db/encomendas/",
-	favorito: 'http://localhost:5000/catalogo/',
-	productselect:'http://localhost:5000/produto/'
+	produtos:"/db/produtos/",
+	encomendas:"/db/encomendas/",
+	favorito: '/catalogo/',
+	productselect:'/produto/'
 }
 
 //================== Estilos ========================
